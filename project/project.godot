@@ -17,6 +17,10 @@ run/main_scene="res://maps/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://scenes/global.tscn"
+
 [input]
 
 click={

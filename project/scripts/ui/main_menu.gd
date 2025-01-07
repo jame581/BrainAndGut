@@ -16,11 +16,11 @@ func _ready() -> void:
 		exit_button.show()
 	
 	credit_panel.visible = false
-	version_label.text = "v" + ProjectSettings.get_setting("application/config/version")
+	version_label.text = Global.get_game_version()
 
 
 func _on_start_button_pressed() -> void:
-	pass # Replace with function body.
+	Global.goto_scene("res://maps/main.tscn")
 
 
 func _on_credits_button_pressed() -> void:
