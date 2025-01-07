@@ -1,3 +1,45 @@
-[gd_scene format=3 uid="uid://c2xijxxnltbxk"]
+[gd_scene load_steps=4 format=3 uid="uid://c2xijxxnltbxk"]
+
+[ext_resource type="PackedScene" uid="uid://cc7ieadixdnpi" path="res://scenes/player.tscn" id="1_gyyf1"]
+[ext_resource type="Script" path="res://scripts/debug/debug_ui_navigation.gd" id="2_6qdk2"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_boexl"]
+vertices = PackedVector2Array(490, 620, 24.9063, 620, 23.0938, 429.93, 490, 427.031, 552.688, 411.773, 506.102, 412.852, 509.758, 259.039, 705.93, 259.953, 704.938, 421.117, 559.008, 620, 1129.91, 620, 1128.08, 416.109)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(4, 7, 8, 9), PackedInt32Array(10, 9, 8, 11)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(13, 420, 496, 417, 500, 249, 716, 250, 715, 411, 1138, 406, 1140, 630, 15, 630)])
 
 [node name="Main" type="Node2D"]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_boexl")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D"]
+radius = 10.0
+vertices = PackedVector2Array(543, 422, 500, 423, 500, 620, 549, 620)
+affect_navigation_mesh = true
+
+[node name="NavigationLink2D" type="NavigationLink2D" parent="NavigationRegion2D"]
+start_position = Vector2(597, 544)
+end_position = Vector2(435, 547)
+
+[node name="Player" parent="." instance=ExtResource("1_gyyf1")]
+position = Vector2(76, 516)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player"]
+avoidance_enabled = true
+
+[node name="DebugUI" type="CanvasLayer" parent="." node_paths=PackedStringArray("navigation_link")]
+script = ExtResource("2_6qdk2")
+navigation_link = NodePath("../NavigationRegion2D/NavigationLink2D")
+
+[node name="ToogleDoorButton" type="Button" parent="DebugUI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -4.0
+offset_right = 4.0
+offset_bottom = 8.0
+grow_horizontal = 2
+text = "Toggle Door"
+
+[connection signal="pressed" from="DebugUI/ToogleDoorButton" to="DebugUI" method="_on_toggle_door_button_pressed"]
