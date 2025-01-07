@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bbhbk3n3bj4fr" path="res://assets/player/Walk Sprite-Sheet.png" id="4_c6tsx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i22jk"]
-size = Vector2(20, 44)
+size = Vector2(20, 44.3333)
 
 [sub_resource type="Animation" id="Animation_6qwyy"]
 length = 0.001
@@ -82,7 +82,7 @@ tracks/0/path = NodePath("Sprite2D:hframes")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(1),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [4]
@@ -341,10 +341,11 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(3, 3)
 script = ExtResource("1_0jg2f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_i22jk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
