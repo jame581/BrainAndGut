@@ -15,3 +15,4 @@ export.cfg
 data_*/
 mono_crash.*.json
 project/.vscode/settings.json
+/.vs
