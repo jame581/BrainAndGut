@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://dam3g0a571pen"]
+
+[ext_resource type="Texture2D" uid="uid://vqigle82qset" path="res://assets/props/bg-bullseye-wave2.png" id="1_3gvnm"]
+[ext_resource type="Texture2D" uid="uid://d2rjotpr7fut1" path="res://assets/room1/room2.png" id="1_prl01"]
+[ext_resource type="Texture2D" uid="uid://b16pbckn655kh" path="res://assets/props/bed2.png" id="2_b8q8l"]
+[ext_resource type="Texture2D" uid="uid://crsuehdxdnoii" path="res://assets/props/bg-bullseye-wave-3.png" id="2_ywwr1"]
+[ext_resource type="Texture2D" uid="uid://chyewg7l3hked" path="res://assets/props/pic2.png" id="5_ikmdy"]
+
+[node name="Room1" type="Node2D"]
+
+[node name="Bg-bullseye-wave2" type="Sprite2D" parent="."]
+position = Vector2(219, 134)
+texture = ExtResource("1_3gvnm")
+
+[node name="Bg-bullseye-wave-3" type="Sprite2D" parent="."]
+position = Vector2(222, 151)
+texture = ExtResource("2_ywwr1")
+
+[node name="BackgroundSprite" type="Sprite2D" parent="."]
+position = Vector2(249, 135)
+texture = ExtResource("1_prl01")
+
+[node name="Bed" type="Sprite2D" parent="BackgroundSprite"]
+position = Vector2(0, 6)
+texture = ExtResource("2_b8q8l")
+
+[node name="Picture" type="Sprite2D" parent="BackgroundSprite"]
+position = Vector2(-23, 23)
+texture = ExtResource("5_ikmdy")
