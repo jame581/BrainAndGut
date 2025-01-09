@@ -5,6 +5,12 @@ signal map_changed(new_map_path: String)
 var current_scene = null
 var current_path: String = ""
 
+enum InteractionAllowed{
+	BRAIN,
+	GUT,
+	BOTH,
+	NONE
+}
 
 func _ready() -> void:
 	var root = get_tree().root

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dam3g0a571pen"]
+[gd_scene load_steps=15 format=3 uid="uid://dam3g0a571pen"]
 
 [ext_resource type="Texture2D" uid="uid://vqigle82qset" path="res://assets/props/bg-bullseye-wave2.png" id="1_3gvnm"]
 [ext_resource type="Texture2D" uid="uid://eaoc4osx1p5j" path="res://assets/bg-bullseye2.png" id="1_emfbx"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://chyewg7l3hked" path="res://assets/props/pic2.png" id="5_ikmdy"]
 [ext_resource type="PackedScene" uid="uid://cc7ieadixdnpi" path="res://scenes/player.tscn" id="6_q03r2"]
 [ext_resource type="Texture2D" uid="uid://dnr8sf54nv8nd" path="res://assets/props/table-letter.png" id="8_veb5u"]
+[ext_resource type="PackedScene" uid="uid://cpbupgumegnux" path="res://scenes/interaction_area.tscn" id="9_y6r4h"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_08l0f"]
 vertices = PackedVector2Array(359.891, 220.906, 358.102, 388.078, -743.727, 397.789, -570.688, 213.031)
@@ -51,6 +52,9 @@ _data = {
 "waves": SubResource("Animation_yn0yu")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ud5gc"]
+size = Vector2(150, 150)
+
 [node name="Room1" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -88,6 +92,10 @@ texture = ExtResource("2_b8q8l")
 position = Vector2(-23, 23)
 texture = ExtResource("5_ikmdy")
 
+[node name="Table-letter" type="Sprite2D" parent="BackgroundSprite"]
+position = Vector2(-345, 98)
+texture = ExtResource("8_veb5u")
+
 [node name="Player" parent="." instance=ExtResource("6_q03r2")]
 position = Vector2(201, 39)
 scale = Vector2(1, 1)
@@ -105,6 +113,10 @@ libraries = {
 "": SubResource("AnimationLibrary_nsu3t")
 }
 
-[node name="Table-letter" type="Sprite2D" parent="."]
-position = Vector2(-345, 98)
-texture = ExtResource("8_veb5u")
+[node name="Interactables" type="Node2D" parent="."]
+
+[node name="InteractionArea" parent="Interactables" instance=ExtResource("9_y6r4h")]
+position = Vector2(-343, 29)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/InteractionArea"]
+shape = SubResource("RectangleShape2D_ud5gc")

@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export_category("Player")
 @export var movement_speed: float = 300.0
+@export var interaction_allowed: Global.InteractionAllowed = Global.InteractionAllowed.BOTH
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
