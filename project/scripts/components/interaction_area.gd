@@ -6,7 +6,6 @@ class_name InteractionArea
 @export var cursor_texture: Texture #= preload("res://assets/sprites/cursor.png")
 @export var interaction_allowed: Global.InteractionAllowed = Global.InteractionAllowed.BOTH
 
-
 signal interacted()
 
 var can_interact: bool = false
@@ -23,7 +22,6 @@ func _ready() -> void:
 func _on_mouse_exited() -> void:
 	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 	#Input.set_custom_mouse_cursor(null)
-	pass # Replace with function body.
 
 
 func _on_mouse_entered() -> void:
