@@ -99,4 +99,3 @@ navigation_polygon = SubResource("NavigationPolygon_08l0f")
 libraries = {
 "": SubResource("AnimationLibrary_nsu3t")
 }
-autoplay = "waves"
