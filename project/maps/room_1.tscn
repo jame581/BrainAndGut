@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://chyewg7l3hked" path="res://assets/props/pic2.png" id="5_ikmdy"]
 [ext_resource type="PackedScene" uid="uid://cc7ieadixdnpi" path="res://scenes/player.tscn" id="6_q03r2"]
 [ext_resource type="Texture2D" uid="uid://dnr8sf54nv8nd" path="res://assets/props/table-letter.png" id="8_veb5u"]
-[ext_resource type="PackedScene" uid="uid://cpbupgumegnux" path="res://scenes/interaction_area.tscn" id="9_y6r4h"]
+[ext_resource type="PackedScene" path="res://scenes/interaction_area.tscn" id="9_y6r4h"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_08l0f"]
 vertices = PackedVector2Array(359.891, 220.906, 358.102, 388.078, -743.727, 397.789, -570.688, 213.031)
@@ -96,11 +96,21 @@ texture = ExtResource("5_ikmdy")
 position = Vector2(-345, 98)
 texture = ExtResource("8_veb5u")
 
-[node name="Player" parent="." instance=ExtResource("6_q03r2")]
+[node name="Player1" parent="." instance=ExtResource("6_q03r2")]
 position = Vector2(201, 39)
 scale = Vector2(1, 1)
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player"]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player1"]
+simplify_path = true
+avoidance_enabled = true
+debug_enabled = true
+
+[node name="Player2" parent="." instance=ExtResource("6_q03r2")]
+position = Vector2(-535, 39)
+scale = Vector2(1, 1)
+player_index = 1
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player2"]
 simplify_path = true
 avoidance_enabled = true
 debug_enabled = true

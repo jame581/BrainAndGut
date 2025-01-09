@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export_category("Player")
 @export var movement_speed: float = 300.0
 @export var interaction_allowed: Global.InteractionAllowed = Global.InteractionAllowed.BOTH
+@export var player_index: int = 0
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
@@ -11,7 +12,10 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 var target_position: Vector2 = Vector2.ZERO
+var is_listening: bool = false
 
+func _enter_tree( ) -> void:
+	InputSwitch.register_player(self)
 
 func _ready() -> void:
 	if not animation_player:
@@ -38,10 +42,14 @@ func actor_setup() -> void:
 func set_movement_target(movement_target: Vector2) -> void:
 	navigation_agent.target_position = movement_target
 
+func set_listening(listening: bool) -> void:
+	is_listening = listening
+
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed(&"click"):
-		target_position = get_global_mouse_position()
-		set_movement_target(target_position)
+	if is_listening:
+		if event.is_action_pressed("click"):
+			target_position = get_global_mouse_position()
+			set_movement_target(target_position)
 
 
 func _physics_process(_delta: float) -> void:
