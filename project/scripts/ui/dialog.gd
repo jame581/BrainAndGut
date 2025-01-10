@@ -23,7 +23,11 @@ extends MarginContainer
 func _ready() -> void:
 	rich_text_label.text = dialog_text
 	title_label.text = dialog_title
-	interaction_area.interacted.connect(handle_interaction)
+
+	if interaction_area:
+		interaction_area.interacted.connect(handle_interaction)
+	else:
+		push_error("Dialog " + get_name() + ": No InteractionArea node found.")		
 
 	hide_timer.wait_time = wait_before_hide
 	writing_timer.wait_time = writing_speed
@@ -59,6 +63,8 @@ func _on_animation_player_animation_finished(anim_name:StringName) -> void:
 	if anim_name == "hide":
 		visible = false
 	elif anim_name == "show":
-		if not show_instant:
+		if show_instant:
+			hide_timer.start()
+		else:
 			writing_timer.start()
 		

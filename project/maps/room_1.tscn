@@ -100,6 +100,7 @@ texture = ExtResource("8_veb5u")
 [node name="Player1" parent="." instance=ExtResource("6_q03r2")]
 position = Vector2(201, 39)
 scale = Vector2(1, 1)
+interaction_allowed = 0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player1"]
 simplify_path = true
@@ -109,6 +110,7 @@ debug_enabled = true
 [node name="Player2" parent="." instance=ExtResource("6_q03r2")]
 position = Vector2(-535, 39)
 scale = Vector2(1, 1)
+interaction_allowed = 1
 player_index = 1
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player2"]
@@ -128,6 +130,7 @@ libraries = {
 
 [node name="TableInteractionArea" parent="Interactables" instance=ExtResource("9_y6r4h")]
 position = Vector2(-343, 29)
+interaction_allowed = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/TableInteractionArea"]
 shape = SubResource("RectangleShape2D_ud5gc")
