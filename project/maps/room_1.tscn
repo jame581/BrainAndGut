@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dam3g0a571pen"]
+[gd_scene load_steps=16 format=3 uid="uid://dam3g0a571pen"]
 
 [ext_resource type="Texture2D" uid="uid://vqigle82qset" path="res://assets/props/bg-bullseye-wave2.png" id="1_3gvnm"]
 [ext_resource type="Texture2D" uid="uid://eaoc4osx1p5j" path="res://assets/bg-bullseye2.png" id="1_emfbx"]
@@ -8,7 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://chyewg7l3hked" path="res://assets/props/pic2.png" id="5_ikmdy"]
 [ext_resource type="PackedScene" uid="uid://cc7ieadixdnpi" path="res://scenes/player.tscn" id="6_q03r2"]
 [ext_resource type="Texture2D" uid="uid://dnr8sf54nv8nd" path="res://assets/props/table-letter.png" id="8_veb5u"]
-[ext_resource type="PackedScene" path="res://scenes/interaction_area.tscn" id="9_y6r4h"]
+[ext_resource type="PackedScene" uid="uid://cpbupgumegnux" path="res://scenes/interaction_area.tscn" id="9_y6r4h"]
+[ext_resource type="PackedScene" uid="uid://b2nhuw7nenoha" path="res://scenes/ui/dialog.tscn" id="10_h7uum"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_08l0f"]
 vertices = PackedVector2Array(359.891, 220.906, 358.102, 388.078, -743.727, 397.789, -570.688, 213.031)
@@ -125,8 +126,17 @@ libraries = {
 
 [node name="Interactables" type="Node2D" parent="."]
 
-[node name="InteractionArea" parent="Interactables" instance=ExtResource("9_y6r4h")]
+[node name="TableInteractionArea" parent="Interactables" instance=ExtResource("9_y6r4h")]
 position = Vector2(-343, 29)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/InteractionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/TableInteractionArea"]
 shape = SubResource("RectangleShape2D_ud5gc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Dialog" parent="CanvasLayer" node_paths=PackedStringArray("interaction_area") instance=ExtResource("10_h7uum")]
+interaction_area = NodePath("../../Interactables/TableInteractionArea")
+dialog_text = "[center]This is really cool newspapers on table! You know right?[/center]"
+dialog_title = "Papers on table"
+writing_speed = 0.03
+show_instant = true

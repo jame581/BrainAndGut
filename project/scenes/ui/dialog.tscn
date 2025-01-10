@@ -1,0 +1,124 @@
+[gd_scene load_steps=8 format=3 uid="uid://b2nhuw7nenoha"]
+
+[ext_resource type="Texture2D" uid="uid://b03rcae8rlmlf" path="res://assets/ui/panel-pac.png" id="1_8dgyt"]
+[ext_resource type="Script" path="res://scripts/ui/dialog.gd" id="1_iius6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_837vr"]
+texture = ExtResource("1_8dgyt")
+
+[sub_resource type="Animation" id="Animation_t402m"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_odu20"]
+resource_name = "hide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g50p7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8pgpp"]
+_data = {
+"RESET": SubResource("Animation_g50p7"),
+"hide": SubResource("Animation_odu20"),
+"show": SubResource("Animation_t402m")
+}
+
+[node name="Dialog" type="MarginContainer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 20
+script = ExtResource("1_iius6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="DialogTitle" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Dialog"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextPanel" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(450, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_837vr")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TextPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/TextPanel/MarginContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center]
+Some really cool text about this and this. 
+
+You know right?
+[/center]"
+
+[node name="WritingTimer" type="Timer" parent="."]
+
+[node name="HideTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8pgpp")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="timeout" from="WritingTimer" to="." method="_on_writing_timer_timeout"]
+[connection signal="timeout" from="HideTimer" to="." method="_on_hide_timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -5,8 +5,8 @@ var current_player_index: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-
-	players[current_player_index].set_listening(true)
+	if players.size() > 0:
+		players[current_player_index].set_listening(true)
 
 # Function to register a new player
 func register_player(player):
