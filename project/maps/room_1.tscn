@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dam3g0a571pen"]
+[gd_scene load_steps=17 format=3 uid="uid://dam3g0a571pen"]
 
 [ext_resource type="Texture2D" uid="uid://vqigle82qset" path="res://assets/props/bg-bullseye-wave2.png" id="1_3gvnm"]
 [ext_resource type="Texture2D" uid="uid://eaoc4osx1p5j" path="res://assets/bg-bullseye2.png" id="1_emfbx"]
@@ -10,6 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://dnr8sf54nv8nd" path="res://assets/props/table-letter.png" id="8_veb5u"]
 [ext_resource type="PackedScene" uid="uid://cpbupgumegnux" path="res://scenes/interaction_area.tscn" id="9_y6r4h"]
 [ext_resource type="PackedScene" uid="uid://b2nhuw7nenoha" path="res://scenes/ui/dialog.tscn" id="10_h7uum"]
+[ext_resource type="PackedScene" uid="uid://blrteg5ux6vja" path="res://scenes/props/door.tscn" id="10_x3qfq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ud5gc"]
+size = Vector2(150, 150)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_08l0f"]
 vertices = PackedVector2Array(359.891, 220.906, 358.102, 388.078, -743.727, 397.789, -570.688, 213.031)
@@ -53,9 +57,6 @@ _data = {
 "waves": SubResource("Animation_yn0yu")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ud5gc"]
-size = Vector2(150, 150)
-
 [node name="Room1" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -97,6 +98,18 @@ texture = ExtResource("5_ikmdy")
 position = Vector2(-345, 98)
 texture = ExtResource("8_veb5u")
 
+[node name="Interactables" type="Node2D" parent="."]
+
+[node name="TableInteractionArea" parent="Interactables" instance=ExtResource("9_y6r4h")]
+position = Vector2(-343, 29)
+interaction_allowed = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/TableInteractionArea"]
+shape = SubResource("RectangleShape2D_ud5gc")
+
+[node name="Door" parent="Interactables" instance=ExtResource("10_x3qfq")]
+position = Vector2(-686, 0)
+
 [node name="Player1" parent="." instance=ExtResource("6_q03r2")]
 position = Vector2(201, 39)
 scale = Vector2(1, 1)
@@ -125,15 +138,6 @@ navigation_polygon = SubResource("NavigationPolygon_08l0f")
 libraries = {
 "": SubResource("AnimationLibrary_nsu3t")
 }
-
-[node name="Interactables" type="Node2D" parent="."]
-
-[node name="TableInteractionArea" parent="Interactables" instance=ExtResource("9_y6r4h")]
-position = Vector2(-343, 29)
-interaction_allowed = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/TableInteractionArea"]
-shape = SubResource("RectangleShape2D_ud5gc")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
