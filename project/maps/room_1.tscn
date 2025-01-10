@@ -109,6 +109,9 @@ shape = SubResource("RectangleShape2D_ud5gc")
 
 [node name="Door" parent="Interactables" instance=ExtResource("10_x3qfq")]
 position = Vector2(-686, 0)
+locked = null
+action = null
+interaction_allowed = null
 
 [node name="Player1" parent="." instance=ExtResource("6_q03r2")]
 position = Vector2(201, 39)
@@ -121,7 +124,7 @@ avoidance_enabled = true
 debug_enabled = true
 
 [node name="Player2" parent="." instance=ExtResource("6_q03r2")]
-position = Vector2(-535, 39)
+position = Vector2(-442, 39)
 scale = Vector2(1, 1)
 interaction_allowed = 1
 player_index = 1
