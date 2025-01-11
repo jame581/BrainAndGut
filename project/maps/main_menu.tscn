@@ -2,11 +2,9 @@
 
 [ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_8vtf1"]
 [ext_resource type="FontFile" uid="uid://dwprribxrnn8f" path="res://assets/fonts/PlaywriteAUSA-VariableFont_wght.ttf" id="2_ox664"]
+[ext_resource type="Texture2D" uid="uid://d2rjotpr7fut1" path="res://assets/room1/room2.png" id="2_rfb40"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y64d8"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rci23"]
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pk0ty"]
@@ -118,6 +116,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_rfb40")
+expand_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -185,11 +185,6 @@ Game Design:
 Meru, Jan Mesarc, Jakub Hubacek
 [/center]"
 fit_content = true
-
-[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/LeftContainer/MarginContainer"]
-visible = false
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rci23")
 
 [node name="RightContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
