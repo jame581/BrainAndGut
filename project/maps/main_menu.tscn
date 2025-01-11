@@ -1,6 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbimief5lvaa0"]
+[gd_scene load_steps=10 format=3 uid="uid://bbimief5lvaa0"]
 
 [ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_8vtf1"]
+[ext_resource type="FontFile" uid="uid://dwprribxrnn8f" path="res://assets/fonts/PlaywriteAUSA-VariableFont_wght.ttf" id="2_ox664"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y64d8"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rci23"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pk0ty"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_xinu1"]
 length = 0.001
@@ -141,6 +151,7 @@ theme_override_constants/margin_bottom = 50
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_y64d8")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/LeftContainer/MarginContainer/CreditsPanel"]
 layout_mode = 1
@@ -154,6 +165,7 @@ alignment = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/LeftContainer/MarginContainer/CreditsPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_ox664")
 bbcode_enabled = true
 text = "[center]
 Team:
@@ -174,6 +186,11 @@ Meru, Jan Mesarc, Jakub Hubacek
 [/center]"
 fit_content = true
 
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/LeftContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rci23")
+
 [node name="RightContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 alignment = 1
@@ -184,6 +201,7 @@ size_flags_vertical = 2
 
 [node name="GameTitle" type="Label" parent="MarginContainer/HBoxContainer/RightContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Brain and Gut"
 horizontal_alignment = 1
 
@@ -196,14 +214,23 @@ alignment = 1
 
 [node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer/RightContainer/ButtonsContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_pk0ty")
 text = "Start Game"
 
 [node name="CreditsButton" type="Button" parent="MarginContainer/HBoxContainer/RightContainer/ButtonsContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_pk0ty")
 text = "Credits"
 
 [node name="ExitButton" type="Button" parent="MarginContainer/HBoxContainer/RightContainer/ButtonsContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_pk0ty")
 text = "Quit"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/RightContainer"]
@@ -213,6 +240,7 @@ alignment = 2
 
 [node name="VersionLabel" type="Label" parent="MarginContainer/HBoxContainer/RightContainer/VBoxContainer2"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "v0.0.1"
 horizontal_alignment = 1
 

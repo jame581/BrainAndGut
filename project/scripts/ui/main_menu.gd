@@ -20,7 +20,7 @@ func _ready() -> void:
 
 
 func _on_start_button_pressed() -> void:
-	Global.goto_scene("res://maps/main.tscn")
+	Global.goto_scene("res://maps/main_level.tscn")
 
 
 func _on_credits_button_pressed() -> void:
