@@ -11,9 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://cc7ieadixdnpi" path="res://scenes/player.tscn" id="9_rsie0"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7umth"]
-vertices = PackedVector2Array(359.891, 220.906, 358.102, 388.078, -743.727, 397.789, -570.688, 213.031)
+vertices = PackedVector2Array(812.172, -79.1094, 1408.61, 947, -967.289, 947, 224.648, -90.9219)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(368, 398, -767, 408, -575, 203, 370, 211)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1426, 957, -994, 957, 221, -101, 818, -89)])
 
 [node name="Room-Corridor" type="Node2D"]
 script = ExtResource("1_ysvqb")
@@ -43,7 +43,7 @@ texture = ExtResource("7_k5sbf")
 zoom = Vector2(0.4, 0.4)
 
 [node name="Player1" parent="." instance=ExtResource("9_rsie0")]
-position = Vector2(201, 39)
+position = Vector2(865, 39)
 scale = Vector2(1, 1)
 interaction_allowed = 0
 
@@ -53,7 +53,7 @@ avoidance_enabled = true
 debug_enabled = true
 
 [node name="Player2" parent="." instance=ExtResource("9_rsie0")]
-position = Vector2(-442, 39)
+position = Vector2(124, 39)
 scale = Vector2(1, 1)
 interaction_allowed = 1
 player_index = 1

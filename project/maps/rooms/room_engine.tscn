@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://fo30wpmou1rx"]
+
+[ext_resource type="Script" path="res://scripts/sub_level.gd" id="1_63hxh"]
+[ext_resource type="Texture2D" uid="uid://c6il3oahldobd" path="res://assets/rooms/engine/engine-room.png" id="2_c84o7"]
+[ext_resource type="Texture2D" uid="uid://baqjlx5sem44c" path="res://assets/rooms/engine/engine-room-shaft.png" id="3_8lwlh"]
+[ext_resource type="Texture2D" uid="uid://n6gqd6whjvj3" path="res://assets/rooms/engine/engine-room-pump.png" id="4_aw31n"]
+[ext_resource type="Texture2D" uid="uid://b2vy4qkojdhd5" path="res://assets/rooms/engine/engine-room-picture.png" id="5_ggxlp"]
+[ext_resource type="Texture2D" uid="uid://c0umhb7ob5wr4" path="res://assets/rooms/engine/engine-room-engine.png" id="6_13m5u"]
+[ext_resource type="PackedScene" uid="uid://blrteg5ux6vja" path="res://scenes/props/door.tscn" id="6_r3kyx"]
+[ext_resource type="PackedScene" uid="uid://cc7ieadixdnpi" path="res://scenes/player.tscn" id="7_tbnbw"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_08l0f"]
+vertices = PackedVector2Array(359.891, 220.906, 358.102, 388.078, -743.727, 397.789, -570.688, 213.031)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(368, 398, -767, 408, -575, 203, 370, 211)])
+
+[sub_resource type="Animation" id="Animation_u1udo"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_yn0yu"]
+resource_name = "waves"
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nsu3t"]
+_data = {
+"RESET": SubResource("Animation_u1udo"),
+"waves": SubResource("Animation_yn0yu")
+}
+
+[node name="Room-Engine" type="Node2D"]
+script = ExtResource("1_63hxh")
+
+[node name="Art" type="Node2D" parent="."]
+
+[node name="Engine-room" type="Sprite2D" parent="Art"]
+texture = ExtResource("2_c84o7")
+
+[node name="Engine-room-shaft" type="Sprite2D" parent="Art/Engine-room"]
+position = Vector2(0, 4)
+texture = ExtResource("3_8lwlh")
+
+[node name="Engine-room-engine" type="Sprite2D" parent="Art/Engine-room"]
+texture = ExtResource("6_13m5u")
+
+[node name="Engine-room-pump" type="Sprite2D" parent="Art/Engine-room"]
+texture = ExtResource("4_aw31n")
+
+[node name="Engine-room-picture" type="Sprite2D" parent="Art/Engine-room"]
+texture = ExtResource("5_ggxlp")
+
+[node name="Interactables" type="Node2D" parent="."]
+
+[node name="Door" parent="Interactables" instance=ExtResource("6_r3kyx")]
+position = Vector2(-1292, 13)
+
+[node name="Player1" parent="." instance=ExtResource("7_tbnbw")]
+position = Vector2(201, 39)
+scale = Vector2(1, 1)
+interaction_allowed = 0
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player1"]
+simplify_path = true
+avoidance_enabled = true
+debug_enabled = true
+
+[node name="Player2" parent="." instance=ExtResource("7_tbnbw")]
+position = Vector2(-442, 39)
+scale = Vector2(1, 1)
+interaction_allowed = 1
+player_index = 1
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player2"]
+simplify_path = true
+avoidance_enabled = true
+debug_enabled = true
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_08l0f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nsu3t")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-563, 10)
+zoom = Vector2(0.65, 0.65)
