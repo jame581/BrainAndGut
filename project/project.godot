@@ -15,12 +15,17 @@ config/description="Brain and Gut is an engaging point-and-click adventure creat
 config/version="0.0.1"
 run/main_scene="res://maps/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://scenes/global.tscn"
 GameHelper="*res://scripts/autoloads/game_helper.gd"
+
+[gui]
+
+theme/custom_font="res://assets/fonts/PlaywriteAUSA-VariableFont_wght.ttf"
 
 [input]
 
