@@ -26,6 +26,7 @@ func _ready() -> void:
 
 	if interaction_area:
 		interaction_area.interacted.connect(handle_interaction)
+		print("Dialog " + get_name() + ": Connected to InteractionArea node.")
 	else:
 		push_error("Dialog " + get_name() + ": No InteractionArea node found.")		
 
