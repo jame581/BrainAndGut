@@ -4,8 +4,8 @@ var main_level: MainLevel = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	main_level = get_tree().root.get_node("MainLevel")
-	if not (main_level as MainLevel):
+	main_level = get_tree().root.get_node_or_null("MainLevel")
+	if main_level && not (main_level as MainLevel):
 		print("GameHelper: MainLevel not found in game_helper autoload.")
 
 		# await get_tree().create_timer(3.0).timeout
