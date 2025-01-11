@@ -1,6 +1,10 @@
 extends Node2D
 class_name Sublevel
 
+func _enter_tree():
+	if $Player1:
+		$Player1.set_listening(true)
+
 # Activate the sublevel
 func activate() -> void:
 	var camera = $Camera2D
