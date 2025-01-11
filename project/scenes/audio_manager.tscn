@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://djelh3oxck74d"]
+
+[ext_resource type="Script" path="res://scripts/autoloads/audio_manager.gd" id="1_jfudr"]
+[ext_resource type="AudioStream" uid="uid://caxxk8o0mg4wi" path="res://assets/sounds/wave_sounds.wav" id="2_yjexd"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_jfudr")
+
+[node name="WavesStream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_yjexd")
+bus = &"Waves"

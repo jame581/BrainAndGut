@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 
 Global="*res://scenes/global.tscn"
 GameHelper="*res://scripts/autoloads/game_helper.gd"
+AudioManager="*res://scenes/audio_manager.tscn"
 
 [gui]
 
