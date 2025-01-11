@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://csnyp5dh5lbea"]
+
+[ext_resource type="Script" path="res://scripts/sub_level.gd" id="1_ylvpe"]
+[ext_resource type="Texture2D" uid="uid://d2rjotpr7fut1" path="res://assets/room1/room2.png" id="4_jfs2k"]
+[ext_resource type="Texture2D" uid="uid://b16pbckn655kh" path="res://assets/props/bed2.png" id="5_blcs1"]
+[ext_resource type="PackedScene" uid="uid://blrteg5ux6vja" path="res://scenes/props/door.tscn" id="9_ti42r"]
+[ext_resource type="PackedScene" uid="uid://cc7ieadixdnpi" path="res://scenes/player.tscn" id="10_wlkvn"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_08l0f"]
+vertices = PackedVector2Array(359.891, 220.906, 358.102, 388.078, -743.727, 397.789, -570.688, 213.031)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(368, 398, -767, 408, -575, 203, 370, 211)])
+
+[sub_resource type="Animation" id="Animation_u1udo"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_yn0yu"]
+resource_name = "waves"
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nsu3t"]
+_data = {
+"RESET": SubResource("Animation_u1udo"),
+"waves": SubResource("Animation_yn0yu")
+}
+
+[node name="Room-Guts" type="Node2D"]
+script = ExtResource("1_ylvpe")
+
+[node name="BackgroundSprite" type="Sprite2D" parent="."]
+self_modulate = Color(0, 1, 1, 1)
+texture = ExtResource("4_jfs2k")
+
+[node name="Bed" type="Sprite2D" parent="BackgroundSprite"]
+self_modulate = Color(0, 1, 1, 1)
+position = Vector2(0, 6)
+texture = ExtResource("5_blcs1")
+
+[node name="Interactables" type="Node2D" parent="."]
+
+[node name="Door" parent="Interactables" instance=ExtResource("9_ti42r")]
+position = Vector2(-686, 0)
+
+[node name="Player1" parent="." instance=ExtResource("10_wlkvn")]
+position = Vector2(201, 39)
+scale = Vector2(1, 1)
+interaction_allowed = 0
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player1"]
+simplify_path = true
+avoidance_enabled = true
+debug_enabled = true
+
+[node name="Player2" parent="." instance=ExtResource("10_wlkvn")]
+position = Vector2(-442, 39)
+scale = Vector2(1, 1)
+interaction_allowed = 1
+player_index = 1
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player2"]
+simplify_path = true
+avoidance_enabled = true
+debug_enabled = true
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_08l0f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nsu3t")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.69, 0.69)

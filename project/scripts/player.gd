@@ -15,7 +15,13 @@ var target_position: Vector2 = Vector2.ZERO
 var is_listening: bool = false
 
 func _enter_tree( ) -> void:
-	InputSwitch.register_player(self)
+	# Get the top-level root node
+	print(get_tree().root)
+	print(get_tree().root.get_child(0))
+	
+	var main_level = get_tree().root.get_child(0) as MainLevel
+	if main_level:
+		main_level.register_player(self)
 
 func _ready() -> void:
 	if not animation_player:
@@ -44,6 +50,7 @@ func set_movement_target(movement_target: Vector2) -> void:
 
 func set_listening(listening: bool) -> void:
 	is_listening = listening
+	print("Player with name: " + get_name() + " is listening: " + str(is_listening))
 
 func _input(event: InputEvent) -> void:
 	if is_listening:
