@@ -12,6 +12,7 @@ signal interacted()
 @onready var audio_stream: AudioStreamPlayer = $AudioStreamPlayer
 
 var can_interact: bool = false
+var selected: bool = false
 
 # # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -36,6 +37,7 @@ func _on_mouse_entered() -> void:
 
 func _on_body_exited(_body:Node2D) -> void:
 	can_interact = false
+	selected = false
 
 
 func _on_body_entered(body:Node2D) -> void:
@@ -50,8 +52,17 @@ func _on_body_entered(body:Node2D) -> void:
 			on_interacted()
 
 func on_interacted() -> void:
-	print("Interacted with", get_name())
-	if can_interact:
+	print("Interacted with: ", get_name())
+	print("Can interact: ", can_interact)
+	print("Selected: ", selected)
+	if can_interact and selected:
 		audio_stream.play()
 		emit_signal("interacted")
 		print("Interacted with", get_name())
+
+func _on_input_event(_viewport:Node, event:InputEvent, _shape_idx:int) -> void:
+	if event is InputEventMouseButton:
+		print(" INPUT 1 DETECTED ")
+		if Input.is_action_just_pressed("click"):
+			print(" INPUT 2 DETECTED ")
+			selected = true
