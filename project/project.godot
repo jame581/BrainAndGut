@@ -15,6 +15,7 @@ config/description="Brain and Gut is an engaging point-and-click adventure creat
 config/version="0.0.1"
 run/main_scene="res://maps/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+run/max_fps=60
 boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.svg"
 
@@ -23,6 +24,10 @@ config/icon="res://icon.svg"
 Global="*res://scenes/global.tscn"
 GameHelper="*res://scripts/autoloads/game_helper.gd"
 AudioManager="*res://scenes/audio_manager.tscn"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [gui]
 
