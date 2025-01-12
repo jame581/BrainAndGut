@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1b0tqy6ljrip"]
+
+[ext_resource type="Script" path="res://scripts/props/debris.gd" id="1_h5o4f"]
+[ext_resource type="Texture2D" uid="uid://cy36d824b8s1u" path="res://assets/damaged/debris.png" id="1_twsog"]
+[ext_resource type="Script" path="res://scripts/components/interaction_area.gd" id="2_ayf13"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrbu5"]
+size = Vector2(687, 416)
+
+[sub_resource type="Animation" id="Animation_hjff8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wst0b"]
+resource_name = "destroy"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_321bu"]
+_data = {
+"RESET": SubResource("Animation_hjff8"),
+"destroy": SubResource("Animation_wst0b")
+}
+
+[node name="Debris" type="Node2D"]
+script = ExtResource("1_h5o4f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_twsog")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+script = ExtResource("2_ayf13")
+interaction_allowed = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(23.5, -1)
+shape = SubResource("RectangleShape2D_xrbu5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_321bu")
+}
+
+[connection signal="interacted" from="InteractionArea" to="." method="_on_interaction_area_interacted"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
