@@ -52,7 +52,7 @@ texture = ExtResource("5_blcs1")
 
 [node name="Door" parent="Interactables" instance=ExtResource("9_ti42r")]
 position = Vector2(-686, 0)
-next_room = 6
+next_room = 5
 
 [node name="Player1" parent="." instance=ExtResource("10_wlkvn")]
 position = Vector2(201, 39)
