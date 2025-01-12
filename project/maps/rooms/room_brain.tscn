@@ -66,8 +66,24 @@ data_dialogs = Array[Dictionary]([{
 "audio_volume": 1.0,
 "show_instant": false,
 "text": "Ugh...what...happened? Did...did we crash...?",
-"title": "Brain",
-"wait_time": 3.0,
+"title": "Jack",
+"wait_time": 2.0,
+"writing_speed": 0.05
+}, {
+"audio": "res://assets/sounds/voices/Jack Lines 8.wav",
+"audio_volume": 1.0,
+"show_instant": false,
+"text": "We still have each other!",
+"title": "Jack",
+"wait_time": 2.0,
+"writing_speed": 0.05
+}, {
+"audio": "res://assets/sounds/voices/Jack Lines 12.wav",
+"audio_volume": 1.0,
+"show_instant": false,
+"text": "This is destiny Lisa!",
+"title": "Jack",
+"wait_time": 2.0,
 "writing_speed": 0.05
 }])
 dialog = NodePath("CanvasLayer/Dialog")
