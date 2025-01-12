@@ -1,0 +1,174 @@
+[gd_scene load_steps=18 format=3 uid="uid://dkv000xjdt377"]
+
+[ext_resource type="Script" path="res://scripts/sub_level.gd" id="1_3jgk4"]
+[ext_resource type="Texture2D" uid="uid://eaoc4osx1p5j" path="res://assets/bg-bullseye2.png" id="2_4vdw7"]
+[ext_resource type="Texture2D" uid="uid://vqigle82qset" path="res://assets/props/bg-bullseye-wave2.png" id="3_1ha23"]
+[ext_resource type="Texture2D" uid="uid://crsuehdxdnoii" path="res://assets/props/bg-bullseye-wave-3.png" id="4_5hd0a"]
+[ext_resource type="Texture2D" uid="uid://d2rjotpr7fut1" path="res://assets/room1/room2.png" id="5_8wpdm"]
+[ext_resource type="Texture2D" uid="uid://b16pbckn655kh" path="res://assets/props/bed2.png" id="6_k5do8"]
+[ext_resource type="Texture2D" uid="uid://chyewg7l3hked" path="res://assets/props/pic2.png" id="7_u25l6"]
+[ext_resource type="Texture2D" uid="uid://dnr8sf54nv8nd" path="res://assets/props/table-letter.png" id="8_i8px4"]
+[ext_resource type="PackedScene" uid="uid://cpbupgumegnux" path="res://scenes/interaction_area.tscn" id="9_pemm8"]
+[ext_resource type="PackedScene" uid="uid://blrteg5ux6vja" path="res://scenes/props/door.tscn" id="10_wlv3v"]
+[ext_resource type="PackedScene" uid="uid://cc7ieadixdnpi" path="res://scenes/player.tscn" id="11_4owkp"]
+[ext_resource type="PackedScene" uid="uid://b2nhuw7nenoha" path="res://scenes/ui/dialog.tscn" id="12_bjlnt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ud5gc"]
+size = Vector2(150, 150)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_08l0f"]
+vertices = PackedVector2Array(599.344, 223.953, 679.094, 289.891, -398.57, 286.031, -395.406, 210.133)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(707, 300, -409, 296, -405, 200, 603, 214)])
+
+[sub_resource type="Animation" id="Animation_u1udo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Parallax2D/Bg-bullseye-wave2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(76, -10)]
+}
+
+[sub_resource type="Animation" id="Animation_yn0yu"]
+resource_name = "waves"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Parallax2D/Bg-bullseye-wave2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-144, -14), Vector2(-45, 62)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nsu3t"]
+_data = {
+"RESET": SubResource("Animation_u1udo"),
+"waves": SubResource("Animation_yn0yu")
+}
+
+[node name="Room-Brain-Begin" type="Node2D" node_paths=PackedStringArray("dialog")]
+script = ExtResource("1_3jgk4")
+play_dialogs_on_start = true
+data_dialogs = Array[Dictionary]([{
+"audio": "res://assets/sounds/voices/Jack Line 2.wav",
+"audio_volume": 1.0,
+"show_instant": false,
+"text": "Ugh...what...happened? Did...did we crash...?",
+"title": "Lisa",
+"wait_time": 2.0,
+"writing_speed": 0.05
+}, {
+"audio": "res://assets/sounds/voices/Jack Lines 8.wav",
+"audio_volume": 1.0,
+"show_instant": false,
+"text": "I should go outside....",
+"title": "Lisa",
+"wait_time": 2.0,
+"writing_speed": 0.05
+}])
+dialog = NodePath("CanvasLayer/Dialog")
+
+[node name="Bg-bullseye2" type="Sprite2D" parent="."]
+texture = ExtResource("2_4vdw7")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(330, 0)
+autoscroll = Vector2(15, 0)
+repeat_times = 5
+
+[node name="Bg-bullseye-wave2" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(76, -10)
+texture = ExtResource("3_1ha23")
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+scroll_offset = Vector2(0, 12)
+repeat_size = Vector2(360, 0)
+autoscroll = Vector2(20, 0)
+repeat_times = 5
+
+[node name="Bg-bullseye-wave-3" type="Sprite2D" parent="Parallax2D2"]
+texture = ExtResource("4_5hd0a")
+
+[node name="BackgroundSprite" type="Sprite2D" parent="."]
+scale = Vector2(-1, 1)
+texture = ExtResource("5_8wpdm")
+
+[node name="Bed" type="Sprite2D" parent="BackgroundSprite"]
+position = Vector2(0, 6)
+texture = ExtResource("6_k5do8")
+
+[node name="Picture" type="Sprite2D" parent="BackgroundSprite"]
+position = Vector2(-23, 23)
+texture = ExtResource("7_u25l6")
+
+[node name="Table-letter" type="Sprite2D" parent="BackgroundSprite"]
+position = Vector2(-345, 98)
+texture = ExtResource("8_i8px4")
+
+[node name="Interactables" type="Node2D" parent="."]
+
+[node name="TableInteractionArea" parent="Interactables" instance=ExtResource("9_pemm8")]
+position = Vector2(334, 20)
+interaction_allowed = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/TableInteractionArea"]
+shape = SubResource("RectangleShape2D_ud5gc")
+
+[node name="Door" parent="Interactables" node_paths=PackedStringArray("dialog_on_interaction") instance=ExtResource("10_wlv3v")]
+position = Vector2(674, 0)
+scale = Vector2(-1, 1)
+locked = true
+dialog_data = {
+"show_instant": false,
+"text": "That door wont open!!",
+"title": "Lisa",
+"wait_time": 1.5,
+"writing_speed": 0.05
+}
+next_room = 1
+force_switch_sublevel = true
+dialog_on_interaction = NodePath("../../CanvasLayer/Dialog")
+
+[node name="Player1" parent="." instance=ExtResource("11_4owkp")]
+position = Vector2(-238, 36)
+scale = Vector2(1, 1)
+collision_layer = 3
+interaction_allowed = 0
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player1"]
+simplify_path = true
+avoidance_enabled = true
+debug_enabled = true
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(20, -229)
+navigation_polygon = SubResource("NavigationPolygon_08l0f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nsu3t")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.655, 0.655)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Dialog" parent="CanvasLayer" node_paths=PackedStringArray("interaction_area") instance=ExtResource("12_bjlnt")]
+interaction_area = NodePath("../../Interactables/TableInteractionArea")
+dialog_text = "[center]This is really cool newspapers on table! You know right?[/center]"
+dialog_title = "Papers on table"
+writing_speed = 0.03
+show_instant = true

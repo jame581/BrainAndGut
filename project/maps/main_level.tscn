@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://daa1361hp5l03"]
+[gd_scene load_steps=9 format=3 uid="uid://daa1361hp5l03"]
 
 [ext_resource type="Script" path="res://scripts/main_level.gd" id="1_johgq"]
 [ext_resource type="PackedScene" uid="uid://dtt1otbxp35mk" path="res://maps/rooms/room_corridor.tscn" id="2_0jo3j"]
@@ -7,10 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://m8rosninkldc" path="res://maps/rooms/room_control.tscn" id="5_0nfsp"]
 [ext_resource type="PackedScene" uid="uid://fo30wpmou1rx" path="res://maps/rooms/room_engine.tscn" id="6_1gwkk"]
 [ext_resource type="PackedScene" uid="uid://bruckdjuw6skc" path="res://maps/rooms/room_corridor_gut.tscn" id="7_by7cb"]
+[ext_resource type="PackedScene" uid="uid://dkv000xjdt377" path="res://maps/rooms/room_brain_begin.tscn" id="8_tyedl"]
 
 [node name="MainLevel" type="Node2D" node_paths=PackedStringArray("sublevels")]
 script = ExtResource("1_johgq")
-sublevels = [NodePath("Rooms/Room-Brain"), NodePath("Rooms/Room-Guts"), NodePath("Rooms/Room-Corridor"), NodePath("Rooms/Room-Engine"), NodePath("Rooms/Room-Control"), NodePath("Rooms/Room-Corridor-Gut")]
+sublevels = [NodePath("Rooms/Room-Brain"), NodePath("Rooms/Room-Guts"), NodePath("Rooms/Room-Corridor"), NodePath("Rooms/Room-Engine"), NodePath("Rooms/Room-Control"), NodePath("Rooms/Room-Corridor-Gut"), NodePath("Rooms/Room-Brain-Begin")]
 
 [node name="Rooms" type="Node2D" parent="."]
 
@@ -30,3 +31,6 @@ position = Vector2(3770, -653)
 
 [node name="Room-Corridor-Gut" parent="Rooms" instance=ExtResource("7_by7cb")]
 position = Vector2(0, 2356)
+
+[node name="Room-Brain-Begin" parent="Rooms" instance=ExtResource("8_tyedl")]
+position = Vector2(-2959, 2032)

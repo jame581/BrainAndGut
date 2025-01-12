@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bruckdjuw6skc"]
+[gd_scene load_steps=14 format=3 uid="uid://bruckdjuw6skc"]
 
 [ext_resource type="Script" path="res://scripts/sub_level.gd" id="1_8c2wp"]
 [ext_resource type="Texture2D" uid="uid://bl87335mqu1ic" path="res://assets/rooms/corridor/deck3.png" id="2_sqwan"]
@@ -11,14 +11,26 @@
 [ext_resource type="PackedScene" uid="uid://cc7ieadixdnpi" path="res://scenes/player.tscn" id="9_vupm1"]
 [ext_resource type="PackedScene" uid="uid://d1b0tqy6ljrip" path="res://scenes/debris.tscn" id="10_38nuj"]
 [ext_resource type="Texture2D" uid="uid://cl456dsixgojw" path="res://assets/damaged/cracks-for-floor2.png" id="11_c5iy5"]
+[ext_resource type="PackedScene" uid="uid://b2nhuw7nenoha" path="res://scenes/ui/dialog.tscn" id="12_dqk0j"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7umth"]
 vertices = PackedVector2Array(812.172, -79.1094, 1408.61, 947, -967.289, 947, 224.648, -90.9219)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(1426, 957, -994, 957, 221, -101, 818, -89)])
 
-[node name="Room-Corridor-Gut" type="Node2D"]
+[node name="Room-Corridor-Gut" type="Node2D" node_paths=PackedStringArray("dialog")]
 script = ExtResource("1_8c2wp")
+play_dialogs_on_start = true
+data_dialogs = Array[Dictionary]([{
+"audio": "res://assets/sounds/voices/Jack Lines 1.wav",
+"audio_volume": 1.0,
+"show_instant": false,
+"text": "Lisa!! It's me - Jack! Wait a moment. Ill get you out of there!",
+"title": "Jack",
+"wait_time": 4.0,
+"writing_speed": 0.05
+}])
+dialog = NodePath("CanvasLayer/Dialog")
 
 [node name="Deck3" type="Sprite2D" parent="."]
 texture = ExtResource("2_sqwan")
@@ -63,3 +75,11 @@ texture = ExtResource("11_c5iy5")
 [node name="Debris" parent="." instance=ExtResource("10_38nuj")]
 position = Vector2(-661, 653)
 interaction_allowed = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Dialog" parent="CanvasLayer" instance=ExtResource("12_dqk0j")]
+dialog_text = "[center]This is really cool newspapers on table! You know right?[/center]"
+dialog_title = "Papers on table"
+writing_speed = 0.03
+show_instant = true

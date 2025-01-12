@@ -183,6 +183,12 @@ _data = {
 
 [node name="Door" type="Node2D"]
 script = ExtResource("1_m3mjq")
+locked = null
+action = null
+interaction_allowed = null
+dialog_data = null
+next_room = null
+force_switch_sublevel = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_1xybd")

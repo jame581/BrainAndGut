@@ -35,15 +35,15 @@ func _on_mouse_entered() -> void:
 
 func _on_body_exited(_body:Node2D) -> void:
 	can_interact = false
-	selected = false
+	# selected = false
 
 
 func _on_body_entered(body:Node2D) -> void:
 	print("Body entered", body)
 	if body is CharacterBody2D:
 		print("Character entered")
-		print("Interaction allowed", interaction_allowed)
-		print("Body interaction allowed", body.interaction_allowed)
+		print("Interaction allowed: ", interaction_allowed)
+		print("Body interaction allowed: ", body.interaction_allowed)
 		if body.interaction_allowed == interaction_allowed or interaction_allowed == Global.InteractionAllowed.BOTH:
 			print("Character can interact")
 			can_interact = true

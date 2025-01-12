@@ -43,7 +43,6 @@ func _on_writing_timer_timeout() -> void:
 	rich_text_label.visible_characters += 1
 	if rich_text_label.visible_characters == rich_text_label.get_total_character_count():
 		writing_timer.stop()
-		audio_player.stop()
 		hide_timer.start()
 
 func show_dialog(data: Dictionary) -> void:
@@ -78,7 +77,9 @@ func handle_interaction() -> void:
 
 func _on_hide_timer_timeout() -> void:
 	animation_player.play("hide")
+	audio_player.stop()
 	hide_timer.stop()
+	print("Dialog - Dialog finished")
 	dialog_finished.emit()
 
 

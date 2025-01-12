@@ -36,6 +36,14 @@ data_dialogs = Array[Dictionary]([{
 "title": "Jack",
 "wait_time": 2.0,
 "writing_speed": 0.05
+}, {
+"audio": "res://assets/sounds/voices/Jack Line 2.wav",
+"audio_volume": 1.0,
+"show_instant": false,
+"text": "Hello??!! Is anybody there?",
+"title": "Lisa",
+"wait_time": 2.0,
+"writing_speed": 0.05
 }])
 dialog = NodePath("CanvasLayer/Dialog")
 
