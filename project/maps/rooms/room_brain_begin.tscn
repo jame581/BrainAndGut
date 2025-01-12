@@ -130,6 +130,7 @@ shape = SubResource("RectangleShape2D_ud5gc")
 position = Vector2(674, 0)
 scale = Vector2(-1, 1)
 locked = true
+dialog_on_interaction = NodePath("../../CanvasLayer/Dialog")
 dialog_data = {
 "show_instant": false,
 "text": "That door wont open!!",
@@ -139,7 +140,6 @@ dialog_data = {
 }
 next_room = 1
 force_switch_sublevel = true
-dialog_on_interaction = NodePath("../../CanvasLayer/Dialog")
 
 [node name="Player1" parent="." instance=ExtResource("11_4owkp")]
 position = Vector2(-238, 36)
