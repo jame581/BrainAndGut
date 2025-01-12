@@ -11,7 +11,6 @@ enum DoorAction { OPEN, CLOSE }
 
 @export var next_room: MainLevel.SUBLEVELS = MainLevel.SUBLEVELS.CORRIDOR
 
-
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var audio_stream: AudioStreamPlayer = $AudioStreamPlayer
@@ -44,6 +43,7 @@ func unlock() -> void:
 func lock() -> void:
 	locked = true
 	interaction_area.interaction_allowed = Global.InteractionAllowed.NONE
+
 
 func _on_animation_finished(animation_name: String) -> void:
 	if animation_name == "open_door":

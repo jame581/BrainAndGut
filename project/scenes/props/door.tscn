@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cpbupgumegnux" path="res://scenes/interaction_area.tscn" id="3_lu6yc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wh4ty"]
-size = Vector2(237, 791)
+size = Vector2(347, 791)
 
 [sub_resource type="Animation" id="Animation_b0g7i"]
 length = 0.001
@@ -183,9 +183,6 @@ _data = {
 
 [node name="Door" type="Node2D"]
 script = ExtResource("1_m3mjq")
-locked = null
-action = null
-interaction_allowed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_1xybd")
@@ -194,7 +191,7 @@ hframes = 3
 [node name="InteractionArea" parent="." instance=ExtResource("3_lu6yc")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(-13.5, 17.5)
+position = Vector2(41.5, 17.5)
 shape = SubResource("RectangleShape2D_wh4ty")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
