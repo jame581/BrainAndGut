@@ -17,9 +17,9 @@
 size = Vector2(150, 150)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_08l0f"]
-vertices = PackedVector2Array(358.25, 220.898, 346.531, 292.789, -594.633, 270.359, -568.578, 213.047)
+vertices = PackedVector2Array(599.344, 223.953, 679.094, 289.891, -398.57, 286.031, -395.406, 210.133)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(355, 303, -610, 280, -575, 203, 370, 211)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(707, 300, -409, 296, -405, 200, 603, 214)])
 
 [sub_resource type="Animation" id="Animation_u1udo"]
 length = 0.001
@@ -110,6 +110,7 @@ repeat_times = 5
 texture = ExtResource("3_rg8bt")
 
 [node name="BackgroundSprite" type="Sprite2D" parent="."]
+scale = Vector2(-1, 1)
 texture = ExtResource("4_k1uoj")
 
 [node name="Bed" type="Sprite2D" parent="BackgroundSprite"]
@@ -127,18 +128,20 @@ texture = ExtResource("7_c6w5g")
 [node name="Interactables" type="Node2D" parent="."]
 
 [node name="TableInteractionArea" parent="Interactables" instance=ExtResource("8_m44dk")]
-position = Vector2(-343, 29)
+position = Vector2(334, 20)
 interaction_allowed = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/TableInteractionArea"]
 shape = SubResource("RectangleShape2D_ud5gc")
 
 [node name="Door" parent="Interactables" instance=ExtResource("9_m0mun")]
-position = Vector2(-686, 0)
+position = Vector2(674, 0)
+scale = Vector2(-1, 1)
 
 [node name="Player1" parent="." instance=ExtResource("10_bg4ig")]
-position = Vector2(201, 39)
+position = Vector2(120, 36)
 scale = Vector2(1, 1)
+collision_layer = 2
 interaction_allowed = 0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player1"]
@@ -147,8 +150,9 @@ avoidance_enabled = true
 debug_enabled = true
 
 [node name="Player2" parent="." instance=ExtResource("10_bg4ig")]
-position = Vector2(-442, 39)
+position = Vector2(-262, 33)
 scale = Vector2(1, 1)
+collision_layer = 4
 interaction_allowed = 1
 player_index = 1
 
