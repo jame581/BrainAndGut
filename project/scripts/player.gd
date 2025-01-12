@@ -60,7 +60,6 @@ func _input(event: InputEvent) -> void:
 
 
 func _physics_process(_delta: float) -> void:
-
 	if navigation_agent.is_navigation_finished():
 		velocity = Vector2.ZERO
 		play_animation()
@@ -70,16 +69,9 @@ func _physics_process(_delta: float) -> void:
 	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
 
 	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
-	# velocity = position.direction_to(target_position) * movement_speed
-	# look_at(target_position)
-	# if position.distance_to(target_position) > 10:
-	# 	move_and_slide()
-	# else:
-	# 	velocity = Vector2.ZERO
 	
 	play_animation()
 	move_and_slide()
-
 
 
 func play_animation() -> void:
