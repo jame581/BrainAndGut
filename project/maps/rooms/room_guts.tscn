@@ -52,6 +52,7 @@ texture = ExtResource("5_blcs1")
 
 [node name="Door" parent="Interactables" instance=ExtResource("9_ti42r")]
 position = Vector2(-686, 0)
+next_room = 6
 
 [node name="Player1" parent="." instance=ExtResource("10_wlkvn")]
 position = Vector2(201, 39)
@@ -76,8 +77,7 @@ zoom = Vector2(0.69, 0.69)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Dialog" parent="CanvasLayer" node_paths=PackedStringArray("interaction_area") instance=ExtResource("6_v40ax")]
-interaction_area = NodePath("")
+[node name="Dialog" parent="CanvasLayer" instance=ExtResource("6_v40ax")]
 dialog_text = "[center]This is really cool newspapers on table! You know right?[/center]"
 dialog_title = "Papers on table"
 writing_speed = 0.03
