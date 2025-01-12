@@ -9,7 +9,7 @@ var active_level: Sublevel = null
 var current_sublevel_index: int = 0
 
 # Define an enum
-enum SUBLEVELS { BRAIN, GUTS, CORRIDOR, ENGINE, CONTROL, EXIT}
+enum SUBLEVELS { BRAIN, GUTS, CORRIDOR, ENGINE, CONTROL, CORRIDOR_GUT, EXIT }
 enum CHARACTERS { BRAIN, GUTS }
 
 @export var sublevels: Array[Sublevel] = []
