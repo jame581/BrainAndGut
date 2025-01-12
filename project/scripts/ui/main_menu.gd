@@ -10,6 +10,7 @@ extends Control
 @onready var audio_player: AudioStreamPlayer = $UIAudioStreamPlayer
 
 var animation_in_progress: bool = false
+var start_game: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,6 +26,8 @@ func _ready() -> void:
 
 func _on_start_button_pressed() -> void:
 	audio_player.play()
+	#await get_tree().create_timer(0.1).timeout
+	start_game = true
 	Global.goto_scene("res://maps/main_level.tscn")
 
 
@@ -48,3 +51,9 @@ func _on_exit_button_pressed() -> void:
 
 func _on_animation_player_animation_finished(_anim_name:StringName) -> void:
 	animation_in_progress = false
+
+
+func _on_ui_audio_stream_player_finished() -> void:
+	pass
+	# if start_game:
+	# 	Global.goto_scene("res://maps/main_level.tscn")
