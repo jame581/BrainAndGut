@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://csnyp5dh5lbea"]
+[gd_scene load_steps=11 format=3 uid="uid://csnyp5dh5lbea"]
 
 [ext_resource type="Script" path="res://scripts/sub_level.gd" id="1_ylvpe"]
 [ext_resource type="Texture2D" uid="uid://d2rjotpr7fut1" path="res://assets/room1/room2.png" id="4_jfs2k"]
 [ext_resource type="Texture2D" uid="uid://b16pbckn655kh" path="res://assets/props/bed2.png" id="5_blcs1"]
+[ext_resource type="PackedScene" uid="uid://b2nhuw7nenoha" path="res://scenes/ui/dialog.tscn" id="6_v40ax"]
 [ext_resource type="PackedScene" uid="uid://blrteg5ux6vja" path="res://scenes/props/door.tscn" id="9_ti42r"]
 [ext_resource type="PackedScene" uid="uid://cc7ieadixdnpi" path="res://scenes/player.tscn" id="10_wlkvn"]
 
@@ -24,8 +25,19 @@ _data = {
 "waves": SubResource("Animation_yn0yu")
 }
 
-[node name="Room-Guts" type="Node2D"]
+[node name="Room-Guts" type="Node2D" node_paths=PackedStringArray("dialog")]
 script = ExtResource("1_ylvpe")
+play_dialogs_on_start = true
+data_dialogs = Array[Dictionary]([{
+"audio": "res://assets/sounds/voices/Jack Line 2.wav",
+"audio_volume": 1.0,
+"show_instant": false,
+"text": "Ugh...what...happened? Did...did we crash...?",
+"title": "Jack",
+"wait_time": 2.0,
+"writing_speed": 0.05
+}])
+dialog = NodePath("CanvasLayer/Dialog")
 
 [node name="BackgroundSprite" type="Sprite2D" parent="."]
 self_modulate = Color(0, 1, 1, 1)
@@ -44,20 +56,9 @@ position = Vector2(-686, 0)
 [node name="Player1" parent="." instance=ExtResource("10_wlkvn")]
 position = Vector2(201, 39)
 scale = Vector2(1, 1)
-interaction_allowed = 0
+interaction_allowed = 1
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player1"]
-simplify_path = true
-avoidance_enabled = true
-debug_enabled = true
-
-[node name="Player2" parent="." instance=ExtResource("10_wlkvn")]
-position = Vector2(-442, 39)
-scale = Vector2(1, 1)
-interaction_allowed = 1
-player_index = 1
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player2"]
 simplify_path = true
 avoidance_enabled = true
 debug_enabled = true
@@ -72,3 +73,12 @@ libraries = {
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.69, 0.69)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Dialog" parent="CanvasLayer" node_paths=PackedStringArray("interaction_area") instance=ExtResource("6_v40ax")]
+interaction_area = NodePath("")
+dialog_text = "[center]This is really cool newspapers on table! You know right?[/center]"
+dialog_title = "Papers on table"
+writing_speed = 0.03
+show_instant = true

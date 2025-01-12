@@ -13,7 +13,7 @@ enum SUBLEVELS { BRAIN, GUTS, CORRIDOR, ENGINE, CONTROL, EXIT}
 enum CHARACTERS { BRAIN, GUTS }
 
 @export var sublevels: Array[Sublevel] = []
-@export var first_sublevel_type: SUBLEVELS = SUBLEVELS.BRAIN
+@export var first_sublevel_type: SUBLEVELS = SUBLEVELS.GUTS
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

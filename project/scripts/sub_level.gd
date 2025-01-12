@@ -25,7 +25,7 @@ func activate() -> void:
 	if $Player1:
 		GameHelper.register_player($Player1)
 		print("Registered Player1")
-	if $Player2:
+	if get_node_or_null("Player2"):
 		GameHelper.register_player($Player2)
 		print("Registered Player2")
 	
