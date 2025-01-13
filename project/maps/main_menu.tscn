@@ -169,21 +169,19 @@ size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_ox664")
 bbcode_enabled = true
 text = "[center]
-Team:
+[b]Team:[/b]
 Tech Tails
-
-Code:
-Jakub Hubacek
-Jan Mesarc
-
-Art:
+[b]Code:[/b]
+Jakub Hubacek, Jan Mesarc
+[b]Art:[/b]
+Meru, Kaya
+[b]Composer:[/b]
 Meru
-
-Composer:
-Meru
-
-Game Design:
+[b]Game Design:[/b]
 Meru, Jan Mesarc, Jakub Hubacek
+[b]Voice Actors:[/b]
+The Honourable Fish as Jack
+ZoraLune as Lisa
 [/center]"
 fit_content = true
 
