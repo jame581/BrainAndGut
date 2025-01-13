@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmlmuefwt8758"]
+
+[ext_resource type="PackedScene" uid="uid://b2nhuw7nenoha" path="res://scenes/ui/dialog.tscn" id="1_8x6cx"]
+[ext_resource type="PackedScene" uid="uid://c5mqi1308eep3" path="res://scenes/ui/dialog_player.tscn" id="1_rxcst"]
+[ext_resource type="Texture2D" uid="uid://24gttdh8uscm" path="res://assets/intro/intro-ship-1.png" id="3_oe088"]
+
+[node name="Intro" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="DialogPlayer" parent="." node_paths=PackedStringArray("dialog_display", "animation_player", "animation_player2") instance=ExtResource("1_rxcst")]
+dialog_display = NodePath("../DialogUI/Dialog")
+load_level_after = "res://maps/main_level.tscn"
+animation_player = NodePath("../AnimationPlayer")
+animation_player2 = NodePath("../AnimationPlayer2")
+dialog_text_file = "res://resources/dialogs/intro_dialog.json"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+
+[node name="DialogUI" type="CanvasLayer" parent="."]
+
+[node name="Dialog" parent="DialogUI" instance=ExtResource("1_8x6cx")]
+
+[node name="Intro-ship-1" type="Sprite2D" parent="."]
+texture = ExtResource("3_oe088")
