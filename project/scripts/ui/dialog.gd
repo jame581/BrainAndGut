@@ -74,13 +74,22 @@ func handle_interaction() -> void:
 	rich_text_label.set_text(dialog_text)
 	visible = true
 
-
-func _on_hide_timer_timeout() -> void:
+func hide_dialog() -> void:
 	animation_player.play("hide")
 	audio_player.stop()
 	hide_timer.stop()
 	print("Dialog - Dialog finished")
 	dialog_finished.emit()
+
+func imidiately_hide_dialog() -> void:
+	hide_timer.stop()
+	animation_player.stop()
+	animation_player.play("hide")
+	audio_player.stop()
+	visible = false
+
+func _on_hide_timer_timeout() -> void:
+	hide_dialog()
 
 
 func _on_animation_player_animation_finished(anim_name:StringName) -> void:

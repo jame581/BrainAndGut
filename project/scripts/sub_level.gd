@@ -39,6 +39,7 @@ func activate() -> void:
 func deactivate() -> void:
 	if dialog:
 		dialog.dialog_finished.disconnect(handle_dialog_finished)
+		dialog.imidiately_hide_dialog()
 
 
 func play_dialogs() -> void:
