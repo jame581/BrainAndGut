@@ -30,7 +30,7 @@ func _ready() -> void:
 	if not animation_player_guts:
 		push_error("Player: No AnimationPlayerGuts node found.")
 
-	animation_player = animation_player_brain if interaction_allowed == Global.Global.InteractionAllowed.BRAIN else animation_player_guts
+	animation_player = animation_player_brain if interaction_allowed == Global.InteractionAllowed.BRAIN else animation_player_guts
 	target_position = global_position
 
 	# These values need to be adjusted for the actor's speed
