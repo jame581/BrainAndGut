@@ -80,3 +80,8 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("next_level"):
 		current_sublevel_index = (current_sublevel_index + 1) % sublevels.size()
 		GameHelper.switch_sublevel(current_sublevel_index)
+
+
+func _on_button_pressed() -> void:
+	GameHelper.switch_character()
+	print("MainLevel: Button pressed")

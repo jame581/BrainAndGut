@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://csnyp5dh5lbea"]
+[gd_scene load_steps=12 format=3 uid="uid://csnyp5dh5lbea"]
 
 [ext_resource type="Script" path="res://scripts/sub_level.gd" id="1_ylvpe"]
-[ext_resource type="Texture2D" uid="uid://d2rjotpr7fut1" path="res://assets/room1/room2.png" id="4_jfs2k"]
-[ext_resource type="Texture2D" uid="uid://b16pbckn655kh" path="res://assets/props/bed2.png" id="5_blcs1"]
+[ext_resource type="Texture2D" uid="uid://bf2gn1crduamf" path="res://assets/rooms/guts/gutsroom.png" id="2_eupe4"]
+[ext_resource type="Texture2D" uid="uid://cit3mo14hgcr1" path="res://assets/rooms/guts/gutsroom-bed.png" id="3_webog"]
+[ext_resource type="Texture2D" uid="uid://bks288ivwd2kv" path="res://assets/rooms/guts/gutsroom-furniture.png" id="4_7bcof"]
 [ext_resource type="PackedScene" uid="uid://b2nhuw7nenoha" path="res://scenes/ui/dialog.tscn" id="6_v40ax"]
 [ext_resource type="PackedScene" uid="uid://blrteg5ux6vja" path="res://scenes/props/door.tscn" id="9_ti42r"]
 [ext_resource type="PackedScene" uid="uid://cc7ieadixdnpi" path="res://scenes/player.tscn" id="10_wlkvn"]
@@ -47,14 +48,19 @@ data_dialogs = Array[Dictionary]([{
 }])
 dialog = NodePath("CanvasLayer/Dialog")
 
-[node name="BackgroundSprite" type="Sprite2D" parent="."]
-self_modulate = Color(0, 1, 1, 1)
-texture = ExtResource("4_jfs2k")
+[node name="Art" type="Node2D" parent="."]
 
-[node name="Bed" type="Sprite2D" parent="BackgroundSprite"]
-self_modulate = Color(0, 1, 1, 1)
-position = Vector2(0, 6)
-texture = ExtResource("5_blcs1")
+[node name="Gutsroom" type="Sprite2D" parent="Art"]
+scale = Vector2(-1, 1)
+texture = ExtResource("2_eupe4")
+
+[node name="Gutsroom-bed" type="Sprite2D" parent="Art"]
+scale = Vector2(-1, 1)
+texture = ExtResource("3_webog")
+
+[node name="Gutsroom-furniture" type="Sprite2D" parent="Art"]
+position = Vector2(126, 21)
+texture = ExtResource("4_7bcof")
 
 [node name="Interactables" type="Node2D" parent="."]
 
