@@ -23,7 +23,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(1426, 957, -994, 957, 2
 script = ExtResource("1_8c2wp")
 play_dialogs_on_start = true
 data_dialogs = Array[Dictionary]([{
-"audio": "res://assets/sounds/voices/Jack Lines 1.wav",
+"audio": "res://assets/sounds/voices/jack/Jack Lines 1.wav",
 "audio_volume": 1.0,
 "show_instant": false,
 "text": "Lisa!! It's me - Jack! Wait a moment. Ill get you out of there!",
@@ -59,7 +59,6 @@ zoom = Vector2(0.4, 0.4)
 
 [node name="Player1" parent="." instance=ExtResource("9_vupm1")]
 position = Vector2(865, 360)
-scale = Vector2(1, 1)
 interaction_allowed = 1
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player1"]
@@ -101,4 +100,14 @@ position = Vector2(-898, 498)
 locked = true
 action = 0
 interaction_allowed = 1
+dialog_data = {
+"audio": "",
+"audio_volume": 1.0,
+"show_instant": false,
+"text": "aaa",
+"title": "Lisa",
+"wait_time": 2.0,
+"writing_speed": 0.05
+}
 next_room = 0
+force_switch_sublevel = false

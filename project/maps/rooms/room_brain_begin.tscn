@@ -62,20 +62,20 @@ _data = {
 script = ExtResource("1_3jgk4")
 play_dialogs_on_start = true
 data_dialogs = Array[Dictionary]([{
-"audio": "res://assets/sounds/voices/Jack Line 2.wav",
+"audio": "res://assets/sounds/voices/lisa/Lisa Lines 1.wav",
 "audio_volume": 1.0,
 "show_instant": false,
 "text": "Ugh...what...happened? Did...did we crash...?",
 "title": "Lisa",
-"wait_time": 2.0,
+"wait_time": 4.0,
 "writing_speed": 0.05
 }, {
-"audio": "res://assets/sounds/voices/Jack Lines 8.wav",
+"audio": "res://assets/sounds/voices/lisa/Lisa Lines 2.wav",
 "audio_volume": 1.0,
 "show_instant": false,
 "text": "I should go outside....",
 "title": "Lisa",
-"wait_time": 2.0,
+"wait_time": 3.0,
 "writing_speed": 0.05
 }])
 dialog = NodePath("CanvasLayer/Dialog")
@@ -130,8 +130,11 @@ shape = SubResource("RectangleShape2D_ud5gc")
 position = Vector2(674, 0)
 scale = Vector2(-1, 1)
 locked = true
+action = 0
+interaction_allowed = 2
 dialog_on_interaction = NodePath("../../CanvasLayer/Dialog")
 dialog_data = {
+"audio": "res://assets/sounds/voices/lisa/Lisa Lines 6.wav",
 "show_instant": false,
 "text": "That door wont open!!",
 "title": "Lisa",
@@ -143,8 +146,6 @@ force_switch_sublevel = true
 
 [node name="Player1" parent="." instance=ExtResource("11_4owkp")]
 position = Vector2(-238, 36)
-scale = Vector2(1, 1)
-collision_layer = 3
 interaction_allowed = 0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player1"]
@@ -167,6 +168,8 @@ zoom = Vector2(0.655, 0.655)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Dialog" parent="CanvasLayer" node_paths=PackedStringArray("interaction_area") instance=ExtResource("12_bjlnt")]
+offset_top = -183.0
+offset_bottom = -3.0
 interaction_area = NodePath("../../Interactables/TableInteractionArea")
 dialog_text = "[center]This is really cool newspapers on table! You know right?[/center]"
 dialog_title = "Papers on table"

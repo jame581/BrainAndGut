@@ -9,9 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://cc7ieadixdnpi" path="res://scenes/player.tscn" id="10_wlkvn"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_08l0f"]
-vertices = PackedVector2Array(359.891, 220.906, 358.102, 388.078, -743.727, 397.789, -570.688, 213.031)
+vertices = PackedVector2Array(359.578, 220.906, 355.406, 322.773, -651.453, 299.508, -570.68, 213.031)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(368, 398, -767, 408, -575, 203, 370, 211)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(365, 333, -674, 309, -575, 203, 370, 211)])
 
 [sub_resource type="Animation" id="Animation_u1udo"]
 length = 0.001
@@ -30,7 +30,7 @@ _data = {
 script = ExtResource("1_ylvpe")
 play_dialogs_on_start = true
 data_dialogs = Array[Dictionary]([{
-"audio": "res://assets/sounds/voices/Jack Line 2.wav",
+"audio": "res://assets/sounds/voices/jack/Jack Line 2.wav",
 "audio_volume": 1.0,
 "show_instant": false,
 "text": "Ugh...what...happened? Did...did we crash...?",
@@ -38,7 +38,7 @@ data_dialogs = Array[Dictionary]([{
 "wait_time": 2.0,
 "writing_speed": 0.05
 }, {
-"audio": "res://assets/sounds/voices/Jack Line 2.wav",
+"audio": "res://assets/sounds/voices/lisa/Lisa Lines 4.wav",
 "audio_volume": 1.0,
 "show_instant": false,
 "text": "Hello??!! Is anybody there?",
@@ -66,11 +66,24 @@ texture = ExtResource("4_7bcof")
 
 [node name="Door" parent="Interactables" instance=ExtResource("9_ti42r")]
 position = Vector2(-686, 0)
+locked = false
+action = 0
+interaction_allowed = 2
+dialog_data = {
+"audio": "",
+"audio_volume": 1.0,
+"show_instant": false,
+"text": "aaa",
+"title": "Lisa",
+"wait_time": 2.0,
+"writing_speed": 0.05
+}
 next_room = 5
+force_switch_sublevel = false
 
 [node name="Player1" parent="." instance=ExtResource("10_wlkvn")]
 position = Vector2(201, 39)
-scale = Vector2(1, 1)
+scale = Vector2(0.8, 0.8)
 interaction_allowed = 1
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player1"]
@@ -79,6 +92,7 @@ avoidance_enabled = true
 debug_enabled = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(8, -330)
 navigation_polygon = SubResource("NavigationPolygon_08l0f")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -87,7 +101,7 @@ libraries = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.69, 0.69)
+zoom = Vector2(0.65, 0.65)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
