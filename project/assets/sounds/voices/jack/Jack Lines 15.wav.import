@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://btue27yarfhqb"
+path="res://.godot/imported/Jack Lines 15.wav-09da62c8fc1aea9cd260e9b91acc3f33.sample"
+
+[deps]
+
+source_file="res://assets/sounds/voices/jack/Jack Lines 15.wav"
+dest_files=["res://.godot/imported/Jack Lines 15.wav-09da62c8fc1aea9cd260e9b91acc3f33.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
