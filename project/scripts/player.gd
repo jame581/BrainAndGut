@@ -5,18 +5,18 @@ extends CharacterBody2D
 @export var interaction_allowed: Global.InteractionAllowed = Global.InteractionAllowed.BOTH
 @export var player_index: int = 0
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animation_player_brain: AnimationPlayer = $AnimationPlayerBrain
+@onready var animation_player_guts: AnimationPlayer = $AnimationPlayerGuts
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
-
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+@onready var player_sprite: Sprite2D = $Sprite2D
 
 var target_position: Vector2 = Vector2.ZERO
 var is_listening: bool = false
+var animation_player: AnimationPlayer = null
 
 func _enter_tree( ) -> void:
 	# Get the top-level root node
-	print(get_tree().root)
+	print(get_tree().root)	
 	print(get_tree().root.get_child(0))
 	
 	var main_level = get_tree().root.get_child(0) as MainLevel
@@ -24,9 +24,13 @@ func _enter_tree( ) -> void:
 		main_level.register_player(self)
 
 func _ready() -> void:
-	if not animation_player:
-		push_error("Player: No AnimationPlayer node found.")
+	if not animation_player_brain:
+		push_error("Player: No AnimationPlayerBrain node found.")
+	
+	if not animation_player_guts:
+		push_error("Player: No AnimationPlayerGuts node found.")
 
+	animation_player = animation_player_brain if interaction_allowed == Global.Global.InteractionAllowed.BRAIN else animation_player_guts
 	target_position = global_position
 
 	# These values need to be adjusted for the actor's speed
@@ -77,8 +81,10 @@ func _physics_process(_delta: float) -> void:
 func play_animation() -> void:
 	if velocity.x != 0:
 		if velocity.x > 0:
-			animation_player.play("walk_right")
+			animation_player.play("walk")
+			player_sprite.flip_h = false
 		else:
-			animation_player.play("walk_left")
+			animation_player.play("walk")
+			player_sprite.flip_h = true
 	else:
 		animation_player.play("idle")
