@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://mabpxtts6b0l"]
+
+[ext_resource type="Texture2D" uid="uid://c6il3oahldobd" path="res://assets/rooms/engine/engine-room.png" id="1_cb288"]
+[ext_resource type="Texture2D" uid="uid://baqjlx5sem44c" path="res://assets/rooms/engine/engine-room-shaft.png" id="2_5ldjl"]
+[ext_resource type="Script" path="res://scripts/props/engine.gd" id="2_5nb1m"]
+[ext_resource type="Texture2D" uid="uid://b2vy4qkojdhd5" path="res://assets/rooms/engine/engine-room-picture.png" id="3_53awu"]
+[ext_resource type="Texture2D" uid="uid://c0umhb7ob5wr4" path="res://assets/rooms/engine/engine-room-engine.png" id="4_vxft7"]
+[ext_resource type="Texture2D" uid="uid://n6gqd6whjvj3" path="res://assets/rooms/engine/engine-room-pump.png" id="5_o40tf"]
+
+[sub_resource type="Animation" id="Animation_1sall"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Engine-room-shaft:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-477, 17)]
+}
+
+[sub_resource type="Animation" id="Animation_clgm2"]
+resource_name = "running"
+length = 0.8
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Engine-room-shaft:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-477, 17), Vector2(-477, 80)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8p775"]
+_data = {
+"RESET": SubResource("Animation_1sall"),
+"running": SubResource("Animation_clgm2")
+}
+
+[node name="Engine-room" type="Sprite2D"]
+texture = ExtResource("1_cb288")
+script = ExtResource("2_5nb1m")
+
+[node name="Engine-room-engine" type="Sprite2D" parent="."]
+position = Vector2(-500, 13)
+texture = ExtResource("4_vxft7")
+
+[node name="Engine-room-shaft" type="Sprite2D" parent="."]
+position = Vector2(-477, 17)
+texture = ExtResource("2_5ldjl")
+
+[node name="Engine-room-pump" type="Sprite2D" parent="."]
+position = Vector2(-477, 11)
+texture = ExtResource("5_o40tf")
+
+[node name="Engine-room-picture" type="Sprite2D" parent="."]
+position = Vector2(3, -123)
+texture = ExtResource("3_53awu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8p775")
+}

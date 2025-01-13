@@ -1,6 +1,11 @@
 extends Node
 
+# Signal to be fired when the engine is fixed
+signal on_engine_fixed
+
 var main_level: MainLevel = null
+
+var button_counter: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -45,3 +50,10 @@ func register_player(player):
 func handle_map_changed(_new_map_path: String) -> void:
 	print("GameHelper: Map changed to: ", _new_map_path)
 	main_level = get_tree().root.get_node_or_null("MainLevel")
+
+# Increment button counter and check if the engine is fixed
+func break_button():
+	button_counter += 1
+	if button_counter >= 4:
+		emit_signal("on_engine_fixed")
+		print("GameHelper: Engine fixed.")

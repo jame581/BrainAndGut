@@ -1,12 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://fo30wpmou1rx"]
+[gd_scene load_steps=10 format=3 uid="uid://fo30wpmou1rx"]
 
 [ext_resource type="Script" path="res://scripts/sub_level.gd" id="1_63hxh"]
-[ext_resource type="Texture2D" uid="uid://c6il3oahldobd" path="res://assets/rooms/engine/engine-room.png" id="2_c84o7"]
-[ext_resource type="Texture2D" uid="uid://baqjlx5sem44c" path="res://assets/rooms/engine/engine-room-shaft.png" id="3_8lwlh"]
-[ext_resource type="Texture2D" uid="uid://n6gqd6whjvj3" path="res://assets/rooms/engine/engine-room-pump.png" id="4_aw31n"]
-[ext_resource type="Texture2D" uid="uid://b2vy4qkojdhd5" path="res://assets/rooms/engine/engine-room-picture.png" id="5_ggxlp"]
-[ext_resource type="Texture2D" uid="uid://c0umhb7ob5wr4" path="res://assets/rooms/engine/engine-room-engine.png" id="6_13m5u"]
+[ext_resource type="PackedScene" uid="uid://mabpxtts6b0l" path="res://scenes/props/engine.tscn" id="2_yhvq1"]
 [ext_resource type="PackedScene" uid="uid://blrteg5ux6vja" path="res://scenes/props/door.tscn" id="6_r3kyx"]
+[ext_resource type="PackedScene" uid="uid://d07uu0bx20luu" path="res://scenes/props/button.tscn" id="7_1cbk6"]
 [ext_resource type="PackedScene" uid="uid://cc7ieadixdnpi" path="res://scenes/player.tscn" id="7_tbnbw"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_08l0f"]
@@ -32,21 +29,19 @@ script = ExtResource("1_63hxh")
 
 [node name="Art" type="Node2D" parent="."]
 
-[node name="Engine-room" type="Sprite2D" parent="Art"]
-texture = ExtResource("2_c84o7")
+[node name="Engine-room" parent="Art" instance=ExtResource("2_yhvq1")]
 
-[node name="Engine-room-shaft" type="Sprite2D" parent="Art/Engine-room"]
-position = Vector2(0, 4)
-texture = ExtResource("3_8lwlh")
+[node name="Button1" parent="Art" instance=ExtResource("7_1cbk6")]
+position = Vector2(-70, -26)
 
-[node name="Engine-room-engine" type="Sprite2D" parent="Art/Engine-room"]
-texture = ExtResource("6_13m5u")
+[node name="Button2" parent="Art" instance=ExtResource("7_1cbk6")]
+position = Vector2(28, -26)
 
-[node name="Engine-room-pump" type="Sprite2D" parent="Art/Engine-room"]
-texture = ExtResource("4_aw31n")
+[node name="Button3" parent="Art" instance=ExtResource("7_1cbk6")]
+position = Vector2(138, -26)
 
-[node name="Engine-room-picture" type="Sprite2D" parent="Art/Engine-room"]
-texture = ExtResource("5_ggxlp")
+[node name="Button4" parent="Art" instance=ExtResource("7_1cbk6")]
+position = Vector2(233, -26)
 
 [node name="Interactables" type="Node2D" parent="."]
 
@@ -54,7 +49,7 @@ texture = ExtResource("5_ggxlp")
 position = Vector2(-1292, 13)
 
 [node name="Player1" parent="." instance=ExtResource("7_tbnbw")]
-position = Vector2(201, 39)
+position = Vector2(-669, 19)
 scale = Vector2(1, 1)
 interaction_allowed = 0
 
@@ -64,7 +59,7 @@ avoidance_enabled = true
 debug_enabled = true
 
 [node name="Player2" parent="." instance=ExtResource("7_tbnbw")]
-position = Vector2(-442, 39)
+position = Vector2(1008, 31)
 scale = Vector2(1, 1)
 interaction_allowed = 1
 player_index = 1
