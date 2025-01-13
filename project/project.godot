@@ -28,6 +28,7 @@ AudioManager="*res://scenes/audio_manager.tscn"
 [display]
 
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="res://assets/cursors/cursor_default.png"
 
 [gui]
 

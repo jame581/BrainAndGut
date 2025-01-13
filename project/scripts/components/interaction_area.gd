@@ -5,7 +5,7 @@ class_name InteractionArea
 signal interacted()
 
 @export_category("Interaction Setup")
-@export var cursor_texture: Texture #= preload("res://assets/sprites/cursor.png")
+@export var cursor_texture: Texture = preload("res://assets/cursors/cursor_interact.png")
 @export var interaction_allowed: Global.InteractionAllowed = Global.InteractionAllowed.BOTH
 @export var sound_effect: AudioStream #= preload("res://assets/sounds/interact.wav")
 
@@ -22,8 +22,8 @@ func _ready() -> void:
 
 
 func _on_mouse_exited() -> void:
-	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
-	#Input.set_custom_mouse_cursor(null)
+	#Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+	Global.set_default_cursor()
 
 
 func _on_mouse_entered() -> void:

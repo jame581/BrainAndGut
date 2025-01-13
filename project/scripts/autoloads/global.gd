@@ -4,6 +4,7 @@ signal map_changed(new_map_path: String)
 
 var current_scene = null
 var current_path: String = ""
+var cursor_default = preload("res://assets/cursors/cursor_default.png")
 
 enum InteractionAllowed{
 	BRAIN,
@@ -16,6 +17,10 @@ func _ready() -> void:
 	var root = get_tree().root
 	current_scene = root.get_child(-1)
 	current_path = current_scene.scene_file_path
+	set_default_cursor()
+
+func set_default_cursor() -> void:
+	Input.set_custom_mouse_cursor(cursor_default)
 
 func get_game_version() -> String:
 	return "v" + ProjectSettings.get_setting("application/config/version")
