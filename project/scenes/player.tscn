@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cc7ieadixdnpi"]
+[gd_scene load_steps=16 format=3 uid="uid://cc7ieadixdnpi"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_0jg2f"]
 [ext_resource type="Texture2D" uid="uid://de52db26dxbvn" path="res://assets/characters/gut/guts-walking.png" id="2_lfc3k"]
@@ -324,9 +324,13 @@ tracks/3/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_inrev"]
+resource_name = "idle"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wmfqv"]
 _data = {
 "RESET": SubResource("Animation_armgk"),
+"idle": SubResource("Animation_inrev"),
 "walk": SubResource("Animation_y4lkx")
 }
 
@@ -347,7 +351,7 @@ libraries = {
 "": SubResource("AnimationLibrary_2hifw")
 }
 
-[node name="AnimationPlayerGut" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayerGuts" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_wmfqv")
 }
