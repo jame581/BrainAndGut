@@ -1,17 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://m8rosninkldc"]
+[gd_scene load_steps=11 format=3 uid="uid://m8rosninkldc"]
 
 [ext_resource type="Script" path="res://scripts/sub_level.gd" id="1_wrug5"]
-[ext_resource type="Texture2D" uid="uid://ctx6iaah0leh8" path="res://assets/rooms/control/machine-room1.png" id="2_0pgkm"]
-[ext_resource type="Texture2D" uid="uid://bq3b6cipy7xbd" path="res://assets/rooms/control/machine-room-buttons.png" id="3_pbpuk"]
+[ext_resource type="PackedScene" uid="uid://chq7bgcpfcmfn" path="res://scenes/props/control/control-panel.tscn" id="2_an1q4"]
 [ext_resource type="PackedScene" uid="uid://blrteg5ux6vja" path="res://scenes/props/door.tscn" id="4_aafsw"]
 [ext_resource type="Texture2D" uid="uid://cumbm17a8ri14" path="res://assets/rooms/control/machine-room-table.png" id="4_iacic"]
 [ext_resource type="Texture2D" uid="uid://b20d00mtgu61g" path="res://assets/rooms/control/machine-room-pc.png" id="5_bgiys"]
 [ext_resource type="PackedScene" uid="uid://cc7ieadixdnpi" path="res://scenes/player.tscn" id="5_ywv12"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_08l0f"]
-vertices = PackedVector2Array(359.891, 220.906, 358.102, 388.078, -743.727, 397.789, -570.688, 213.031)
+vertices = PackedVector2Array(1368.2, 446.094, -714.297, 455.883, -555.609, 291.844, 1208.09, 230.172)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(368, 398, -767, 408, -575, 203, 370, 211)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1388, 456, -738, 466, -560, 282, 1213, 220)])
 
 [sub_resource type="Animation" id="Animation_u1udo"]
 length = 0.001
@@ -31,11 +30,8 @@ script = ExtResource("1_wrug5")
 
 [node name="Art" type="Node2D" parent="."]
 
-[node name="Machine-room1" type="Sprite2D" parent="Art"]
-texture = ExtResource("2_0pgkm")
-
-[node name="Machine-room-buttons" type="Sprite2D" parent="Art"]
-texture = ExtResource("3_pbpuk")
+[node name="Control" parent="Art" instance=ExtResource("2_an1q4")]
+position = Vector2(0, 3)
 
 [node name="Machine-room-table" type="Sprite2D" parent="Art"]
 position = Vector2(-540, -33)

@@ -2,10 +2,16 @@ extends Node
 
 # Signal to be fired when the engine is fixed
 signal on_engine_fixed
+signal on_control_fixed
+
+signal on_control_button_pressed(button_index: int)
 
 var main_level: MainLevel = null
 
 var button_counter: int = 0
+
+var fixed_control: bool = false
+var fixed_engine: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,16 +21,9 @@ func _ready():
 
 	Global.map_changed.connect(handle_map_changed)
 
-		# await get_tree().create_timer(3.0).timeout
-		# main_level.switch_sublevel(MainLevel.SUBLEVELS.CORRIDOR)
-		# await get_tree().create_timer(3.0).timeout
-		# main_level.switch_sublevel(MainLevel.SUBLEVELS.GUTS)
-		# await get_tree().create_timer(3.0).timeout
-		# main_level.switch_sublevel(MainLevel.SUBLEVELS.BRAIN)
-
+# Setup the main level
 func setup_main_level() -> void:
 	main_level = get_tree().root.get_node_or_null("MainLevel")
-
 
 # Switch the current character
 func switch_character():
@@ -40,6 +39,7 @@ func switch_sublevel(sublevel: MainLevel.SUBLEVELS):
 
 	main_level.switch_sublevel(sublevel)
 
+# Register a player in the main level
 func register_player(player):
 	print("GameHelper: Registering player")
 	if not main_level:
@@ -47,6 +47,7 @@ func register_player(player):
 	
 	main_level.register_player(player)
 
+# Saves reference to the main level after the map has changed
 func handle_map_changed(_new_map_path: String) -> void:
 	print("GameHelper: Map changed to: ", _new_map_path)
 	main_level = get_tree().root.get_node_or_null("MainLevel")
@@ -55,5 +56,14 @@ func handle_map_changed(_new_map_path: String) -> void:
 func break_button():
 	button_counter += 1
 	if button_counter >= 4:
-		emit_signal("on_engine_fixed")
-		print("GameHelper: Engine fixed.")
+		fix_engine()
+		
+func fix_engine():
+	fixed_engine = true
+	emit_signal("on_engine_fixed")
+	print("GameHelper: Engine fixed.")
+
+func fix_control():
+	fixed_control = true
+	emit_signal("on_control_fixed")
+	print("GameHelper: Control fixed.")

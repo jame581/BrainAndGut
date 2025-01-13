@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://bhbexnolt7mhq"]
+
+[ext_resource type="Script" path="res://scripts/props/button.gd" id="1_67bbu"]
+[ext_resource type="Texture2D" uid="uid://btcgejf1sxgxk" path="res://assets/rooms/engine/engine-room-button-green.png" id="2_2leyv"]
+[ext_resource type="Texture2D" uid="uid://ciu2vrx870rty" path="res://assets/rooms/engine/engine-room-button-red.png" id="2_swe04"]
+[ext_resource type="PackedScene" uid="uid://cpbupgumegnux" path="res://scenes/interaction_area.tscn" id="3_4d6iu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wh4ty"]
+size = Vector2(81, 85)
+
+[sub_resource type="Animation" id="Animation_b0g7i"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_4b57u"]
+resource_name = "close_door"
+length = 0.5
+
+[sub_resource type="Animation" id="Animation_c6o1j"]
+resource_name = "open_door"
+length = 0.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lnqd7"]
+_data = {
+"RESET": SubResource("Animation_b0g7i"),
+"close_door": SubResource("Animation_4b57u"),
+"open_door": SubResource("Animation_c6o1j")
+}
+
+[node name="ControlButton" type="Node2D"]
+script = ExtResource("1_67bbu")
+
+[node name="SpriteON" type="Sprite2D" parent="."]
+texture = ExtResource("2_2leyv")
+
+[node name="SpriteOFF" type="Sprite2D" parent="."]
+texture = ExtResource("2_swe04")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_4d6iu")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_wh4ty")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lnqd7")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="interacted" from="InteractionArea" to="." method="_on_interaction_area_interacted"]
