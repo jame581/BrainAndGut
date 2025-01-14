@@ -3,9 +3,7 @@
         {
             "text": "Welcome to the game!",
             "wait_time": 2,
-            "hide_dialog_after": false,
-            "animation": "intro_start",
-            "animation2": "intro_start"
+            "hide_dialog_after": false
         }
     ]
 }

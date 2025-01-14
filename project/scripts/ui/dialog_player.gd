@@ -1,9 +1,10 @@
 extends Node2D
 
 @export_group("Dialog Data")
+@export var enabled: bool = true
 @export var dialog_display: Dialog
 @export var start_wait_time: float = 2.0
-@export var load_level_after: String = "res://maps/game_world.tscn"
+@export var load_level_after: String = "res://maps/main_level.tscn"
 @export var animation_player: AnimationPlayer
 @export var animation_player2: AnimationPlayer
 @export_file("*.json") var dialog_text_file
@@ -20,14 +21,12 @@ var dialog_index: int = 0
 func _ready() -> void:
 	parse_json()
 	timer.wait_time = start_wait_time
-	# dialog_display.message_displayed.connect(next_message)
 	dialog_display.dialog_finished.connect(next_message)
-	# dialog_display.set_wait_on_input(wait_for_input)
 	
 	if animation_player == null:
 		push_error("Animation player not set")
 
-	if dialogs_data.size() > 0:
+	if dialogs_data.size() > 0 and enabled:
 		timer.start()
 
 
@@ -61,7 +60,7 @@ func load_dialog_text() -> String:
 
 func next_message() -> void:
 	if dialog_index < dialogs_data.size():
-		dialog_display.display_next_message(dialogs_data[dialog_index])
+		dialog_display.show_dialog(dialogs_data[dialog_index])
 		if dialogs_data[dialog_index].has("animation") and animation_player != null:
 			animation_player.play(dialogs_data[dialog_index]["animation"])
 		if dialogs_data[dialog_index].has("animation2") and animation_player2 != null:
@@ -70,11 +69,13 @@ func next_message() -> void:
 	else:
 		load_level_timer.start()
 
+func load_next_level() -> void:
+	if load_level_after:
+		Global.goto_scene(load_level_after)
 
 func _on_timer_timeout() -> void:
 	next_message()
 
 
 func _on_load_level_timer_timeout() -> void:
-	if load_level_after:
-		Global.goto_scene(load_level_after)
+	load_next_level()

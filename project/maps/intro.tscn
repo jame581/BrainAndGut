@@ -1,21 +1,228 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmlmuefwt8758"]
+[gd_scene load_steps=17 format=3 uid="uid://dmlmuefwt8758"]
 
 [ext_resource type="PackedScene" uid="uid://b2nhuw7nenoha" path="res://scenes/ui/dialog.tscn" id="1_8x6cx"]
 [ext_resource type="PackedScene" uid="uid://c5mqi1308eep3" path="res://scenes/ui/dialog_player.tscn" id="1_rxcst"]
 [ext_resource type="Texture2D" uid="uid://24gttdh8uscm" path="res://assets/intro/intro-ship-1.png" id="3_oe088"]
+[ext_resource type="AudioStream" uid="uid://bdk2gvkw4jx2u" path="res://assets/sounds/intro/alarmintro.mp3" id="3_sf1o1"]
+[ext_resource type="Texture2D" uid="uid://bn2pdna0i786i" path="res://assets/intro/intro-ship-2.png" id="4_6lcx2"]
+[ext_resource type="AudioStream" uid="uid://tig6lp0j0ltw" path="res://assets/sounds/intro/Intro-CRASH.mp3" id="4_tdjvh"]
+[ext_resource type="Texture2D" uid="uid://caiv0k20tx7x" path="res://assets/intro/intro-ship-3.png" id="5_rkk73"]
+[ext_resource type="Texture2D" uid="uid://dem56lifm5ak6" path="res://assets/intro/intro-ship-4.png" id="6_6i3f6"]
+[ext_resource type="AudioStream" uid="uid://caxxk8o0mg4wi" path="res://assets/sounds/wave_sounds.wav" id="7_0ydii"]
+[ext_resource type="Texture2D" uid="uid://c83xgseeepl72" path="res://assets/intro/intro-2-animationsheet.png" id="7_agfrk"]
+
+[sub_resource type="Animation" id="Animation_msfbg"]
+resource_name = "intro_start"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Part2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Part1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Part2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer:stream")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5, 8.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("7_0ydii"), ExtResource("3_sf1o1"), ExtResource("4_tdjvh")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5, 8.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Part3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 8.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("DialogPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(10),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"load_next_level"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_sw5cg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Part2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Part1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Part2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer:stream")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_0ydii")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Part3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rl804"]
+_data = {
+"RESET": SubResource("Animation_sw5cg"),
+"intro_start": SubResource("Animation_msfbg")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xa5qu"]
+atlas = ExtResource("7_agfrk")
+region = Rect2(0, 0, 1792, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uagv"]
+atlas = ExtResource("7_agfrk")
+region = Rect2(1792, 0, 1792, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o1yfh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xa5qu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uagv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="Intro" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.65, 0.65)
 
 [node name="DialogPlayer" parent="." node_paths=PackedStringArray("dialog_display", "animation_player", "animation_player2") instance=ExtResource("1_rxcst")]
+enabled = false
 dialog_display = NodePath("../DialogUI/Dialog")
-load_level_after = "res://maps/main_level.tscn"
+start_wait_time = 15.0
 animation_player = NodePath("../AnimationPlayer")
 animation_player2 = NodePath("../AnimationPlayer2")
 dialog_text_file = "res://resources/dialogs/intro_dialog.json"
+wait_for_input = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rl804")
+}
+autoplay = "intro_start"
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 
@@ -23,5 +230,45 @@ dialog_text_file = "res://resources/dialogs/intro_dialog.json"
 
 [node name="Dialog" parent="DialogUI" instance=ExtResource("1_8x6cx")]
 
-[node name="Intro-ship-1" type="Sprite2D" parent="."]
+[node name="Part1" type="Node2D" parent="."]
+
+[node name="Intro-ship-1" type="Sprite2D" parent="Part1"]
 texture = ExtResource("3_oe088")
+
+[node name="Parallax2D" type="Parallax2D" parent="Part1"]
+repeat_size = Vector2(1792, 0)
+autoscroll = Vector2(-25, 0)
+repeat_times = 3
+
+[node name="Intro-ship-2" type="Sprite2D" parent="Part1/Parallax2D"]
+texture = ExtResource("4_6lcx2")
+
+[node name="Intro-ship-3" type="Sprite2D" parent="Part1"]
+texture = ExtResource("5_rkk73")
+
+[node name="Parallax2D2" type="Parallax2D" parent="Part1"]
+repeat_size = Vector2(1792, 0)
+autoscroll = Vector2(-30, 0)
+repeat_times = 3
+
+[node name="Intro-ship-4" type="Sprite2D" parent="Part1/Parallax2D2"]
+texture = ExtResource("6_6i3f6")
+
+[node name="Part2" type="Node2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Part2"]
+sprite_frames = SubResource("SpriteFrames_o1yfh")
+frame = 1
+
+[node name="Part3" type="Node2D" parent="."]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Part3"]
+sprite_frames = SubResource("SpriteFrames_o1yfh")
+frame_progress = 0.0147408
+speed_scale = 0.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_0ydii")

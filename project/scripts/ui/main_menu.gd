@@ -28,7 +28,7 @@ func _on_start_button_pressed() -> void:
 	audio_player.play()
 	#await get_tree().create_timer(0.1).timeout
 	start_game = true
-	Global.goto_scene("res://maps/main_level.tscn")
+	Global.goto_scene("res://maps/intro.tscn")
 
 
 func _on_credits_button_pressed() -> void:
