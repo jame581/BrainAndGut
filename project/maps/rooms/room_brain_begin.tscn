@@ -130,15 +130,13 @@ shape = SubResource("RectangleShape2D_ud5gc")
 position = Vector2(674, 0)
 scale = Vector2(-1, 1)
 locked = true
-action = 0
-interaction_allowed = 2
 dialog_on_interaction = NodePath("../../CanvasLayer/Dialog")
 dialog_data = {
 "audio": "res://assets/sounds/voices/lisa/Lisa Lines 6.wav",
 "show_instant": false,
 "text": "That door wont open!!",
 "title": "Lisa",
-"wait_time": 1.5,
+"wait_time": 2.5,
 "writing_speed": 0.05
 }
 next_room = 1
