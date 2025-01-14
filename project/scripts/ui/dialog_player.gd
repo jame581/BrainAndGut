@@ -31,11 +31,9 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("skip_dialog_text"):		
-		if dialog_display.dialog_writing:
-			dialog_display.finish_writing()
-		else:
-			next_message()
+	if event.is_action_pressed("skip_dialog_text") and dialog_display:		
+		dialog_display.imidiately_hide_dialog()
+		next_message()
 
 func parse_json() -> void:
 
