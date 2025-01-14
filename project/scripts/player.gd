@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var movement_speed: float = 300.0
 @export var interaction_allowed: Global.InteractionAllowed = Global.InteractionAllowed.BOTH
 @export var player_index: int = 0
-@export var interaction_distance: float = 60.0
+@export var interaction_distance: float = 100.0
 
 @onready var animation_player_brain: AnimationPlayer = $AnimationPlayerBrain
 @onready var animation_player_guts: AnimationPlayer = $AnimationPlayerGuts
@@ -88,7 +88,10 @@ func _physics_process(_delta: float) -> void:
 	if navigation_agent.is_navigation_finished():
 		velocity = Vector2.ZERO
 		play_animation()
-		if Global.player_payload and Global.player_payload.global_position.distance_to(global_position) < interaction_distance:
+		print("FIRE DEBUG: Player with name: " + get_name() + " has reached the target position.")
+		if Global.player_payload:
+			print("FIRE DEBUG: player_payload.global_position.distance_to(global_position): " + str(Global.player_payload.global_position.distance_to(global_position)))
+		if Global.player_payload:
 			Global.player_payload.interact(self)
 			# play_interact_animation()
 			Global.player_payload = null
