@@ -20,6 +20,31 @@ sublevels = [NodePath("Rooms/Room-Brain"), NodePath("Rooms/Room-Guts"), NodePath
 
 [node name="Room-Brain" parent="Rooms" instance=ExtResource("3_mcyaf")]
 position = Vector2(-2981, 883)
+data_dialogs = Array[Dictionary]([{
+"audio": "res://assets/sounds/voices/jack/Jack Line 2.wav",
+"audio_volume": 1.0,
+"show_instant": false,
+"text": "Ugh...what...happened? Did...did we crash...?",
+"title": "Jack",
+"wait_time": 2.0,
+"writing_speed": 0.05
+}, {
+"audio": "res://assets/sounds/voices/jack/Jack Lines 8.wav",
+"audio_volume": 1.0,
+"show_instant": false,
+"text": "We still have each other!",
+"title": "Jack",
+"wait_time": 2.0,
+"writing_speed": 0.05
+}, {
+"audio": "res://assets/sounds/voices/jack/Jack Lines 12.wav",
+"audio_volume": 1.0,
+"show_instant": false,
+"text": "This is destiny Lisa!",
+"title": "Jack",
+"wait_time": 2.0,
+"writing_speed": 0.05
+}])
 
 [node name="Room-Guts" parent="Rooms" instance=ExtResource("4_36851")]
 position = Vector2(3151, 968)
