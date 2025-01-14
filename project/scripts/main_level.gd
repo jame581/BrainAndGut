@@ -59,9 +59,11 @@ func reactivate_players():
 
 	for player in players:
 		player.set_listening(false)
+		player.set_player_active(false)
 
 	if players.size() > 0:
 		players[current_player_index].set_listening(true)
+		players[current_player_index].set_player_active(true)
 
 # Switches the current character to another character in the game.
 func switch_character():

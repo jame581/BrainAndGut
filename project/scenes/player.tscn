@@ -1,10 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://cc7ieadixdnpi"]
+[gd_scene load_steps=19 format=3 uid="uid://cc7ieadixdnpi"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_0jg2f"]
 [ext_resource type="Texture2D" uid="uid://de52db26dxbvn" path="res://assets/characters/gut/guts-walking.png" id="2_lfc3k"]
 [ext_resource type="Texture2D" uid="uid://c7hwijveneq7h" path="res://assets/characters/brain/brain-idle.png" id="3_6v36v"]
 [ext_resource type="Texture2D" uid="uid://bflaev8iocvih" path="res://assets/characters/brain/brain-walking.png" id="4_ytyfr"]
 [ext_resource type="Texture2D" uid="uid://b2xcpxstb8hou" path="res://assets/characters/brain/brain-thinking.png" id="5_rivnj"]
+[ext_resource type="Texture2D" uid="uid://7bxyrl2wiv6b" path="res://assets/characters/gut/guts-idle.png" id="6_4012l"]
+[ext_resource type="Texture2D" uid="uid://djatohhkjoonm" path="res://assets/characters/gut/guts-punch.png" id="7_u6hi8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i22jk"]
 size = Vector2(273.667, 722.667)
@@ -275,6 +277,54 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_inrev"]
 resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_4012l")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.11, 0.22, 0.33, 0.44, 0.55, 0.66, 0.77, 0.88),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
 
 [sub_resource type="Animation" id="Animation_y4lkx"]
 resource_name = "walk"
@@ -327,10 +377,62 @@ tracks/3/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
 }
 
+[sub_resource type="Animation" id="Animation_nng0a"]
+resource_name = "punch"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_u6hi8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wmfqv"]
 _data = {
 "RESET": SubResource("Animation_armgk"),
 "idle": SubResource("Animation_inrev"),
+"punch": SubResource("Animation_nng0a"),
 "walk": SubResource("Animation_y4lkx")
 }
 

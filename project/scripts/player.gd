@@ -13,6 +13,9 @@ extends CharacterBody2D
 var target_position: Vector2 = Vector2.ZERO
 var is_listening: bool = false
 var animation_player: AnimationPlayer = null
+var player_thinking: bool = false
+var player_punching: bool = false
+var player_is_active: bool = false
 
 func _enter_tree( ) -> void:
 	# Get the top-level root node
@@ -52,19 +55,25 @@ func actor_setup() -> void:
 func set_movement_target(movement_target: Vector2) -> void:
 	navigation_agent.target_position = movement_target
 
+
 func set_listening(listening: bool) -> void:
 	is_listening = listening
 	print("Player with name: " + get_name() + " is listening: " + str(is_listening))
 
+
+func set_player_active(active: bool) -> void:
+	player_is_active = active
+
+
 func _input(event: InputEvent) -> void:
 	if is_listening:
-		if event.is_action_pressed("click"):
+		if event.is_action_pressed("click") and player_is_active:
 			target_position = get_global_mouse_position()
 			set_movement_target(target_position)
 
 
 func _physics_process(_delta: float) -> void:
-	if navigation_agent.is_navigation_finished():
+	if navigation_agent.is_navigation_finished() or not player_is_active:
 		velocity = Vector2.ZERO
 		play_animation()
 		return
@@ -78,7 +87,23 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 
+func set_player_thinking(thinking: bool) -> void:
+	player_thinking = thinking
+
+
+func set_player_punching(punching: bool) -> void:
+	player_punching = punching
+
+
 func play_animation() -> void:
+	if player_thinking and interaction_allowed == Global.InteractionAllowed.BRAIN:
+		animation_player.play("think")
+		return
+
+	if player_punching and interaction_allowed == Global.InteractionAllowed.GUT:
+		animation_player.play("punch")
+		return
+
 	if velocity.x != 0:
 		if velocity.x > 0:
 			animation_player.play("walk")
