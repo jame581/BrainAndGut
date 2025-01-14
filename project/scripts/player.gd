@@ -59,11 +59,13 @@ func set_movement_target(movement_target: Vector2) -> void:
 
 func set_listening(listening: bool) -> void:
 	is_listening = listening
+	player_is_active = listening
 	print("Player with name: " + get_name() + " is listening: " + str(is_listening))
 
 
 func set_player_active(active: bool) -> void:
 	player_is_active = active
+	is_listening = active
 
 func play_interact_animation(player_animation: String = "interact") -> void:
 	if player_animation == "interact":

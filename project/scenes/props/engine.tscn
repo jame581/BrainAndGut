@@ -49,13 +49,13 @@ _data = {
 texture = ExtResource("1_cb288")
 script = ExtResource("2_5nb1m")
 
-[node name="Engine-room-engine" type="Sprite2D" parent="."]
-position = Vector2(-500, 13)
-texture = ExtResource("4_vxft7")
-
 [node name="Engine-room-shaft" type="Sprite2D" parent="."]
 position = Vector2(-477, 17)
 texture = ExtResource("2_5ldjl")
+
+[node name="Engine-room-engine" type="Sprite2D" parent="."]
+position = Vector2(-500, 13)
+texture = ExtResource("4_vxft7")
 
 [node name="Engine-room-pump" type="Sprite2D" parent="."]
 position = Vector2(-477, 11)
