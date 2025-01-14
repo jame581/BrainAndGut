@@ -31,6 +31,7 @@ func _on_mouse_entered() -> void:
 
 
 func interact(body:Node2D) -> void:
+	print("FIRE DEBUG: InteractionArea interact()")
 	if body is CharacterBody2D:
 		if body.interaction_allowed == interaction_allowed or interaction_allowed == Global.InteractionAllowed.BOTH:
 			print("FIRE DEBUG: Character interacted")

@@ -25,6 +25,7 @@ func _ready() -> void:
 	interaction_area.interaction_allowed = interaction_allowed
 
 func _on_interaction_area_interacted() -> void:
+	print("FIRE DEBUG: Interaction with debris")
 	if dialog_on_interaction:
 		dialog_on_interaction.dialog_finished.connect(_dialog_finished)
 		dialog_on_interaction.show_dialog(dialog_data)
