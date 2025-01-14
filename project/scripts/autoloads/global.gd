@@ -6,6 +6,8 @@ var current_scene = null
 var current_path: String = ""
 var cursor_default = preload("res://assets/cursors/cursor_default.png")
 
+var player_payload = null
+
 enum InteractionAllowed{
 	BRAIN,
 	GUT,
@@ -54,3 +56,6 @@ func _deferred_goto_scene(path):
 	# Optionally, to make it compatible with the SceneTree.change_scene_to_file() API.
 	get_tree().current_scene = current_scene
 	map_changed.emit(current_scene.scene_file_path)
+
+func player_clicked_on_interacted(payload) -> void:
+	player_payload = payload

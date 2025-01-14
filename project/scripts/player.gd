@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var movement_speed: float = 300.0
 @export var interaction_allowed: Global.InteractionAllowed = Global.InteractionAllowed.BOTH
 @export var player_index: int = 0
+@export var interaction_distance: float = 60.0
 
 @onready var animation_player_brain: AnimationPlayer = $AnimationPlayerBrain
 @onready var animation_player_guts: AnimationPlayer = $AnimationPlayerGuts
@@ -64,20 +65,35 @@ func set_listening(listening: bool) -> void:
 func set_player_active(active: bool) -> void:
 	player_is_active = active
 
+func play_interact_animation(player_animation: String = "interact") -> void:
+	if player_animation == "interact":
+		player_thinking = true if interaction_allowed == Global.InteractionAllowed.BRAIN else false
+		player_punching = true if interaction_allowed == Global.InteractionAllowed.GUT else false
+
 
 func _input(event: InputEvent) -> void:
-	if is_listening:
+	if is_listening or player_is_active:
 		if event.is_action_pressed("click") and player_is_active:
+			Global.player_payload = null
 			target_position = get_global_mouse_position()
 			set_movement_target(target_position)
 
 
 func _physics_process(_delta: float) -> void:
-	if navigation_agent.is_navigation_finished() or not player_is_active:
+	if not player_is_active:
 		velocity = Vector2.ZERO
 		play_animation()
 		return
-
+	
+	if navigation_agent.is_navigation_finished():
+		velocity = Vector2.ZERO
+		play_animation()
+		if Global.player_payload and Global.player_payload.global_position.distance_to(global_position) < interaction_distance:
+			Global.player_payload.interact(self)
+			# play_interact_animation()
+			Global.player_payload = null
+		return
+	
 	var current_agent_position: Vector2 = global_position
 	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
 
