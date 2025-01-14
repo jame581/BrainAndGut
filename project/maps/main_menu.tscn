@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbimief5lvaa0"]
+[gd_scene load_steps=12 format=3 uid="uid://bbimief5lvaa0"]
 
 [ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_8vtf1"]
+[ext_resource type="Texture2D" uid="uid://bp282vvwr26b" path="res://assets/ui/main_menu_bg.png" id="2_18gii"]
 [ext_resource type="FontFile" uid="uid://dwprribxrnn8f" path="res://assets/fonts/PlaywriteAUSA-VariableFont_wght.ttf" id="2_ox664"]
-[ext_resource type="Texture2D" uid="uid://d2rjotpr7fut1" path="res://assets/room1/room2.png" id="2_rfb40"]
+[ext_resource type="Texture2D" uid="uid://biv4i4vhg3xl6" path="res://assets/ui/brain_and_gut_logo.png" id="4_65j3r"]
 [ext_resource type="AudioStream" uid="uid://dpswla2drqd8j" path="res://assets/sounds/buttons/ESM_Perfect_App_Button_5_Organic_Simple_Classic_Game_Click.wav" id="4_p30hg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y64d8"]
@@ -117,7 +118,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_rfb40")
+texture = ExtResource("2_18gii")
 expand_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -193,11 +194,9 @@ alignment = 1
 layout_mode = 2
 size_flags_vertical = 2
 
-[node name="GameTitle" type="Label" parent="MarginContainer/HBoxContainer/RightContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/RightContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "Brain and Gut"
-horizontal_alignment = 1
+texture = ExtResource("4_65j3r")
 
 [node name="ButtonsContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/RightContainer"]
 custom_minimum_size = Vector2(250, 0)
