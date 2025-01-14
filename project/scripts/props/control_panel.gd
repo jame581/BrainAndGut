@@ -16,7 +16,7 @@ var pressed: Array = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GameHelper.connect("on_control_button_pressed", Callable(self, "_on_control_button_pressed"))
-	control_panel.modulate = red
+	control_panel.modulate = Color.WHITE
 	
 
 # Handle button pressed signal
@@ -26,12 +26,18 @@ func _on_control_button_pressed(button_index: int):
 
 	if pressed.size() > sequence.size():
 		pressed.clear()
+		reset_buttons()
+		print("Incorrect sequence entered!")
 
-	if pressed == sequence.slice(0, pressed.size()):
+	if pressed[pressed.size() - 1] == sequence[pressed.size() - 1]:
+		buttons[pressed.size() - 1].enable_button()
+
 		if pressed.size() == sequence.size():
 			print("Correct sequence entered!")
 			control_panel.modulate = green
-			pressed.clear()
+			GameHelper.fix_control()
+			pressed.clear() 
+
 	else:
 		pressed.clear()
 		reset_buttons()
@@ -39,5 +45,12 @@ func _on_control_button_pressed(button_index: int):
 
 
 func reset_buttons():
+	control_panel.modulate = red
+	await get_tree().create_timer(0.1).timeout
+	control_panel.modulate = Color.WHITE
+	await get_tree().create_timer(0.1).timeout
+	control_panel.modulate = red
+	await get_tree().create_timer(0.1).timeout
+	control_panel.modulate = Color.WHITE
 	for button in buttons:
 		button.disable_button()
