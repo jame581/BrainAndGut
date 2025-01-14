@@ -62,28 +62,65 @@ _data = {
 script = ExtResource("1_1q4go")
 play_dialogs_on_start = true
 data_dialogs = Array[Dictionary]([{
-"audio": "res://assets/sounds/voices/Jack Line 2.wav",
+"audio": "res://assets/sounds/voices/lisa/Lisa Lines 10.wav",
 "audio_volume": 1.0,
 "show_instant": false,
-"text": "Ugh...what...happened? Did...did we crash...?",
+"text": "Jack!! I'm so happy to see you!",
+"title": "Lisa",
+"wait_time": 6.0,
+"writing_speed": 0.05
+}, {
+"audio": "res://assets/sounds/voices/lisa/Lisa Lines 11.wav",
+"audio_volume": 1.0,
+"show_instant": false,
+"text": "Are...you all right?",
+"title": "Lisa",
+"wait_time": 5.0,
+"writing_speed": 0.05
+}, {
+"audio_volume": 1.0,
+"show_instant": false,
+"text": "I'm fine.",
 "title": "Jack",
 "wait_time": 2.0,
 "writing_speed": 0.05
 }, {
-"audio": "res://assets/sounds/voices/Jack Lines 8.wav",
 "audio_volume": 1.0,
 "show_instant": false,
-"text": "We still have each other!",
-"title": "Jack",
+"text": "What happened?",
+"title": "Lisa",
 "wait_time": 2.0,
 "writing_speed": 0.05
 }, {
-"audio": "res://assets/sounds/voices/Jack Lines 12.wav",
 "audio_volume": 1.0,
 "show_instant": false,
-"text": "This is destiny Lisa!",
+"text": "I think... the ship had a crash...",
 "title": "Jack",
-"wait_time": 2.0,
+"wait_time": 4.0,
+"writing_speed": 0.05
+}, {
+"audio": "res://assets/sounds/voices/jack/Jack Lines 9.wav",
+"audio_volume": 1.0,
+"show_instant": false,
+"text": "Don't worry. I'm here to protect you.",
+"title": "Jack",
+"wait_time": 3.0,
+"writing_speed": 0.05
+}, {
+"audio": "res://assets/sounds/voices/lisa/Lisa Lines 13.wav",
+"audio_volume": 1.0,
+"show_instant": false,
+"text": "Thank you...",
+"title": "Lisa",
+"wait_time": 3.0,
+"writing_speed": 0.05
+}, {
+"audio": "res://assets/sounds/voices/lisa/Lisa Lines 20.wav",
+"audio_volume": 1.0,
+"show_instant": false,
+"text": "We need to send an SOS.",
+"title": "Lisa",
+"wait_time": 5.0,
 "writing_speed": 0.05
 }])
 dialog = NodePath("CanvasLayer/Dialog")
@@ -140,7 +177,6 @@ scale = Vector2(-1, 1)
 
 [node name="Player1" parent="." instance=ExtResource("10_bg4ig")]
 position = Vector2(120, 36)
-scale = Vector2(1, 1)
 collision_layer = 2
 interaction_allowed = 0
 
@@ -151,7 +187,6 @@ debug_enabled = true
 
 [node name="Player2" parent="." instance=ExtResource("10_bg4ig")]
 position = Vector2(-262, 33)
-scale = Vector2(1, 1)
 collision_layer = 4
 interaction_allowed = 1
 player_index = 1

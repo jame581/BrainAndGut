@@ -31,6 +31,14 @@ data_dialogs = Array[Dictionary]([{
 "title": "Jack",
 "wait_time": 4.0,
 "writing_speed": 0.05
+}, {
+"audio": "res://assets/sounds/voices/lisa/Lisa Lines 5.wav",
+"audio_volume": 1.0,
+"show_instant": false,
+"text": "Hello, I need help!!!",
+"title": "Lisa",
+"wait_time": 4.0,
+"writing_speed": 0.05
 }])
 dialog = NodePath("CanvasLayer/Dialog")
 
@@ -80,7 +88,7 @@ interaction_allowed = 1
 open_door = NodePath("../CorridorDoor")
 dialog_on_interaction = NodePath("../CanvasLayer/Dialog")
 dialog_data = {
-"audio": "res://assets/sounds/voices/Jack Lines 4.wav",
+"audio": "res://assets/sounds/voices/jack/Jack Lines 4.wav",
 "audio_volume": 1.0,
 "show_instant": false,
 "text": "This debris is blocking her door. I need to get it out of the way ...",

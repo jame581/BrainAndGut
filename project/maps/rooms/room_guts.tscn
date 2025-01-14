@@ -66,20 +66,7 @@ texture = ExtResource("4_7bcof")
 
 [node name="Door" parent="Interactables" instance=ExtResource("9_ti42r")]
 position = Vector2(-686, 0)
-locked = false
-action = 0
-interaction_allowed = 2
-dialog_data = {
-"audio": "",
-"audio_volume": 1.0,
-"show_instant": false,
-"text": "aaa",
-"title": "Lisa",
-"wait_time": 2.0,
-"writing_speed": 0.05
-}
 next_room = 5
-force_switch_sublevel = false
 
 [node name="Player1" parent="." instance=ExtResource("10_wlkvn")]
 position = Vector2(201, 39)

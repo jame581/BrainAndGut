@@ -18,6 +18,24 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(1426, 957, -994, 957, 2
 
 [node name="Room-Corridor" type="Node2D"]
 script = ExtResource("1_ysvqb")
+play_dialogs_on_start = true
+data_dialogs = Array[Dictionary]([{
+"audio": "res://assets/sounds/voices/lisa/Lisa Lines 14.wav",
+"audio_volume": 1.0,
+"show_instant": false,
+"text": "We have no power... We should get it back up and then try to send an SOS.",
+"title": "Lisa",
+"wait_time": 7.0,
+"writing_speed": 0.05
+}, {
+"audio": "res://assets/sounds/voices/lisa/Lisa Lines 21.wav",
+"audio_volume": 1.0,
+"show_instant": false,
+"text": "Engine and Generator are both down it seems... We need to repair them both before we can send a mayday.",
+"title": "Lisa",
+"wait_time": 8.5,
+"writing_speed": 0.05
+}])
 
 [node name="Deck3" type="Sprite2D" parent="."]
 texture = ExtResource("1_pdrp2")
