@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dtt1otbxp35mk"]
+[gd_scene load_steps=12 format=3 uid="uid://dtt1otbxp35mk"]
 
 [ext_resource type="Texture2D" uid="uid://bl87335mqu1ic" path="res://assets/rooms/corridor/deck3.png" id="1_pdrp2"]
 [ext_resource type="Script" path="res://scripts/sub_level.gd" id="1_ysvqb"]
@@ -8,10 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://7j8swqtocjfq" path="res://assets/rooms/corridor/light4.png" id="5_8468y"]
 [ext_resource type="Texture2D" uid="uid://b0tnts0w0gkbo" path="res://assets/rooms/corridor/light5.png" id="6_6dh0w"]
 [ext_resource type="Texture2D" uid="uid://djbe007jk1qqx" path="res://assets/rooms/corridor/light6.png" id="7_k5sbf"]
-[ext_resource type="Texture2D" uid="uid://b4mllnx8fiqgt" path="res://assets/rooms/corridor/left_lock.png" id="9_bolg8"]
 [ext_resource type="PackedScene" uid="uid://cc7ieadixdnpi" path="res://scenes/player.tscn" id="9_rsie0"]
 [ext_resource type="PackedScene" uid="uid://kmt2ryi8xibm" path="res://scenes/props/corridor_door_smaller.tscn" id="10_4td0b"]
-[ext_resource type="Texture2D" uid="uid://bislrfchaocou" path="res://assets/rooms/corridor/right_lock.png" id="10_lb4uy"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7umth"]
 vertices = PackedVector2Array(812.172, -79.1094, 1408.61, 947, -967.289, 947, 224.648, -90.9219)
@@ -59,12 +57,6 @@ texture = ExtResource("6_6dh0w")
 
 [node name="Light6" type="Sprite2D" parent="Deck3"]
 texture = ExtResource("7_k5sbf")
-
-[node name="LeftLock" type="Sprite2D" parent="Deck3"]
-texture = ExtResource("9_bolg8")
-
-[node name="RightLock" type="Sprite2D" parent="Deck3"]
-texture = ExtResource("10_lb4uy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.4, 0.4)

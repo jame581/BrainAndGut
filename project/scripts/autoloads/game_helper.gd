@@ -13,6 +13,8 @@ var button_counter: int = 0
 var fixed_control: bool = false
 var fixed_engine: bool = false
 
+@export var load_outro_level: String = "res://maps/outro_2.tscn"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	setup_main_level()
@@ -61,9 +63,17 @@ func break_button():
 func fix_engine():
 	fixed_engine = true
 	emit_signal("on_engine_fixed")
-	print("GameHelper: Engine fixed.")
+	if fixed_engine && fixed_control:
+		load_outro_level()
+
 
 func fix_control():
 	fixed_control = true
 	emit_signal("on_control_fixed")
-	print("GameHelper: Control fixed.")
+	if fixed_engine && fixed_control:
+		load_outro_level()
+
+func load_outro_level() -> void:
+	await get_tree().create_timer(1.0).timeout
+	if load_outro_level:
+		Global.goto_scene(load_outro_level)
