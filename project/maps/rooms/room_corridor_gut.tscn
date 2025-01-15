@@ -81,7 +81,7 @@ navigation_polygon = SubResource("NavigationPolygon_7umth")
 texture = ExtResource("11_c5iy5")
 
 [node name="Debris" parent="." node_paths=PackedStringArray("open_door", "dialog_on_interaction") instance=ExtResource("10_38nuj")]
-position = Vector2(-568, 653)
+position = Vector2(-497, 599)
 interaction_allowed = 1
 open_door = NodePath("../CorridorDoor")
 dialog_on_interaction = NodePath("../CanvasLayer/Dialog")

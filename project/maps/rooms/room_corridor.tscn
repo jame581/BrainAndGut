@@ -61,6 +61,15 @@ texture = ExtResource("7_k5sbf")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.4, 0.4)
 
+[node name="CorridorDoorSmaller2" parent="." instance=ExtResource("10_4td0b")]
+next_room = 4
+
+[node name="CorridorDoorSmaller3" parent="." instance=ExtResource("10_4td0b")]
+position = Vector2(838, 0)
+rotation = 3.14159
+scale = Vector2(1, -1)
+next_room = 3
+
 [node name="Player1" parent="." instance=ExtResource("9_rsie0")]
 position = Vector2(865, 39)
 interaction_allowed = 0
@@ -82,11 +91,3 @@ debug_enabled = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_7umth")
-
-[node name="CorridorDoorSmaller2" parent="." instance=ExtResource("10_4td0b")]
-next_room = 4
-
-[node name="CorridorDoorSmaller3" parent="." instance=ExtResource("10_4td0b")]
-position = Vector2(838, 0)
-scale = Vector2(-1, 1)
-next_room = 3

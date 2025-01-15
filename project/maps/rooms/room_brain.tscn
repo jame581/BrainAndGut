@@ -210,8 +210,7 @@ zoom = Vector2(0.655, 0.655)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Dialog" parent="CanvasLayer" node_paths=PackedStringArray("interaction_area") instance=ExtResource("12_xr0mj")]
-interaction_area = NodePath("../../Interactables/TableInteractionArea")
+[node name="Dialog" parent="CanvasLayer" instance=ExtResource("12_xr0mj")]
 dialog_text = "[center]This is really cool newspapers on table! You know right?[/center]"
 dialog_title = "Papers on table"
 writing_speed = 0.03
