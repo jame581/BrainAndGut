@@ -1,0 +1,194 @@
+[gd_scene load_steps=19 format=3 uid="uid://ckdxwxfx0yqlc"]
+
+[ext_resource type="PackedScene" uid="uid://c5mqi1308eep3" path="res://scenes/ui/dialog_player.tscn" id="1_wf88k"]
+[ext_resource type="AudioStream" uid="uid://caxxk8o0mg4wi" path="res://assets/sounds/wave_sounds.wav" id="2_pjte2"]
+[ext_resource type="AudioStream" uid="uid://bdk2gvkw4jx2u" path="res://assets/sounds/intro/alarmintro.mp3" id="3_38flb"]
+[ext_resource type="AudioStream" uid="uid://tig6lp0j0ltw" path="res://assets/sounds/intro/Intro-CRASH.mp3" id="4_8t4le"]
+[ext_resource type="PackedScene" uid="uid://b2nhuw7nenoha" path="res://scenes/ui/dialog.tscn" id="5_3ss85"]
+[ext_resource type="Texture2D" uid="uid://dpmvvf3dwth5d" path="res://assets/rooms/outro/ending1.png" id="5_7qbdr"]
+[ext_resource type="Texture2D" uid="uid://24gttdh8uscm" path="res://assets/intro/intro-ship-1.png" id="6_cppvh"]
+[ext_resource type="Texture2D" uid="uid://c2comyrwmbjeg" path="res://assets/rooms/outro/ending2.png" id="6_ujilk"]
+[ext_resource type="Texture2D" uid="uid://bn2pdna0i786i" path="res://assets/intro/intro-ship-2.png" id="7_5dytf"]
+[ext_resource type="Texture2D" uid="uid://dwitf0f7jncfl" path="res://assets/rooms/outro/ending3.png" id="7_53fkm"]
+[ext_resource type="Texture2D" uid="uid://caiv0k20tx7x" path="res://assets/intro/intro-ship-3.png" id="8_swfyp"]
+[ext_resource type="Texture2D" uid="uid://dem56lifm5ak6" path="res://assets/intro/intro-ship-4.png" id="9_eebam"]
+
+[sub_resource type="Animation" id="Animation_sw5cg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:stream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_pjte2")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_msfbg"]
+resource_name = "intro_start"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:stream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 8.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_pjte2"), ExtResource("3_38flb"), ExtResource("4_8t4le")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5, 8.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DialogPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(10),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"load_next_level"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rl804"]
+_data = {
+"RESET": SubResource("Animation_sw5cg"),
+"intro_start": SubResource("Animation_msfbg")
+}
+
+[sub_resource type="Animation" id="Animation_n858i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Art/Ending2:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_clesl"]
+resource_name = "helicopter"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Art/Ending2:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7xhcy"]
+_data = {
+"RESET": SubResource("Animation_n858i"),
+"helicopter": SubResource("Animation_clesl")
+}
+
+[node name="Intro" type="Node2D"]
+
+[node name="Art" type="Node2D" parent="."]
+
+[node name="Intro-ship-1" type="Sprite2D" parent="Art"]
+texture = ExtResource("6_cppvh")
+
+[node name="Parallax2D" type="Parallax2D" parent="Art"]
+repeat_size = Vector2(1792, 0)
+autoscroll = Vector2(-25, 0)
+repeat_times = 3
+
+[node name="Intro-ship-2" type="Sprite2D" parent="Art/Parallax2D"]
+texture = ExtResource("7_5dytf")
+
+[node name="Intro-ship-3" type="Sprite2D" parent="Art"]
+texture = ExtResource("8_swfyp")
+
+[node name="Parallax2D2" type="Parallax2D" parent="Art"]
+repeat_size = Vector2(1792, 0)
+autoscroll = Vector2(-30, 0)
+repeat_times = 3
+
+[node name="Intro-ship-4" type="Sprite2D" parent="Art/Parallax2D2"]
+texture = ExtResource("9_eebam")
+
+[node name="Ending1" type="Sprite2D" parent="Art"]
+texture = ExtResource("5_7qbdr")
+
+[node name="Ending2" type="Sprite2D" parent="Art"]
+position = Vector2(381, -472)
+rotation = -0.0436332
+texture = ExtResource("6_ujilk")
+offset = Vector2(-389.135, 462.17)
+
+[node name="Ending3" type="Sprite2D" parent="Art"]
+texture = ExtResource("7_53fkm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.65, 0.65)
+
+[node name="DialogPlayer" parent="." node_paths=PackedStringArray("dialog_display", "animation_player") instance=ExtResource("1_wf88k")]
+enabled = false
+dialog_display = NodePath("../DialogUI/Dialog")
+start_wait_time = 15.0
+animation_player = NodePath("../AnimationPlayer")
+dialog_text_file = "res://resources/dialogs/intro_dialog.json"
+wait_for_input = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rl804")
+}
+autoplay = "intro_start"
+
+[node name="DialogUI" type="CanvasLayer" parent="."]
+
+[node name="Dialog" parent="DialogUI" instance=ExtResource("5_3ss85")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_pjte2")
+
+[node name="AnimationPlayerHelicopter" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7xhcy")
+}
