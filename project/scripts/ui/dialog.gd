@@ -49,7 +49,7 @@ func show_dialog(data: Dictionary) -> void:
 	show_instant = data["show_instant"] if data.has("show_instant") else show_instant
 	writing_speed = data["writing_speed"] if data.has("writing_speed") else writing_speed
 	wait_before_hide = data["wait_time"] if data.has("wait_time") else wait_before_hide
-	dialog_audio = load(data["audio"]) if data.has("audio") else dialog_audio
+	dialog_audio = load(data["audio"]) if data.has("audio") else null
 	dialog_audio_volume = data["audio_volume"] if data.has("audio_volume") else dialog_audio_volume
 
 	title_label.text = dialog_title

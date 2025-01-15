@@ -53,7 +53,6 @@ interaction_allowed = 0
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player1"]
 simplify_path = true
 avoidance_enabled = true
-debug_enabled = true
 
 [node name="Player2" parent="." instance=ExtResource("5_ywv12")]
 position = Vector2(-54, 17)
@@ -63,7 +62,6 @@ player_index = 1
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player2"]
 simplify_path = true
 avoidance_enabled = true
-debug_enabled = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_08l0f")

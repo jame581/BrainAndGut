@@ -82,7 +82,7 @@ data_dialogs = Array[Dictionary]([{
 "show_instant": false,
 "text": "I'm fine.",
 "title": "Jack",
-"wait_time": 2.0,
+"wait_time": 3.5,
 "writing_speed": 0.05
 }, {
 "audio_volume": 1.0,
@@ -183,7 +183,6 @@ interaction_allowed = 0
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player1"]
 simplify_path = true
 avoidance_enabled = true
-debug_enabled = true
 
 [node name="Player2" parent="." instance=ExtResource("10_bg4ig")]
 position = Vector2(-262, 33)
@@ -193,7 +192,6 @@ player_index = 1
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player2"]
 simplify_path = true
-avoidance_enabled = true
 debug_enabled = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
