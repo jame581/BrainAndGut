@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Brain and Gut"
 config/description="Brain and Gut is an engaging point-and-click adventure created in Godot for the GoedWare Game Jam. Immerse yourself in a world where intellect and instinct collide as you solve intricate puzzles and navigate through captivating scenes. With a limited color palette, experience a visually striking journey that challenges your problem-solving skills and intuition."
-config/version="0.0.1"
+config/version="0.0.2"
 run/main_scene="res://maps/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 run/max_fps=60
