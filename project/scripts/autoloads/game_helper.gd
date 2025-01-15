@@ -13,7 +13,7 @@ var button_counter: int = 0
 var fixed_control: bool = false
 var fixed_engine: bool = false
 
-@export var load_outro_level: String = "res://maps/outro_2.tscn"
+@export var outro_level: String = "res://maps/outro_2.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -75,5 +75,5 @@ func fix_control():
 
 func load_outro_level() -> void:
 	await get_tree().create_timer(1.0).timeout
-	if load_outro_level:
-		Global.goto_scene(load_outro_level)
+	if outro_level:
+		Global.goto_scene(outro_level)
