@@ -2,7 +2,7 @@ extends Node2D
 
 @export_category("Debris Setup")
 @export_subgroup("Interaction Setup")
-@export var cursor_texture: Texture #= preload("res://assets/sprites/cursor.png")
+@export var cursor_texture: Texture = preload("res://assets/cursors/cursor_interact.png")
 @export var interaction_allowed: Global.InteractionAllowed = Global.InteractionAllowed.BOTH
 @export var open_door: Node2D = null
 @export_subgroup("Dialog Setup")
@@ -40,6 +40,7 @@ func _on_animation_player_animation_finished(anim_name:StringName) -> void:
 		queue_free()
 
 func _dialog_finished() -> void:
-	animation_player.play("destroy")
 	if open_door:
 		open_door.unlock()
+	
+	animation_player.play("destroy")

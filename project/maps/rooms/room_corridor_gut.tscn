@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bruckdjuw6skc"]
+[gd_scene load_steps=15 format=3 uid="uid://bruckdjuw6skc"]
 
 [ext_resource type="Script" path="res://scripts/sub_level.gd" id="1_8c2wp"]
 [ext_resource type="Texture2D" uid="uid://bl87335mqu1ic" path="res://assets/rooms/corridor/deck3.png" id="2_sqwan"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://d1b0tqy6ljrip" path="res://scenes/debris.tscn" id="10_38nuj"]
 [ext_resource type="Texture2D" uid="uid://cl456dsixgojw" path="res://assets/damaged/cracks-for-floor2.png" id="11_c5iy5"]
 [ext_resource type="PackedScene" uid="uid://b2nhuw7nenoha" path="res://scenes/ui/dialog.tscn" id="12_dqk0j"]
-[ext_resource type="Texture2D" uid="uid://budfqlm85jac4" path="res://assets/cursors/cursor_interact.png" id="12_uan3v"]
 [ext_resource type="PackedScene" uid="uid://fjwmicie0bbf" path="res://scenes/props/corridor_door.tscn" id="14_qm0i1"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7umth"]
@@ -83,7 +82,6 @@ texture = ExtResource("11_c5iy5")
 
 [node name="Debris" parent="." node_paths=PackedStringArray("open_door", "dialog_on_interaction") instance=ExtResource("10_38nuj")]
 position = Vector2(-568, 653)
-cursor_texture = ExtResource("12_uan3v")
 interaction_allowed = 1
 open_door = NodePath("../CorridorDoor")
 dialog_on_interaction = NodePath("../CanvasLayer/Dialog")

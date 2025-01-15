@@ -30,9 +30,7 @@ func _ready() -> void:
 
 	if interaction_area:
 		interaction_area.interacted.connect(handle_interaction)
-		print("Dialog " + get_name() + ": Connected to InteractionArea node.")
-	else:
-		push_warning("Dialog " + get_name() + ": No InteractionArea node found.")		
+		print("Dialog " + get_name() + ": Connected to InteractionArea node.")	
 
 	hide_timer.wait_time = wait_before_hide
 	writing_timer.wait_time = writing_speed
@@ -101,4 +99,3 @@ func _on_animation_player_animation_finished(anim_name:StringName) -> void:
 			hide_timer.start()
 		else:
 			writing_timer.start()
-		

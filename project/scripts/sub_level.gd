@@ -10,12 +10,10 @@ class_name Sublevel
 var dialogs_played: bool = false
 var dialog_index: int = 0
 
-func _enter_tree() -> void:
-	if $Player1:
-		$Player1.set_listening(true)
-
 # Activate the sublevel
 func activate() -> void:
+	dialog_index = 0
+	dialogs_played = false
 	var camera = $Camera2D
 	if camera as Camera2D:
 		camera.make_current()
@@ -37,9 +35,17 @@ func activate() -> void:
 
 # Deactivate the sublevel
 func deactivate() -> void:
+	dialog_index = 0
+	dialogs_played = false
+	
 	if dialog:
 		dialog.dialog_finished.disconnect(handle_dialog_finished)
 		dialog.imidiately_hide_dialog()
+	
+	if $Player1:
+		$Player1.set_listening(false)
+	if get_node_or_null("Player2"):
+		$Player2.set_listening(false)
 
 
 func play_dialogs() -> void:

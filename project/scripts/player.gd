@@ -74,15 +74,15 @@ func play_interact_animation(player_animation: String = "interact") -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if is_listening or player_is_active:
-		if event.is_action_pressed("click") and player_is_active:
+	if is_listening and player_is_active:
+		if event.is_action_pressed("click"):
 			Global.player_payload = null
 			target_position = get_global_mouse_position()
 			set_movement_target(target_position)
 
 
 func _physics_process(_delta: float) -> void:
-	if not player_is_active:
+	if not player_is_active and not is_listening:
 		velocity = Vector2.ZERO
 		play_animation()
 		return

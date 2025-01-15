@@ -30,14 +30,6 @@ _data = {
 script = ExtResource("1_ylvpe")
 play_dialogs_on_start = true
 data_dialogs = Array[Dictionary]([{
-"audio": "res://assets/sounds/voices/jack/Jack Line 2.wav",
-"audio_volume": 1.0,
-"show_instant": false,
-"text": "Ugh...what...happened? Did...did we crash...?",
-"title": "Jack",
-"wait_time": 2.0,
-"writing_speed": 0.05
-}, {
 "audio": "res://assets/sounds/voices/lisa/Lisa Lines 4.wav",
 "audio_volume": 1.0,
 "show_instant": false,
