@@ -5,6 +5,7 @@ extends Node2D
 @export var dialog_display: Dialog
 @export var start_wait_time: float = 2.0
 @export var load_level_after: String = "res://maps/main_level.tscn"
+@export var main_menu: String = "res://maps/main_menu.tscn"
 @export var animation_player: AnimationPlayer
 @export var animation_player2: AnimationPlayer
 @export_file("*.json") var dialog_text_file
@@ -70,6 +71,10 @@ func next_message() -> void:
 func load_next_level() -> void:
 	if load_level_after:
 		Global.goto_scene(load_level_after)
+
+func load_main_menu() -> void:
+	if main_menu:
+		Global.goto_scene(main_menu)
 
 func _on_timer_timeout() -> void:
 	next_message()

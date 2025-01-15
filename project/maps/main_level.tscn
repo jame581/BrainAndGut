@@ -22,11 +22,9 @@ sublevels = [NodePath("Rooms/Room-Brain"), NodePath("Rooms/Room-Guts"), NodePath
 [node name="Room-Corridor" parent="Rooms" instance=ExtResource("2_0jo3j")]
 
 [node name="LeftLock" type="Sprite2D" parent="Rooms/Room-Corridor"]
-visible = false
 texture = ExtResource("3_jtkpf")
 
 [node name="RightLock" type="Sprite2D" parent="Rooms/Room-Corridor"]
-visible = false
 texture = ExtResource("4_74u0c")
 
 [node name="Room-Brain" parent="Rooms" instance=ExtResource("3_mcyaf")]
