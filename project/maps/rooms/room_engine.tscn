@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://cc7ieadixdnpi" path="res://scenes/player.tscn" id="7_tbnbw"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_08l0f"]
-vertices = PackedVector2Array(359.891, 220.906, 358.102, 388.078, -743.727, 397.789, -570.688, 213.031)
+vertices = PackedVector2Array(357.508, 220.742, 297.039, 484.922, -1415.52, 469.211, -1142.86, 189.094)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(368, 398, -767, 408, -575, 203, 370, 211)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(305, 495, -1439, 479, -1147, 179, 370, 211)])
 
 [sub_resource type="Animation" id="Animation_u1udo"]
 length = 0.001
@@ -49,7 +49,7 @@ position = Vector2(233, -26)
 position = Vector2(-1292, 13)
 
 [node name="Player1" parent="." instance=ExtResource("7_tbnbw")]
-position = Vector2(-669, 19)
+position = Vector2(-528, 19)
 interaction_allowed = 0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player1"]
@@ -58,7 +58,7 @@ avoidance_enabled = true
 debug_enabled = true
 
 [node name="Player2" parent="." instance=ExtResource("7_tbnbw")]
-position = Vector2(1008, 31)
+position = Vector2(-813, 28)
 interaction_allowed = 1
 player_index = 1
 
