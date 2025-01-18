@@ -8,6 +8,11 @@ var cursor_default = preload("res://assets/cursors/cursor_default.png")
 
 var player_payload = null
 
+enum CharacterType{
+	BRAIN,
+	GUT
+}
+
 enum InteractionAllowed{
 	BRAIN,
 	GUT,

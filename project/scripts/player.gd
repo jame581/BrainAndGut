@@ -1,21 +1,21 @@
 extends CharacterBody2D
 
+class_name Player
+
+# export variables
 @export_category("Player")
 @export var movement_speed: float = 300.0
 @export var interaction_allowed: Global.InteractionAllowed = Global.InteractionAllowed.BOTH
 @export var player_index: int = 0
 @export var interaction_distance: float = 100.0
 
-@onready var animation_player_brain: AnimationPlayer = $AnimationPlayerBrain
-@onready var animation_player_guts: AnimationPlayer = $AnimationPlayerGuts
+# load on ready variables
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var player_sprite: Sprite2D = $Sprite2D
 
+# local variables
 var target_position: Vector2 = Vector2.ZERO
-var is_listening: bool = false
-var animation_player: AnimationPlayer = null
-var player_thinking: bool = false
-var player_punching: bool = false
 var player_is_active: bool = false
 
 func _enter_tree( ) -> void:
@@ -28,13 +28,9 @@ func _enter_tree( ) -> void:
 		main_level.register_player(self)
 
 func _ready() -> void:
-	if not animation_player_brain:
-		push_error("Player: No AnimationPlayerBrain node found.")
-	
-	if not animation_player_guts:
-		push_error("Player: No AnimationPlayerGuts node found.")
+	if not animation_player:
+		push_error("Player " + name + ": No AnimationPlayer node found.")
 
-	animation_player = animation_player_brain if interaction_allowed == Global.InteractionAllowed.BRAIN else animation_player_guts
 	target_position = global_position
 
 	# These values need to be adjusted for the actor's speed
@@ -57,32 +53,19 @@ func set_movement_target(movement_target: Vector2) -> void:
 	navigation_agent.target_position = movement_target
 
 
-func set_listening(listening: bool) -> void:
-	is_listening = listening
-	player_is_active = listening
-	print("Player with name: " + get_name() + " is listening: " + str(is_listening))
-
-
 func set_player_active(active: bool) -> void:
 	player_is_active = active
-	is_listening = active
-
-func play_interact_animation(player_animation: String = "interact") -> void:
-	if player_animation == "interact":
-		player_thinking = true if interaction_allowed == Global.InteractionAllowed.BRAIN else false
-		player_punching = true if interaction_allowed == Global.InteractionAllowed.GUT else false
 
 
 func _input(event: InputEvent) -> void:
-	if is_listening and player_is_active:
-		if event.is_action_pressed("click"):
-			Global.player_payload = null
-			target_position = get_global_mouse_position()
-			set_movement_target(target_position)
+	if player_is_active and event.is_action_pressed("click"):
+		Global.player_payload = null
+		target_position = get_global_mouse_position()
+		set_movement_target(target_position)
 
 
 func _physics_process(_delta: float) -> void:
-	if not player_is_active and not is_listening:
+	if not player_is_active:
 		velocity = Vector2.ZERO
 		play_animation()
 		return
@@ -90,12 +73,8 @@ func _physics_process(_delta: float) -> void:
 	if navigation_agent.is_navigation_finished():
 		velocity = Vector2.ZERO
 		play_animation()
-		print("FIRE DEBUG: Player with name: " + get_name() + " has reached the target position.")
-		if Global.player_payload:
-			print("FIRE DEBUG: player_payload.global_position.distance_to(global_position): " + str(Global.player_payload.global_position.distance_to(global_position)))
 		if Global.player_payload:
 			Global.player_payload.interact(self)
-			# play_interact_animation()
 			Global.player_payload = null
 		return
 	
@@ -108,23 +87,7 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 
-func set_player_thinking(thinking: bool) -> void:
-	player_thinking = thinking
-
-
-func set_player_punching(punching: bool) -> void:
-	player_punching = punching
-
-
 func play_animation() -> void:
-	if player_thinking and interaction_allowed == Global.InteractionAllowed.BRAIN:
-		animation_player.play("think")
-		return
-
-	if player_punching and interaction_allowed == Global.InteractionAllowed.GUT:
-		animation_player.play("punch")
-		return
-
 	if velocity.x != 0:
 		if velocity.x > 0:
 			animation_player.play("walk")

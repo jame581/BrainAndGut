@@ -26,7 +26,7 @@ func _ready():
 		# 	camera.make_current()
 
 	# if current_player_index < players.size():
-	# 	players[current_player_index].set_listening(true)
+	# 	players[current_player_index].set_player_active(true)
 
 # Activate a given sublevel
 func activate_sublevel(sublevel: Sublevel) -> void:
@@ -58,22 +58,20 @@ func reactivate_players():
 	current_player_index = 0
 
 	for player in players:
-		player.set_listening(false)
 		player.set_player_active(false)
 
 	if players.size() > 0:
-		players[current_player_index].set_listening(true)
 		players[current_player_index].set_player_active(true)
 
 # Switches the current character to another character in the game.
 func switch_character():
 	if players.size() == 2:
-			players[current_player_index].set_listening(false)
+			players[current_player_index].set_player_active(false)
 			current_player_index = (current_player_index + 1) % players.size()
-			players[current_player_index].set_listening(true)
+			players[current_player_index].set_player_active(true)
 	else:
 		if players.has(0):
-			players[0].set_listening(true)
+			players[0].set_player_active(true)
 
 # Function to handle input events
 func _input(event: InputEvent) -> void:

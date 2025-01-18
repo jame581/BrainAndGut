@@ -43,9 +43,9 @@ func deactivate() -> void:
 		dialog.imidiately_hide_dialog()
 	
 	if $Player1:
-		$Player1.set_listening(false)
+		$Player1.set_player_active(false)
 	if get_node_or_null("Player2"):
-		$Player2.set_listening(false)
+		$Player2.set_player_active(false)
 
 
 func play_dialogs() -> void:
