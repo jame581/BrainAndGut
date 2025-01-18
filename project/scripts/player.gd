@@ -52,6 +52,7 @@ func actor_setup() -> void:
 
 
 func set_movement_target(movement_target: Vector2) -> void:
+	target_position = movement_target
 	navigation_agent.target_position = movement_target
 
 

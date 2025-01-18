@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://daa1361hp5l03"]
+[gd_scene load_steps=13 format=3 uid="uid://daa1361hp5l03"]
 
 [ext_resource type="Script" path="res://scripts/main_level.gd" id="1_johgq"]
 [ext_resource type="PackedScene" uid="uid://dtt1otbxp35mk" path="res://maps/rooms/room_corridor.tscn" id="2_0jo3j"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bruckdjuw6skc" path="res://maps/rooms/room_corridor_gut.tscn" id="7_by7cb"]
 [ext_resource type="PackedScene" uid="uid://dkv000xjdt377" path="res://maps/rooms/room_brain_begin.tscn" id="8_tyedl"]
 [ext_resource type="Texture2D" uid="uid://cqerulxrmawco" path="res://assets/sprites/ui/switch-button1.png" id="9_g51ab"]
+[ext_resource type="PackedScene" uid="uid://cty8hotp0o4pj" path="res://scenes/characters/brain.tscn" id="12_f1qhn"]
 
 [node name="MainLevel" type="Node2D" node_paths=PackedStringArray("sublevels")]
 position = Vector2(-9, -3)
@@ -42,14 +43,15 @@ position = Vector2(3770, -653)
 [node name="Room-Corridor-Gut" parent="Rooms" instance=ExtResource("7_by7cb")]
 position = Vector2(0, 2356)
 
-[node name="Room-Brain-Begin" parent="Rooms" instance=ExtResource("8_tyedl")]
+[node name="Room-Brain-Begin" parent="Rooms" node_paths=PackedStringArray("player_brain") instance=ExtResource("8_tyedl")]
 position = Vector2(-2959, 2032)
+player_brain = NodePath("../../Brain")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1792.0
+offset_bottom = 1024.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("9_g51ab")
 
@@ -59,5 +61,10 @@ layout_mode = 0
 offset_right = 258.0
 offset_bottom = 130.0
 button_mask = 3
+
+[node name="Brain" parent="." instance=ExtResource("12_f1qhn")]
+position = Vector2(-226, 0)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Brain"]
 
 [connection signal="pressed" from="CanvasLayer/TextureRect/Button" to="." method="_on_button_pressed"]

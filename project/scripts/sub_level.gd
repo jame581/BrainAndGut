@@ -2,6 +2,11 @@ extends Node2D
 class_name Sublevel
 
 @export_category("Sublevel Data")
+@export_subgroup("Players Setup")
+@export var player_brain: Player = null
+@export var player_brain_start_position: Node2D = null
+@export var player_gut: Player = null
+@export var player_gut_start_position: Node2D = null
 @export_subgroup("Dialogs Setup")
 @export var play_dialogs_on_start: bool = false
 @export var data_dialogs: Array[Dictionary] = []
@@ -20,12 +25,23 @@ func activate() -> void:
 	
 	print("Activated sublevel : ", get_name())
 
-	if $Player1:
-		GameHelper.register_player($Player1)
-		print("Registered Player1")
-	if get_node_or_null("Player2"):
-		GameHelper.register_player($Player2)
-		print("Registered Player2")
+	if player_brain:
+		GameHelper.register_player(player_brain)
+		if player_brain_start_position:
+			player_brain.global_position = player_brain_start_position.global_position
+		else:
+			push_warning("Player Brain: No start position found.")
+
+		player_brain.set_movement_target(player_brain.global_position)
+		print("Registered Player Brain")
+	if player_gut:
+		GameHelper.register_player(player_gut)
+		if player_gut_start_position:
+			player_gut.global_position = player_gut_start_position.global_position
+		else:
+			push_warning("Player Gut: No start position found.")
+		
+		print("Registered Player Gut")
 	
 	if dialog:
 		print("Dialog found")
@@ -42,10 +58,10 @@ func deactivate() -> void:
 		dialog.dialog_finished.disconnect(handle_dialog_finished)
 		dialog.imidiately_hide_dialog()
 	
-	if $Player1:
-		$Player1.set_player_active(false)
-	if get_node_or_null("Player2"):
-		$Player2.set_player_active(false)
+	if player_brain:
+		player_brain.set_player_active(false)
+	if player_gut:
+		player_gut.set_player_active(false)
 
 
 func play_dialogs() -> void:
