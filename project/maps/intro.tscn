@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://b2nhuw7nenoha" path="res://scenes/ui/dialog.tscn" id="1_8x6cx"]
 [ext_resource type="PackedScene" uid="uid://c5mqi1308eep3" path="res://scenes/ui/dialog_player.tscn" id="1_rxcst"]
-[ext_resource type="Texture2D" uid="uid://24gttdh8uscm" path="res://assets/intro/intro-ship-1.png" id="3_oe088"]
+[ext_resource type="Texture2D" uid="uid://24gttdh8uscm" path="res://assets/sprites/intro/intro-ship-1.png" id="3_oe088"]
 [ext_resource type="AudioStream" uid="uid://bdk2gvkw4jx2u" path="res://assets/sounds/intro/alarmintro.mp3" id="3_sf1o1"]
-[ext_resource type="Texture2D" uid="uid://bn2pdna0i786i" path="res://assets/intro/intro-ship-2.png" id="4_6lcx2"]
+[ext_resource type="Texture2D" uid="uid://bn2pdna0i786i" path="res://assets/sprites/intro/intro-ship-2.png" id="4_6lcx2"]
 [ext_resource type="AudioStream" uid="uid://tig6lp0j0ltw" path="res://assets/sounds/intro/Intro-CRASH.mp3" id="4_tdjvh"]
-[ext_resource type="Texture2D" uid="uid://caiv0k20tx7x" path="res://assets/intro/intro-ship-3.png" id="5_rkk73"]
-[ext_resource type="Texture2D" uid="uid://dem56lifm5ak6" path="res://assets/intro/intro-ship-4.png" id="6_6i3f6"]
+[ext_resource type="Texture2D" uid="uid://caiv0k20tx7x" path="res://assets/sprites/intro/intro-ship-3.png" id="5_rkk73"]
+[ext_resource type="Texture2D" uid="uid://dem56lifm5ak6" path="res://assets/sprites/intro/intro-ship-4.png" id="6_6i3f6"]
 [ext_resource type="AudioStream" uid="uid://caxxk8o0mg4wi" path="res://assets/sounds/wave_sounds.wav" id="7_0ydii"]
-[ext_resource type="Texture2D" uid="uid://c83xgseeepl72" path="res://assets/intro/intro-2-animationsheet.png" id="7_agfrk"]
+[ext_resource type="Texture2D" uid="uid://c83xgseeepl72" path="res://assets/sprites/intro/intro-2-animationsheet.png" id="7_agfrk"]
 
 [sub_resource type="Animation" id="Animation_sw5cg"]
 length = 0.001

@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://csnyp5dh5lbea"]
 
 [ext_resource type="Script" path="res://scripts/sub_level.gd" id="1_ylvpe"]
-[ext_resource type="Texture2D" uid="uid://bf2gn1crduamf" path="res://assets/rooms/guts/gutsroom.png" id="2_eupe4"]
-[ext_resource type="Texture2D" uid="uid://cit3mo14hgcr1" path="res://assets/rooms/guts/gutsroom-bed.png" id="3_webog"]
-[ext_resource type="Texture2D" uid="uid://bks288ivwd2kv" path="res://assets/rooms/guts/gutsroom-furniture.png" id="4_7bcof"]
+[ext_resource type="Texture2D" uid="uid://bf2gn1crduamf" path="res://assets/sprites/rooms/guts/gutsroom.png" id="2_eupe4"]
+[ext_resource type="Texture2D" uid="uid://cit3mo14hgcr1" path="res://assets/sprites/rooms/guts/gutsroom-bed.png" id="3_webog"]
+[ext_resource type="Texture2D" uid="uid://bks288ivwd2kv" path="res://assets/sprites/rooms/guts/gutsroom-furniture.png" id="4_7bcof"]
 [ext_resource type="PackedScene" uid="uid://b2nhuw7nenoha" path="res://scenes/ui/dialog.tscn" id="6_v40ax"]
 [ext_resource type="PackedScene" uid="uid://blrteg5ux6vja" path="res://scenes/props/door.tscn" id="9_ti42r"]
 

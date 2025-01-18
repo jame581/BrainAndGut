@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://blrteg5ux6vja"]
 
 [ext_resource type="Script" path="res://scripts/props/door.gd" id="1_m3mjq"]
-[ext_resource type="Texture2D" uid="uid://ce3ae1qn4nrgm" path="res://assets/props/door-open-animation.png" id="2_1xybd"]
+[ext_resource type="Texture2D" uid="uid://ce3ae1qn4nrgm" path="res://assets/sprites/props/door-open-animation.png" id="2_1xybd"]
 [ext_resource type="PackedScene" uid="uid://cpbupgumegnux" path="res://scenes/interaction_area.tscn" id="3_lu6yc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wh4ty"]

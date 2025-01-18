@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://pgtjew3ftoie"]
 
-[ext_resource type="Texture2D" uid="uid://dpmvvf3dwth5d" path="res://assets/rooms/outro/ending1.png" id="1_xuxmq"]
-[ext_resource type="Texture2D" uid="uid://c2comyrwmbjeg" path="res://assets/rooms/outro/ending2.png" id="2_ublnf"]
-[ext_resource type="Texture2D" uid="uid://dwitf0f7jncfl" path="res://assets/rooms/outro/ending3.png" id="3_pdiun"]
+[ext_resource type="Texture2D" uid="uid://dpmvvf3dwth5d" path="res://assets/sprites/rooms/outro/ending1.png" id="1_xuxmq"]
+[ext_resource type="Texture2D" uid="uid://c2comyrwmbjeg" path="res://assets/sprites/rooms/outro/ending2.png" id="2_ublnf"]
+[ext_resource type="Texture2D" uid="uid://dwitf0f7jncfl" path="res://assets/sprites/rooms/outro/ending3.png" id="3_pdiun"]
 
 [sub_resource type="Animation" id="Animation_clesl"]
 resource_name = "helicopter"

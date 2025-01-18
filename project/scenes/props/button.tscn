@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://d07uu0bx20luu"]
 
 [ext_resource type="Script" path="res://scripts/props/button.gd" id="1_6h124"]
-[ext_resource type="Texture2D" uid="uid://ciu2vrx870rty" path="res://assets/rooms/engine/engine-room-button-red.png" id="2_nnsbj"]
+[ext_resource type="Texture2D" uid="uid://ciu2vrx870rty" path="res://assets/sprites/rooms/engine/engine-room-button-red.png" id="2_nnsbj"]
 [ext_resource type="PackedScene" uid="uid://cpbupgumegnux" path="res://scenes/interaction_area.tscn" id="3_prjq3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wh4ty"]

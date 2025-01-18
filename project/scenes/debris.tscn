@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://d1b0tqy6ljrip"]
 
 [ext_resource type="Script" path="res://scripts/props/debris.gd" id="1_h5o4f"]
-[ext_resource type="Texture2D" uid="uid://cy36d824b8s1u" path="res://assets/damaged/debris.png" id="1_twsog"]
+[ext_resource type="Texture2D" uid="uid://cy36d824b8s1u" path="res://assets/sprites/damaged/debris.png" id="1_twsog"]
 [ext_resource type="PackedScene" uid="uid://cpbupgumegnux" path="res://scenes/interaction_area.tscn" id="3_k0vcc"]
 
 [sub_resource type="Animation" id="Animation_hjff8"]

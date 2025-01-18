@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://fjwmicie0bbf"]
 
 [ext_resource type="Script" path="res://scripts/props/corridor_door.gd" id="1_pdhti"]
-[ext_resource type="Texture2D" uid="uid://clh3krjbvxpk4" path="res://assets/props/firstdoor2.png" id="1_rn7sx"]
+[ext_resource type="Texture2D" uid="uid://clh3krjbvxpk4" path="res://assets/sprites/props/firstdoor2.png" id="1_rn7sx"]
 [ext_resource type="PackedScene" uid="uid://cpbupgumegnux" path="res://scenes/interaction_area.tscn" id="2_xty6t"]
 
 [sub_resource type="Animation" id="Animation_ykafw"]
