@@ -25,23 +25,7 @@ func activate() -> void:
 	
 	print("Activated sublevel : ", get_name())
 
-	if player_brain:
-		GameHelper.register_player(player_brain)
-		if player_brain_start_position:
-			player_brain.global_position = player_brain_start_position.global_position
-		else:
-			push_warning("Player Brain: No start position found.")
-
-		player_brain.set_movement_target(player_brain.global_position)
-		print("Registered Player Brain")
-	if player_gut:
-		GameHelper.register_player(player_gut)
-		if player_gut_start_position:
-			player_gut.global_position = player_gut_start_position.global_position
-		else:
-			push_warning("Player Gut: No start position found.")
-		
-		print("Registered Player Gut")
+	register_players()
 	
 	if dialog:
 		print("Dialog found")
@@ -75,3 +59,23 @@ func handle_dialog_finished() -> void:
 		play_dialogs()
 	else:
 		dialogs_played = true
+
+func register_players() -> void:
+	if player_brain:
+		GameHelper.register_player(player_brain)
+		if player_brain_start_position:
+			player_brain.global_position = player_brain_start_position.global_position
+		else:
+			push_warning("Player Brain: No start position found.")
+
+		player_brain.set_movement_target(player_brain.global_position)
+		print("Registered Player Brain")
+	if player_gut:
+		GameHelper.register_player(player_gut)
+		if player_gut_start_position:
+			player_gut.global_position = player_gut_start_position.global_position
+		else:
+			push_warning("Player Gut: No start position found.")
+		
+		player_gut.set_movement_target(player_gut.global_position)
+		print("Registered Player Gut")
