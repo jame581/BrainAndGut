@@ -4,6 +4,7 @@ class_name Player
 
 # export variables
 @export_category("Player")
+@export var character_type: Global.CharacterType = Global.CharacterType.BRAIN
 @export var movement_speed: float = 300.0
 @export var interaction_allowed: Global.InteractionAllowed = Global.InteractionAllowed.BOTH
 @export var player_index: int = 0
@@ -49,6 +50,10 @@ func actor_setup() -> void:
 
 	# Now that the navigation map is no longer empty, set the movement target.
 	set_movement_target(target_position)
+
+
+func get_character_type() -> Global.CharacterType:
+	return character_type
 
 
 func set_movement_target(movement_target: Vector2) -> void:
