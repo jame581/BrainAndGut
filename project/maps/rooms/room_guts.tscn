@@ -25,8 +25,9 @@ _data = {
 "waves": SubResource("Animation_yn0yu")
 }
 
-[node name="Room-Guts" type="Node2D" node_paths=PackedStringArray("dialog")]
+[node name="Room-Guts" type="Node2D" node_paths=PackedStringArray("player_gut_start_position", "dialog")]
 script = ExtResource("1_ylvpe")
+player_gut_start_position = NodePath("SpawnPoint")
 play_dialogs_on_start = true
 data_dialogs = Array[Dictionary]([{
 "audio": "res://assets/sounds/voices/lisa/Lisa Lines 4.wav",
@@ -78,3 +79,6 @@ dialog_text = "[center]This is really cool newspapers on table! You know right?[
 dialog_title = "Papers on table"
 writing_speed = 0.03
 show_instant = true
+
+[node name="SpawnPoint" type="Node2D" parent="."]
+position = Vector2(236, 0)
