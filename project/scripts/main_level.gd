@@ -20,13 +20,7 @@ func _ready():
 	if sublevels.size() > 0:
 		var first_sublevel = sublevels[first_sublevel_type]
 		activate_sublevel(first_sublevel)
-		
-		# var camera = first_sublevel.get_node("Camera2D")
-		# if camera as Camera2D:
-		# 	camera.make_current()
 
-	# if current_player_index < players.size():
-	# 	players[current_player_index].set_player_active(true)
 
 # Activate a given sublevel
 func activate_sublevel(sublevel: Sublevel) -> void:
