@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://fo30wpmou1rx"]
+[gd_scene load_steps=9 format=3 uid="uid://fo30wpmou1rx"]
 
 [ext_resource type="Script" path="res://scripts/sub_level.gd" id="1_63hxh"]
 [ext_resource type="PackedScene" uid="uid://mabpxtts6b0l" path="res://scenes/props/engine.tscn" id="2_yhvq1"]
 [ext_resource type="PackedScene" uid="uid://blrteg5ux6vja" path="res://scenes/props/door.tscn" id="6_r3kyx"]
 [ext_resource type="PackedScene" uid="uid://d07uu0bx20luu" path="res://scenes/props/button.tscn" id="7_1cbk6"]
-[ext_resource type="PackedScene" uid="uid://cc7ieadixdnpi" path="res://scenes/player.tscn" id="7_tbnbw"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_08l0f"]
 vertices = PackedVector2Array(357.508, 220.742, 297.039, 484.922, -1415.52, 469.211, -1142.86, 189.094)
@@ -47,23 +46,6 @@ position = Vector2(233, -26)
 
 [node name="Door" parent="Interactables" instance=ExtResource("6_r3kyx")]
 position = Vector2(-1292, 13)
-
-[node name="Player1" parent="." instance=ExtResource("7_tbnbw")]
-position = Vector2(-528, 19)
-interaction_allowed = 0
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player1"]
-simplify_path = true
-avoidance_enabled = true
-
-[node name="Player2" parent="." instance=ExtResource("7_tbnbw")]
-position = Vector2(-813, 28)
-interaction_allowed = 1
-player_index = 1
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player2"]
-simplify_path = true
-avoidance_enabled = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_08l0f")

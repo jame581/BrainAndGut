@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bf1q3fletbrbw"]
+[gd_scene load_steps=17 format=3 uid="uid://bf1q3fletbrbw"]
 
 [ext_resource type="Script" path="res://scripts/sub_level.gd" id="1_1q4go"]
 [ext_resource type="Texture2D" uid="uid://eaoc4osx1p5j" path="res://assets/bg-bullseye2.png" id="1_mf8ih"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://dnr8sf54nv8nd" path="res://assets/props/table-letter.png" id="7_c6w5g"]
 [ext_resource type="PackedScene" uid="uid://cpbupgumegnux" path="res://scenes/interaction_area.tscn" id="8_m44dk"]
 [ext_resource type="PackedScene" uid="uid://blrteg5ux6vja" path="res://scenes/props/door.tscn" id="9_m0mun"]
-[ext_resource type="PackedScene" uid="uid://cc7ieadixdnpi" path="res://scenes/player.tscn" id="10_bg4ig"]
 [ext_resource type="PackedScene" uid="uid://b2nhuw7nenoha" path="res://scenes/ui/dialog.tscn" id="12_xr0mj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ud5gc"]
@@ -174,25 +173,6 @@ shape = SubResource("RectangleShape2D_ud5gc")
 [node name="Door" parent="Interactables" instance=ExtResource("9_m0mun")]
 position = Vector2(674, 0)
 scale = Vector2(-1, 1)
-
-[node name="Player1" parent="." instance=ExtResource("10_bg4ig")]
-position = Vector2(120, 36)
-collision_layer = 2
-interaction_allowed = 0
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player1"]
-simplify_path = true
-avoidance_enabled = true
-
-[node name="Player2" parent="." instance=ExtResource("10_bg4ig")]
-position = Vector2(-262, 33)
-collision_layer = 4
-interaction_allowed = 1
-player_index = 1
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player2"]
-simplify_path = true
-debug_enabled = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(20, -229)

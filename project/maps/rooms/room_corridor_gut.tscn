@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bruckdjuw6skc"]
+[gd_scene load_steps=16 format=3 uid="uid://bruckdjuw6skc"]
 
 [ext_resource type="Script" path="res://scripts/sub_level.gd" id="1_8c2wp"]
 [ext_resource type="Texture2D" uid="uid://bl87335mqu1ic" path="res://assets/rooms/corridor/deck3.png" id="2_sqwan"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://7j8swqtocjfq" path="res://assets/rooms/corridor/light4.png" id="6_fjnwi"]
 [ext_resource type="Texture2D" uid="uid://b0tnts0w0gkbo" path="res://assets/rooms/corridor/light5.png" id="7_hdqcp"]
 [ext_resource type="Texture2D" uid="uid://djbe007jk1qqx" path="res://assets/rooms/corridor/light6.png" id="8_g0wfq"]
-[ext_resource type="PackedScene" uid="uid://cc7ieadixdnpi" path="res://scenes/player.tscn" id="9_vupm1"]
 [ext_resource type="Texture2D" uid="uid://bislrfchaocou" path="res://assets/rooms/corridor/right_lock.png" id="10_2qs5u"]
 [ext_resource type="PackedScene" uid="uid://d1b0tqy6ljrip" path="res://scenes/debris.tscn" id="10_38nuj"]
 [ext_resource type="Texture2D" uid="uid://cl456dsixgojw" path="res://assets/damaged/cracks-for-floor2.png" id="11_c5iy5"]
@@ -72,14 +71,6 @@ texture = ExtResource("10_2qs5u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.39, 0.39)
-
-[node name="Player1" parent="." instance=ExtResource("9_vupm1")]
-position = Vector2(865, 360)
-interaction_allowed = 1
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player1"]
-simplify_path = true
-avoidance_enabled = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_7umth")

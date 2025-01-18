@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dkv000xjdt377"]
+[gd_scene load_steps=17 format=3 uid="uid://dkv000xjdt377"]
 
 [ext_resource type="Script" path="res://scripts/sub_level.gd" id="1_3jgk4"]
 [ext_resource type="Texture2D" uid="uid://eaoc4osx1p5j" path="res://assets/bg-bullseye2.png" id="2_4vdw7"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://dnr8sf54nv8nd" path="res://assets/props/table-letter.png" id="8_i8px4"]
 [ext_resource type="PackedScene" uid="uid://cpbupgumegnux" path="res://scenes/interaction_area.tscn" id="9_pemm8"]
 [ext_resource type="PackedScene" uid="uid://blrteg5ux6vja" path="res://scenes/props/door.tscn" id="10_wlv3v"]
-[ext_resource type="PackedScene" uid="uid://cc7ieadixdnpi" path="res://scenes/player.tscn" id="11_4owkp"]
 [ext_resource type="PackedScene" uid="uid://b2nhuw7nenoha" path="res://scenes/ui/dialog.tscn" id="12_bjlnt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ud5gc"]
@@ -141,14 +140,6 @@ dialog_data = {
 }
 next_room = 1
 force_switch_sublevel = true
-
-[node name="Player1" parent="." instance=ExtResource("11_4owkp")]
-position = Vector2(-238, 36)
-interaction_allowed = 0
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player1"]
-simplify_path = true
-avoidance_enabled = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(20, -229)
