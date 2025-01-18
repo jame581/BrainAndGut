@@ -4,7 +4,7 @@ signal map_changed(new_map_path: String)
 
 var current_scene = null
 var current_path: String = ""
-var cursor_default = preload("res://assets/cursors/cursor_default.png")
+var cursor_default = preload("res://assets/sprites/cursors/cursor_default.png")
 
 var player_payload = null
 

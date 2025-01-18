@@ -5,9 +5,9 @@ class_name InteractionArea
 signal interacted()
 
 @export_category("Interaction Setup")
-@export var cursor_texture: Texture = preload("res://assets/cursors/cursor_interact.png")
+@export var cursor_texture: Texture = preload("res://assets/sprites/cursors/cursor_interact.png")
 @export var interaction_allowed: Global.InteractionAllowed = Global.InteractionAllowed.BOTH
-@export var sound_effect: AudioStream #= preload("res://assets/sounds/interact.wav")
+@export var sound_effect: AudioStream
 @export var player_animation: String
 
 @onready var audio_stream: AudioStreamPlayer = $AudioStreamPlayer

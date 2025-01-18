@@ -2,7 +2,7 @@ extends Node2D
 
 @export_category("Debris Setup")
 @export_subgroup("Interaction Setup")
-@export var cursor_texture: Texture = preload("res://assets/cursors/cursor_interact.png")
+@export var cursor_texture: Texture = preload("res://assets/sprites/cursors/cursor_interact.png")
 @export var interaction_allowed: Global.InteractionAllowed = Global.InteractionAllowed.BOTH
 @export var open_door: Node2D = null
 @export_subgroup("Dialog Setup")

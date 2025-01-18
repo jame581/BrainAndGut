@@ -27,6 +27,7 @@ func _enter_tree( ) -> void:
 	if main_level:
 		main_level.register_player(self)
 
+
 func _ready() -> void:
 	if not animation_player:
 		push_error("Player " + name + ": No AnimationPlayer node found.")
@@ -40,6 +41,7 @@ func _ready() -> void:
 
 	# Make sure to not await during _ready.
 	actor_setup.call_deferred()
+
 
 func actor_setup() -> void:
 	# Wait for the first physics frame so the NavigationServer can sync.

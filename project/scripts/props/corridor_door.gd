@@ -3,7 +3,7 @@ extends Node2D
 @export_category("Door Setup")
 @export var locked: bool = false
 @export_subgroup("Interaction Setup")
-@export var cursor_texture: Texture = preload("res://assets/cursors/cursor_interact.png")
+@export var cursor_texture: Texture = preload("res://assets/sprites/cursors/cursor_interact.png")
 @export var interaction_allowed: Global.InteractionAllowed = Global.InteractionAllowed.BOTH
 @export_subgroup("Dialog Setup")
 @export var dialog_on_interaction: Dialog = null
