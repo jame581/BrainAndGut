@@ -11,12 +11,20 @@ config_version=5
 [application]
 
 config/name="Brain and Gut"
-config/description="Brain and Gut is an engaging point-and-click adventure created in Godot for the GoedWare Game Jam. Immerse yourself in a world where intellect and instinct collide as you solve intricate puzzles and navigate through captivating scenes. With a limited color palette, experience a visually striking journey that challenges your problem-solving skills and intuition."
+config/description="Step into the shoes of a survivor in \"Brain and Gut,\" a thrilling 2D point-and-click adventure. Navigate through the wreckage and solve intricate puzzles. Use your wit and strength to overcome challenges and piece together the story of what happened.
+
+Credits:
+- Art: Meru, Kaya
+- Composer: Meru
+- Game Design: Meru, Me, Jakub.Hubacek
+- Voice Actors: The Honourable Fish as Jack, ZoraLune as Lisa"
 config/version="0.0.3"
+config/tags=PackedStringArray("2d", "point_and_click")
 run/main_scene="res://maps/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 run/max_fps=60
 boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="res://assets/sprites/cover_art.png"
 config/icon="res://icon.svg"
 
 [autoload]
