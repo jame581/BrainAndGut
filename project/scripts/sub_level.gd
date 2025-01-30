@@ -14,9 +14,11 @@ class_name Sublevel
 
 var dialogs_played: bool = false
 var dialog_index: int = 0
+var sub_level_active: bool = false
 
 # Activate the sublevel
 func activate() -> void:
+	sub_level_active = true
 	dialog_index = 0
 	dialogs_played = false
 	var camera = $Camera2D
@@ -33,8 +35,10 @@ func activate() -> void:
 		if play_dialogs_on_start and not dialogs_played:
 			play_dialogs()
 
+
 # Deactivate the sublevel
 func deactivate() -> void:
+	sub_level_active = false
 	dialog_index = 0
 	dialogs_played = false
 	
@@ -42,15 +46,15 @@ func deactivate() -> void:
 		dialog.dialog_finished.disconnect(handle_dialog_finished)
 		dialog.imidiately_hide_dialog()
 	
-	if player_brain:
-		player_brain.set_player_active(false)
-	if player_gut:
-		player_gut.set_player_active(false)
+	set_players_active(false)
 
 
 func play_dialogs() -> void:
 	if not data_dialogs.is_empty() or dialog_index < data_dialogs.size():
-		dialog.show_dialog(data_dialogs[dialog_index]) 
+		dialog.show_dialog(data_dialogs[dialog_index])
+		set_players_active(false)
+		print("Playing dialog: ", dialog_index)
+		print("Sub level " + name + ": Players are inactive")
 
 
 func handle_dialog_finished() -> void:
@@ -59,6 +63,16 @@ func handle_dialog_finished() -> void:
 		play_dialogs()
 	else:
 		dialogs_played = true
+		set_players_active(true)
+		print("Players are active")
+
+
+func set_players_active(active: bool) -> void:
+	if player_brain:
+		player_brain.set_player_active(active)
+	if player_gut:
+		player_gut.set_player_active(active)
+
 
 func register_players() -> void:
 	if player_brain:

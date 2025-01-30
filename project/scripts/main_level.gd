@@ -31,8 +31,8 @@ func activate_sublevel(sublevel: Sublevel) -> void:
 
 		players.clear()
 		active_level = sublevel
-		sublevel.activate()
 		reactivate_players()
+		sublevel.activate()
 
 	else:
 		print("MainLevel: Sublevel is null.")	
@@ -50,7 +50,7 @@ func switch_sublevel(sublevel_type: SUBLEVELS):
 # Reactivate all players
 func reactivate_players():
 	current_player_index = 0
-
+	print("MainLevel: Reactivating players")
 	for player in players:
 		player.set_player_active(false)
 

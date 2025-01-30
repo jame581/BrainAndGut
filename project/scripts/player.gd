@@ -62,10 +62,12 @@ func set_movement_target(movement_target: Vector2) -> void:
 
 
 func set_player_active(active: bool) -> void:
+	print("Player " + name + " is active: ", active)
 	player_is_active = active
 
 
 func _input(event: InputEvent) -> void:
+	#print("Player " + name + " input: player_is_active: ", player_is_active)
 	if player_is_active and event.is_action_pressed("click"):
 		Global.player_payload = null
 		target_position = get_global_mouse_position()
