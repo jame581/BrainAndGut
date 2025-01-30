@@ -20,8 +20,9 @@ vertices = PackedVector2Array(812.258, -79.1094, 1334.39, 792.078, -865.859, 802
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(1352, 802, -894, 813, 221, -101, 818, -89)])
 
-[node name="Room-Corridor-Gut" type="Node2D" node_paths=PackedStringArray("dialog")]
+[node name="Room-Corridor-Gut" type="Node2D" node_paths=PackedStringArray("player_gut_start_position", "dialog")]
 script = ExtResource("1_8c2wp")
+player_gut_start_position = NodePath("SpawnPosition")
 play_dialogs_on_start = true
 data_dialogs = Array[Dictionary]([{
 "audio": "res://assets/sounds/voices/jack/Jack Lines 1.wav",
@@ -106,3 +107,6 @@ position = Vector2(10, -2)
 locked = true
 next_room = 0
 force_switch_sublevel = true
+
+[node name="SpawnPosition" type="Node2D" parent="."]
+position = Vector2(1032, 596)

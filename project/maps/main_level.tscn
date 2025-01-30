@@ -42,8 +42,9 @@ position = Vector2(-3450, -656)
 [node name="Room-Engine" parent="Rooms" instance=ExtResource("6_1gwkk")]
 position = Vector2(3770, -653)
 
-[node name="Room-Corridor-Gut" parent="Rooms" instance=ExtResource("7_by7cb")]
+[node name="Room-Corridor-Gut" parent="Rooms" node_paths=PackedStringArray("player_gut") instance=ExtResource("7_by7cb")]
 position = Vector2(0, 2356)
+player_gut = NodePath("../../Gut")
 
 [node name="Room-Brain-Begin" parent="Rooms" node_paths=PackedStringArray("player_brain") instance=ExtResource("8_tyedl")]
 position = Vector2(-2959, 2032)
