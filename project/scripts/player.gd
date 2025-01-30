@@ -78,6 +78,10 @@ func _physics_process(_delta: float) -> void:
 		play_animation()
 		return
 	
+	# Check if the navigation map is ready
+	if NavigationServer2D.map_get_iteration_id(navigation_agent.get_navigation_map()) == 0:
+		return
+
 	if navigation_agent.is_navigation_finished():
 		velocity = Vector2.ZERO
 		play_animation()

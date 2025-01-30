@@ -8,9 +8,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vksrd"]
 size = Vector2(359, 814)
 
-[sub_resource type="Animation" id="Animation_de0rs"]
-resource_name = "idle"
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_irodo"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -54,14 +53,15 @@ tracks/3/path = NodePath("Sprite2D:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.11, 0.22, 0.33, 0.44, 0.55, 0.66, 0.77, 0.88),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+"values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_kf41p"]
-resource_name = "walk"
+[sub_resource type="Animation" id="Animation_de0rs"]
+resource_name = "idle"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -72,7 +72,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_gknss")]
+"values": [ExtResource("2_30sn2")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -162,8 +162,8 @@ tracks/3/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
 
-[sub_resource type="Animation" id="Animation_irodo"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_kf41p"]
+resource_name = "walk"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -174,7 +174,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_30sn2")]
+"values": [ExtResource("3_gknss")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -207,10 +207,10 @@ tracks/3/path = NodePath("Sprite2D:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.11, 0.22, 0.33, 0.44, 0.55, 0.66, 0.77, 0.88),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gfkmh"]
