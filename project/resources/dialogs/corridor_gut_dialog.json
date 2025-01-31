@@ -1,0 +1,22 @@
+{
+    "dialogs": [
+        {
+            "audio": "res://assets/sounds/voices/jack/Jack Lines 1.wav",
+            "audio_volume": 1,
+            "show_instant": false,
+            "text": "Lisa!! It's me - Jack! Wait a moment. Ill get you out of there!",
+            "title": "Jack",
+            "wait_time": 4,
+            "write_speed": 0.05
+        },
+        {
+            "audio": "res://assets/sounds/voices/lisa/Lisa Lines 5.wav",
+            "audio_volume": 1,
+            "show_instant": false,
+            "text": "Hello, I need help!!!",
+            "title": "Lisa",
+            "wait_time": 4,
+            "write_speed": 0.05
+        }
+    ]
+}

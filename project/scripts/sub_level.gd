@@ -9,8 +9,9 @@ class_name Sublevel
 @export var player_gut_start_position: Node2D = null
 @export_subgroup("Dialogs Setup")
 @export var play_dialogs_on_start: bool = false
-@export var data_dialogs: Array[Dictionary] = []
+@export var data_dialogs: Array = []
 @export var dialog: Dialog = null
+@export_file("*.json") var dialog_text_file
 
 var dialogs_played: bool = false
 var dialog_index: int = 0
@@ -21,16 +22,20 @@ func activate() -> void:
 	sub_level_active = true
 	dialog_index = 0
 	dialogs_played = false
+	
 	var camera = $Camera2D
 	if camera as Camera2D:
 		camera.make_current()
 	
 	print("Activated sublevel : ", get_name())
-
 	register_players()
 	
 	if dialog:
-		print("Dialog found")
+		if dialog_text_file:
+			parse_json()
+		else:
+			push_warning("No dialog text file found.")
+		
 		dialog.dialog_finished.connect(handle_dialog_finished)
 		if play_dialogs_on_start and not dialogs_played:
 			play_dialogs()
@@ -93,3 +98,24 @@ func register_players() -> void:
 		
 		player_gut.set_movement_target(player_gut.global_position)
 		print("Registered Player Gut")
+
+
+func parse_json() -> void:
+
+	var file_content = load_dialog_text()
+	var json = JSON.new()
+	var error = json.parse(file_content)
+	var dialog_data_json : Dictionary
+
+	if error != OK:
+		push_error("Error parsing JSON")
+	else:
+		dialog_data_json = json.get_data()
+		data_dialogs = dialog_data_json["dialogs"]
+
+
+func load_dialog_text() -> String:
+	var file = FileAccess.open(dialog_text_file, FileAccess.READ)
+	var content = file.get_as_text()
+	file.close()
+	return content

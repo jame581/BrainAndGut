@@ -1,0 +1,22 @@
+{
+    "dialogs": [
+        {
+            "audio": "res://assets/sounds/voices/lisa/Lisa Lines 14.wav",
+            "audio_volume": 1,
+            "show_instant": false,
+            "text": "We have no power... We should get it back up and then try to send an SOS.",
+            "title": "Lisa",
+            "wait_time": 7,
+            "write_speed": 0.05
+        },
+        {
+            "audio": "res://assets/sounds/voices/lisa/Lisa Lines 21.wav",
+            "audio_volume": 1,
+            "show_instant": false,
+            "text": "Engine and Generator are both down it seems... We need to repair them both before we can send a mayday.",
+            "title": "Lisa",
+            "wait_time": 8.5,
+            "write_speed": 0.05
+        }
+    ]
+}

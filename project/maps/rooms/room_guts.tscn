@@ -29,15 +29,6 @@ _data = {
 script = ExtResource("1_ylvpe")
 player_gut_start_position = NodePath("SpawnPoint")
 play_dialogs_on_start = true
-data_dialogs = Array[Dictionary]([{
-"audio": "res://assets/sounds/voices/lisa/Lisa Lines 4.wav",
-"audio_volume": 1.0,
-"show_instant": false,
-"text": "Hello??!! Is anybody there?",
-"title": "Lisa",
-"wait_time": 2.0,
-"writing_speed": 0.05
-}])
 dialog = NodePath("CanvasLayer/Dialog")
 
 [node name="Art" type="Node2D" parent="."]

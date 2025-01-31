@@ -1,0 +1,13 @@
+{
+    "dialogs": [
+        {
+            "audio": "res://assets/sounds/voices/lisa/Lisa Lines 4.wav",
+            "audio_volume": 1,
+            "show_instant": false,
+            "text": "Hello??!! Is anybody there?",
+            "title": "Lisa",
+            "wait_time": 2,
+            "write_speed": 0.05
+        }
+    ]
+}
