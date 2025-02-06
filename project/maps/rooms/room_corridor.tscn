@@ -44,12 +44,14 @@ texture = ExtResource("7_k5sbf")
 zoom = Vector2(0.4, 0.4)
 
 [node name="CorridorDoorSmaller2" parent="." instance=ExtResource("10_4td0b")]
+interaction_allowed = 0
 next_room = 4
 
 [node name="CorridorDoorSmaller3" parent="." instance=ExtResource("10_4td0b")]
 position = Vector2(838, 0)
 rotation = 3.14159
 scale = Vector2(1, -1)
+interaction_allowed = 1
 next_room = 3
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]

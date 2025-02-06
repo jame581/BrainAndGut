@@ -73,7 +73,7 @@ player_gut = NodePath("../../Gut")
 player_gut_start_position = NodePath("GutStartPosition")
 
 [node name="GutStartPosition" type="Node2D" parent="Rooms/Room-Engine"]
-position = Vector2(-870, 0)
+position = Vector2(-874, 0)
 
 [node name="Room-Corridor-Gut" parent="Rooms" node_paths=PackedStringArray("player_gut") instance=ExtResource("7_by7cb")]
 position = Vector2(0, 2356)
