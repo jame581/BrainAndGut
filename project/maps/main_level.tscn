@@ -26,7 +26,6 @@ player_brain = NodePath("../../Brain")
 player_brain_start_position = NodePath("BrainStartPosition")
 player_gut = NodePath("../../Gut")
 player_gut_start_position = NodePath("GutStartPosition")
-data_dialogs = Array[Dictionary]([])
 dialog_text_file = "res://resources/dialogs/corridor_dialog.json"
 
 [node name="LeftLock" type="Sprite2D" parent="Rooms/Room-Corridor"]
@@ -47,7 +46,6 @@ player_brain = NodePath("../../Brain")
 player_brain_start_position = NodePath("BrainStartPosition")
 player_gut = NodePath("../../Gut")
 player_gut_start_position = NodePath("GutStartPosition")
-data_dialogs = Array[Dictionary]([])
 dialog_text_file = "res://resources/dialogs/brain_dialog.json"
 
 [node name="BrainStartPosition" type="Node2D" parent="Rooms/Room-Brain"]
@@ -59,7 +57,6 @@ position = Vector2(344, 204)
 [node name="Room-Guts" parent="Rooms" node_paths=PackedStringArray("player_gut") instance=ExtResource("4_36851")]
 position = Vector2(3151, 968)
 player_gut = NodePath("../../Gut")
-data_dialogs = Array[Dictionary]([])
 dialog_text_file = "res://resources/dialogs/gut_dialog.json"
 
 [node name="Room-Control" parent="Rooms" instance=ExtResource("5_0nfsp")]
@@ -71,13 +68,11 @@ position = Vector2(3770, -653)
 [node name="Room-Corridor-Gut" parent="Rooms" node_paths=PackedStringArray("player_gut") instance=ExtResource("7_by7cb")]
 position = Vector2(0, 2356)
 player_gut = NodePath("../../Gut")
-data_dialogs = Array[Dictionary]([])
 dialog_text_file = "res://resources/dialogs/corridor_gut_dialog.json"
 
 [node name="Room-Brain-Begin" parent="Rooms" node_paths=PackedStringArray("player_brain") instance=ExtResource("8_tyedl")]
 position = Vector2(-2959, 2032)
 player_brain = NodePath("../../Brain")
-data_dialogs = Array[Dictionary]([])
 dialog_text_file = "res://resources/dialogs/brain_begin_dialog.json"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

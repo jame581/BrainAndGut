@@ -19,7 +19,7 @@
             "write_speed": 0.05
         },
         {
-            
+            "audio": "res://assets/sounds/voices/male_mumble.wav",
             "audio_volume": 1,
             "show_instant": false,
             "text": "I'm fine.",
@@ -28,6 +28,7 @@
             "write_speed": 0.05
         },
         {
+            "audio": "res://assets/sounds/voices/woman_blabla.wav",
             "audio_volume": 1,
             "show_instant": false,
             "text": "What happened?",
@@ -36,11 +37,30 @@
             "write_speed": 0.05
         },
         {
+            "audio": "res://assets/sounds/voices/jack/Jack Line 2.wav",
             "audio_volume": 1,
             "show_instant": false,
             "text": "I think... the ship had a crash...",
             "title": "Jack",
             "wait_time": 4,
+            "write_speed": 0.05
+        },
+        {
+            "audio": "res://assets/sounds/voices/woman_blabla.wav",
+            "audio_volume": 1,
+            "show_instant": false,
+            "text": "Are we... the only survivors..?",
+            "title": "Lisa",
+            "wait_time": 3.5,
+            "write_speed": 0.05
+        },
+        {
+            "audio": "res://assets/sounds/voices/woman_blabla.wav",
+            "audio_volume": 1,
+            "show_instant": false,
+            "text": "Jack... I'm scared...",
+            "title": "Lisa",
+            "wait_time": 3,
             "write_speed": 0.05
         },
         {
@@ -69,7 +89,15 @@
             "title": "Lisa",
             "wait_time": 5,
             "write_speed": 0.05
+        },
+        {
+            "audio": "res://assets/sounds/voices/male_mumble.wav",
+            "audio_volume": 1,
+            "show_instant": false,
+            "text": "Let me help.",
+            "title": "Jack",
+            "wait_time": 3,
+            "write_speed": 0.05
         }
-
     ]
 }

@@ -31,6 +31,9 @@ All graphics, sounds and music assets were created by:
 Voice actors:
 * Voice Actors: The Honourable Fish as Jack, ZoraLune as Lisa
 
+* [Human_Male_Mumble_Short_1.wav by SilentStrikeZ](https://freesound.org/s/389644/) -- License: Creative Commons 0
+* [Woman saying: blah blah blah (louder) by Nanny3Pups](https://freesound.org/s/727347/) -- License: Creative Commons 0
+
 ## Team
 
 - [**Jan Mesarč**: Programmer](https://janmesarc.online/)
