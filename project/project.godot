@@ -75,7 +75,7 @@ renderer/rendering_method.mobile="gl_compatibility"
 
 first_puzzle_solved={
 "type": "bool",
-"value": true
+"value": false
 }
 second_puzzle_solved={
 "type": "bool",

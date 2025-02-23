@@ -30,7 +30,6 @@ void fragment() {
 
 	vec2 offset = direction * time_offset;
 
-	// floor rounds down to the nearest integer, without it there would be gradient effect
 	pos = floor(pos + offset);
 
 	float x_pattern = mod(pos.x, 2) * direction_x;
