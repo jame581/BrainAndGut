@@ -23,6 +23,13 @@ func _ready():
 
 	Global.map_changed.connect(handle_map_changed)
 
+	# await get_tree().create_timer(3.0).timeout
+	# RenderingServer.global_shader_parameter_set("first_puzzle_solved", 1.0)
+	# await get_tree().create_timer(3.0).timeout
+	# RenderingServer.global_shader_parameter_set("second_puzzle_solved", 1.0)
+	# await get_tree().create_timer(3.0).timeout
+
+
 # Setup the main level
 func setup_main_level() -> void:
 	main_level = get_tree().root.get_node_or_null("MainLevel")
