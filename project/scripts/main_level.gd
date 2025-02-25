@@ -15,11 +15,15 @@ enum CHARACTERS { BRAIN, GUTS }
 @export var sublevels: Array[Sublevel] = []
 @export var first_sublevel_type: SUBLEVELS = SUBLEVELS.BRAIN_BEGINING
 
+@onready var switch_button_texture: TextureRect = $CanvasLayer/TextureRect
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if sublevels.size() > 0:
 		var first_sublevel = sublevels[first_sublevel_type]
 		activate_sublevel(first_sublevel)
+	
+	switch_button_texture.visible = false;
 
 
 # Activate a given sublevel
@@ -41,6 +45,9 @@ func activate_sublevel(sublevel: Sublevel) -> void:
 func register_player(player):
 	players.append(player)
 
+	if players.size() > 1:
+		switch_button_texture.visible = true
+
 # Switch to a different sublevel
 func switch_sublevel(sublevel_type: SUBLEVELS):
 	print("Switching to sublevel: ", sublevel_type)
@@ -56,6 +63,9 @@ func reactivate_players():
 
 	if players.size() > 0:
 		players[current_player_index].set_player_active(true)
+	
+	if players.size() > 1:
+		switch_button_texture.visible = true
 
 # Switches the current character to another character in the game.
 func switch_character():
@@ -76,6 +86,6 @@ func _input(event: InputEvent) -> void:
 		GameHelper.switch_sublevel(current_sublevel_index)
 
 
-func _on_button_pressed() -> void:
+func _on_switch_player_button_pressed() -> void:
 	GameHelper.switch_character()
-	print("MainLevel: Button pressed")
+	print("MainLevel: switch player button pressed")

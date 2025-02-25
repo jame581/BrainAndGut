@@ -93,7 +93,7 @@ offset_bottom = 1024.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("9_g51ab")
 
-[node name="Button" type="Button" parent="CanvasLayer/TextureRect"]
+[node name="SwitchPlayerButton" type="Button" parent="CanvasLayer/TextureRect"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 258.0
@@ -112,4 +112,4 @@ interaction_allowed = 1
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Gut"]
 
-[connection signal="pressed" from="CanvasLayer/TextureRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureRect/SwitchPlayerButton" to="." method="_on_switch_player_button_pressed"]
