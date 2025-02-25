@@ -20,15 +20,18 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var interaction_area: InteractionArea = $InteractionArea
 
+var registred_to_dialog: bool = false
+
 func _ready() -> void:
 	interaction_area.cursor_texture = cursor_texture
 	interaction_area.interaction_allowed = interaction_allowed
 
 func _on_interaction_area_interacted() -> void:
 	print("FIRE DEBUG: Interaction with debris")
-	if dialog_on_interaction:
+	if dialog_on_interaction and not registred_to_dialog:
 		dialog_on_interaction.dialog_finished.connect(_dialog_finished)
 		dialog_on_interaction.show_dialog(dialog_data)
+		registred_to_dialog = true
 	else:
 		animation_player.play("destroy")
 		if open_door:
