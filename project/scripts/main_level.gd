@@ -50,9 +50,11 @@ func register_player(player):
 
 # Switch to a different sublevel
 func switch_sublevel(sublevel_type: SUBLEVELS):
+	await Global.play_fade_in()
 	print("Switching to sublevel: ", sublevel_type)
 	var next_sublevel = sublevels[sublevel_type]
 	activate_sublevel(next_sublevel)
+	await Global.play_fade_out()
 
 # Reactivate all players
 func reactivate_players():
