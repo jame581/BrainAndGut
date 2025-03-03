@@ -51,13 +51,13 @@ func deactivate() -> void:
 		dialog.dialog_finished.disconnect(handle_dialog_finished)
 		dialog.imidiately_hide_dialog()
 	
-	set_players_active(false)
+	deactivate_players()
 
 
 func play_dialogs() -> void:
 	if not data_dialogs.is_empty() or dialog_index < data_dialogs.size():
 		dialog.show_dialog(data_dialogs[dialog_index])
-		set_players_active(false)
+		deactivate_players()
 		print("Playing dialog: ", dialog_index)
 		print("Sub level " + name + ": Players are inactive")
 
@@ -68,14 +68,19 @@ func handle_dialog_finished() -> void:
 		play_dialogs()
 	else:
 		dialogs_played = true
-		set_players_active(true)
+		set_player_active(true)
 		print("Players are active")
 
+func deactivate_players() -> void:
+	if player_brain:
+		player_brain.set_player_active(false)
+	if player_gut:
+		player_gut.set_player_active(false)
 
-func set_players_active(active: bool) -> void:
+func set_player_active(active: bool) -> void:
 	if player_brain:
 		player_brain.set_player_active(active)
-	if player_gut:
+	elif player_gut:
 		player_gut.set_player_active(active)
 
 
