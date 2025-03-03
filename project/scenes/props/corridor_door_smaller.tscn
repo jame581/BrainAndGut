@@ -53,13 +53,12 @@ texture = ExtResource("2_oem5e")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_r51ik")
+&"": SubResource("AnimationLibrary_r51ik")
 }
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_ewehn")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(-247.5, -43.75)
 shape = SubResource("RectangleShape2D_uwu60")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

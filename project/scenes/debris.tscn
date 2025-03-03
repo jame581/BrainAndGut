@@ -51,7 +51,7 @@ texture = ExtResource("1_twsog")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_321bu")
+&"": SubResource("AnimationLibrary_321bu")
 }
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_k0vcc")]

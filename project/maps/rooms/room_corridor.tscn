@@ -149,14 +149,14 @@ texture = ExtResource("12_kk2mf")
 zoom = Vector2(0.4, 0.4)
 
 [node name="CorridorDoorSmaller2" parent="." instance=ExtResource("10_4td0b")]
+position = Vector2(-237, -46)
 interaction_allowed = 0
 next_room = 4
 
 [node name="CorridorDoorSmaller3" parent="." instance=ExtResource("10_4td0b")]
-position = Vector2(838, 0)
+position = Vector2(1043, 31)
 rotation = 3.14159
 scale = Vector2(1, -1)
-cursor_texture = ExtResource("14_4wkwk")
 interaction_allowed = 1
 next_room = 3
 

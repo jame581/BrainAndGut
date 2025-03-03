@@ -31,13 +31,13 @@ func _on_mouse_entered() -> void:
 
 
 func interact(body:Node2D) -> void:
-	print("FIRE DEBUG: InteractionArea interact()")
 	if body is CharacterBody2D:
 		if body.interaction_allowed == interaction_allowed or interaction_allowed == Global.InteractionAllowed.BOTH:
-			print("FIRE DEBUG: Character interacted")
+			print("InteractionArea: interacted with " + body.name)
 			emit_signal("interacted")
 
 
 func _on_input_event(_viewport:Node, event:InputEvent, _shape_idx:int) -> void:
 	if event is InputEventMouseButton and Input.is_action_just_pressed("click"):
 		Global.player_clicked_on_interacted(self)
+		print("InteractionArea _on_input_event() - Global player clicked on interacted")

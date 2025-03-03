@@ -86,10 +86,9 @@ writing_speed = 0.03
 show_instant = true
 
 [node name="CorridorDoor" parent="." instance=ExtResource("14_qm0i1")]
-position = Vector2(10, -2)
+position = Vector2(-829, 474)
 locked = true
 next_room = 0
-force_switch_sublevel = true
 
 [node name="SpawnPosition" type="Node2D" parent="."]
-position = Vector2(1032, 596)
+position = Vector2(970, 549)

@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://dawdndhy5pp3e" path="res://scenes/characters/gut.tscn" id="13_xucwh"]
 
 [node name="MainLevel" type="Node2D" node_paths=PackedStringArray("sublevels")]
-position = Vector2(-9, -3)
 script = ExtResource("1_johgq")
 sublevels = [NodePath("Rooms/Room-Brain"), NodePath("Rooms/Room-Guts"), NodePath("Rooms/Room-Corridor"), NodePath("Rooms/Room-Engine"), NodePath("Rooms/Room-Control"), NodePath("Rooms/Room-Corridor-Gut"), NodePath("Rooms/Room-Brain-Begin")]
 
@@ -103,12 +102,14 @@ button_mask = 3
 [node name="Brain" parent="." instance=ExtResource("12_f1qhn")]
 position = Vector2(-226, 0)
 interaction_allowed = 0
+interaction_distance = 350.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Brain"]
 
 [node name="Gut" parent="." instance=ExtResource("13_xucwh")]
 character_type = 1
 interaction_allowed = 1
+interaction_distance = 350.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Gut"]
 

@@ -8,7 +8,7 @@ class_name Player
 @export var movement_speed: float = 300.0
 @export var interaction_allowed: Global.InteractionAllowed = Global.InteractionAllowed.BOTH
 @export var player_index: int = 0
-@export var interaction_distance: float = 100.0
+@export var interaction_distance: float = 250.0
 
 # load on ready variables
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -88,8 +88,15 @@ func _physics_process(_delta: float) -> void:
 		velocity = Vector2.ZERO
 		play_animation()
 		if Global.player_payload:
-			Global.player_payload.interact(self)
-			Global.player_payload = null
+			# check if player is in interaction distance
+			print("Player " + name + " is in location: ", global_position)
+			print("Player payload is in global_position: ", Global.player_payload.global_position)
+			print("Player payload is in position: ", Global.player_payload.position)
+			print("Player " + name + " is in interaction distance: ", global_position.distance_to(Global.player_payload.global_position))
+			if global_position.distance_to(Global.player_payload.global_position) < interaction_distance:
+				Global.player_payload.interact(self)
+				print("Player " + name + " is interacting with: ", Global.player_payload)
+				Global.player_payload = null
 		return
 	
 	var current_agent_position: Vector2 = global_position
