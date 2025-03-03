@@ -107,6 +107,8 @@ interaction_distance = 350.0
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Brain"]
 
 [node name="Gut" parent="." instance=ExtResource("13_xucwh")]
+collision_layer = 2
+collision_mask = 2
 character_type = 1
 interaction_allowed = 1
 interaction_distance = 350.0
