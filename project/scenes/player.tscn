@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://cc7ieadixdnpi"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_0jg2f"]
+[ext_resource type="Script" uid="uid://digku0lx4kcax" path="res://scripts/player.gd" id="1_0jg2f"]
 [ext_resource type="Texture2D" uid="uid://de52db26dxbvn" path="res://assets/sprites/characters/gut/guts-walking.png" id="2_lfc3k"]
 [ext_resource type="Texture2D" uid="uid://c7hwijveneq7h" path="res://assets/sprites/characters/brain/brain-idle.png" id="3_6v36v"]
 [ext_resource type="Texture2D" uid="uid://bflaev8iocvih" path="res://assets/sprites/characters/brain/brain-walking.png" id="4_ytyfr"]
@@ -218,10 +218,10 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2hifw"]
 _data = {
-"RESET": SubResource("Animation_vch2d"),
-"idle": SubResource("Animation_0dqw3"),
-"think": SubResource("Animation_k2x3k"),
-"walk": SubResource("Animation_4shul")
+&"RESET": SubResource("Animation_vch2d"),
+&"idle": SubResource("Animation_0dqw3"),
+&"think": SubResource("Animation_k2x3k"),
+&"walk": SubResource("Animation_4shul")
 }
 
 [sub_resource type="Animation" id="Animation_armgk"]
@@ -430,10 +430,10 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wmfqv"]
 _data = {
-"RESET": SubResource("Animation_armgk"),
-"idle": SubResource("Animation_inrev"),
-"punch": SubResource("Animation_nng0a"),
-"walk": SubResource("Animation_y4lkx")
+&"RESET": SubResource("Animation_armgk"),
+&"idle": SubResource("Animation_inrev"),
+&"punch": SubResource("Animation_nng0a"),
+&"walk": SubResource("Animation_y4lkx")
 }
 
 [node name="Player" type="CharacterBody2D"]

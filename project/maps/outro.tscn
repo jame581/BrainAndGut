@@ -38,8 +38,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7xhcy"]
 _data = {
-"RESET": SubResource("Animation_n858i"),
-"helicopter": SubResource("Animation_clesl")
+&"RESET": SubResource("Animation_n858i"),
+&"helicopter": SubResource("Animation_clesl")
 }
 
 [node name="Node2D" type="Node2D"]

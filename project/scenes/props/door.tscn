@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://blrteg5ux6vja"]
 
-[ext_resource type="Script" path="res://scripts/props/door.gd" id="1_m3mjq"]
+[ext_resource type="Script" uid="uid://ckx7lysh0l782" path="res://scripts/props/door.gd" id="1_m3mjq"]
 [ext_resource type="Texture2D" uid="uid://ce3ae1qn4nrgm" path="res://assets/sprites/props/door-open-animation.png" id="2_1xybd"]
 [ext_resource type="PackedScene" uid="uid://cpbupgumegnux" path="res://scenes/interaction_area.tscn" id="3_lu6yc"]
 
@@ -176,9 +176,9 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lnqd7"]
 _data = {
-"RESET": SubResource("Animation_b0g7i"),
-"close_door": SubResource("Animation_4b57u"),
-"open_door": SubResource("Animation_c6o1j")
+&"RESET": SubResource("Animation_b0g7i"),
+&"close_door": SubResource("Animation_4b57u"),
+&"open_door": SubResource("Animation_c6o1j")
 }
 
 [node name="Door" type="Node2D"]

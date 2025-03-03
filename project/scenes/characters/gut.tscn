@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dawdndhy5pp3e"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_peeam"]
+[ext_resource type="Script" uid="uid://digku0lx4kcax" path="res://scripts/player.gd" id="1_peeam"]
 [ext_resource type="Texture2D" uid="uid://7bxyrl2wiv6b" path="res://assets/sprites/characters/gut/guts-idle.png" id="2_30sn2"]
 [ext_resource type="Texture2D" uid="uid://de52db26dxbvn" path="res://assets/sprites/characters/gut/guts-walking.png" id="3_gknss"]
 [ext_resource type="Texture2D" uid="uid://djatohhkjoonm" path="res://assets/sprites/characters/gut/guts-punch.png" id="3_pxdh0"]
@@ -215,10 +215,10 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gfkmh"]
 _data = {
-"RESET": SubResource("Animation_irodo"),
-"idle": SubResource("Animation_de0rs"),
-"punch": SubResource("Animation_s2ab2"),
-"walk": SubResource("Animation_kf41p")
+&"RESET": SubResource("Animation_irodo"),
+&"idle": SubResource("Animation_de0rs"),
+&"punch": SubResource("Animation_s2ab2"),
+&"walk": SubResource("Animation_kf41p")
 }
 
 [node name="Gut" type="CharacterBody2D"]

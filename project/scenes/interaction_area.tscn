@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cpbupgumegnux"]
 
-[ext_resource type="Script" path="res://scripts/components/interaction_area.gd" id="1_by64v"]
+[ext_resource type="Script" uid="uid://48ep4je6bbh6" path="res://scripts/components/interaction_area.gd" id="1_by64v"]
 
 [node name="InteractionArea" type="Area2D"]
 script = ExtResource("1_by64v")

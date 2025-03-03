@@ -53,8 +53,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nsu3t"]
 _data = {
-"RESET": SubResource("Animation_u1udo"),
-"waves": SubResource("Animation_yn0yu")
+&"RESET": SubResource("Animation_u1udo"),
+&"waves": SubResource("Animation_yn0yu")
 }
 
 [node name="Room1" type="Node2D"]

@@ -178,8 +178,8 @@ tracks/6/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rl804"]
 _data = {
-"RESET": SubResource("Animation_sw5cg"),
-"intro_start": SubResource("Animation_msfbg")
+&"RESET": SubResource("Animation_sw5cg"),
+&"intro_start": SubResource("Animation_msfbg")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xa5qu"]
@@ -220,7 +220,7 @@ wait_for_input = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_rl804")
+&"": SubResource("AnimationLibrary_rl804")
 }
 autoplay = "intro_start"
 

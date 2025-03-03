@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c6il3oahldobd" path="res://assets/sprites/rooms/engine/engine-room.png" id="1_cb288"]
 [ext_resource type="Texture2D" uid="uid://baqjlx5sem44c" path="res://assets/sprites/rooms/engine/engine-room-shaft.png" id="2_5ldjl"]
-[ext_resource type="Script" path="res://scripts/props/engine.gd" id="2_5nb1m"]
+[ext_resource type="Script" uid="uid://bn0wjymfqfior" path="res://scripts/props/engine.gd" id="2_5nb1m"]
 [ext_resource type="Texture2D" uid="uid://b2vy4qkojdhd5" path="res://assets/sprites/rooms/engine/engine-room-picture.png" id="3_53awu"]
 [ext_resource type="Texture2D" uid="uid://c0umhb7ob5wr4" path="res://assets/sprites/rooms/engine/engine-room-engine.png" id="4_vxft7"]
 [ext_resource type="Texture2D" uid="uid://n6gqd6whjvj3" path="res://assets/sprites/rooms/engine/engine-room-pump.png" id="5_o40tf"]
@@ -41,8 +41,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8p775"]
 _data = {
-"RESET": SubResource("Animation_1sall"),
-"running": SubResource("Animation_clgm2")
+&"RESET": SubResource("Animation_1sall"),
+&"running": SubResource("Animation_clgm2")
 }
 
 [node name="Engine-room" type="Sprite2D"]

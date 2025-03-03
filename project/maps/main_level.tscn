@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://daa1361hp5l03"]
 
-[ext_resource type="Script" path="res://scripts/main_level.gd" id="1_johgq"]
+[ext_resource type="Script" uid="uid://bpsskonm540dn" path="res://scripts/main_level.gd" id="1_johgq"]
 [ext_resource type="PackedScene" uid="uid://dtt1otbxp35mk" path="res://maps/rooms/room_corridor.tscn" id="2_0jo3j"]
 [ext_resource type="Texture2D" uid="uid://b4mllnx8fiqgt" path="res://assets/sprites/rooms/corridor/left_lock.png" id="3_jtkpf"]
 [ext_resource type="PackedScene" uid="uid://bf1q3fletbrbw" path="res://maps/rooms/room_brain.tscn" id="3_mcyaf"]

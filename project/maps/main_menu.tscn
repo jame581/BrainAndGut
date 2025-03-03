@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bbimief5lvaa0"]
 
-[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_8vtf1"]
+[ext_resource type="Script" uid="uid://dhmgyhpyt7dkd" path="res://scripts/ui/main_menu.gd" id="1_8vtf1"]
 [ext_resource type="Texture2D" uid="uid://bp282vvwr26b" path="res://assets/sprites/ui/main_menu_bg.png" id="2_18gii"]
 [ext_resource type="FontFile" uid="uid://dwprribxrnn8f" path="res://assets/fonts/PlaywriteAUSA-VariableFont_wght.ttf" id="2_ox664"]
 [ext_resource type="Texture2D" uid="uid://biv4i4vhg3xl6" path="res://assets/sprites/ui/brain_and_gut_logo.png" id="4_65j3r"]
@@ -97,9 +97,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u7gxb"]
 _data = {
-"RESET": SubResource("Animation_xinu1"),
-"hide_credits": SubResource("Animation_xaa1h"),
-"show_credits": SubResource("Animation_awe2x")
+&"RESET": SubResource("Animation_xinu1"),
+&"hide_credits": SubResource("Animation_xaa1h"),
+&"show_credits": SubResource("Animation_awe2x")
 }
 
 [node name="MainMenu" type="Control"]
@@ -207,22 +207,22 @@ alignment = 1
 
 [node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer/RightContainer/ButtonsContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_pk0ty")
 text = "Start Game"
 
 [node name="CreditsButton" type="Button" parent="MarginContainer/HBoxContainer/RightContainer/ButtonsContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_pk0ty")
 text = "Credits"
 
 [node name="ExitButton" type="Button" parent="MarginContainer/HBoxContainer/RightContainer/ButtonsContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_pk0ty")
 text = "Quit"
 
@@ -239,7 +239,7 @@ horizontal_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_u7gxb")
+&"": SubResource("AnimationLibrary_u7gxb")
 }
 
 [node name="UIAudioStreamPlayer" type="AudioStreamPlayer" parent="."]

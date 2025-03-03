@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bhbexnolt7mhq"]
 
-[ext_resource type="Script" path="res://scripts/props/button.gd" id="1_67bbu"]
+[ext_resource type="Script" uid="uid://dl3c2s0lglqho" path="res://scripts/props/button.gd" id="1_67bbu"]
 [ext_resource type="Texture2D" uid="uid://btcgejf1sxgxk" path="res://assets/sprites/rooms/engine/engine-room-button-green.png" id="2_2leyv"]
 [ext_resource type="Texture2D" uid="uid://ciu2vrx870rty" path="res://assets/sprites/rooms/engine/engine-room-button-red.png" id="2_swe04"]
 [ext_resource type="PackedScene" uid="uid://cpbupgumegnux" path="res://scenes/interaction_area.tscn" id="3_4d6iu"]
@@ -21,9 +21,9 @@ length = 0.5
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lnqd7"]
 _data = {
-"RESET": SubResource("Animation_b0g7i"),
-"close_door": SubResource("Animation_4b57u"),
-"open_door": SubResource("Animation_c6o1j")
+&"RESET": SubResource("Animation_b0g7i"),
+&"close_door": SubResource("Animation_4b57u"),
+&"open_door": SubResource("Animation_c6o1j")
 }
 
 [node name="ControlButton" type="Node2D"]

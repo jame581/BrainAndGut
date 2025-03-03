@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://kmt2ryi8xibm"]
 
-[ext_resource type="Script" path="res://scripts/props/corridor_door.gd" id="1_l7jvm"]
+[ext_resource type="Script" uid="uid://cedrxuu04vt4q" path="res://scripts/props/corridor_door.gd" id="1_l7jvm"]
 [ext_resource type="Texture2D" uid="uid://bmcwnikqc617x" path="res://assets/sprites/props/seconddoor2.png" id="2_oem5e"]
 [ext_resource type="PackedScene" uid="uid://cpbupgumegnux" path="res://scenes/interaction_area.tscn" id="3_ewehn"]
 
@@ -37,8 +37,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r51ik"]
 _data = {
-"RESET": SubResource("Animation_qv8km"),
-"open_door": SubResource("Animation_ykafw")
+&"RESET": SubResource("Animation_qv8km"),
+&"open_door": SubResource("Animation_ykafw")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwu60"]

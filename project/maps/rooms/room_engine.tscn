@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://fo30wpmou1rx"]
 
-[ext_resource type="Script" path="res://scripts/sub_level.gd" id="1_63hxh"]
+[ext_resource type="Script" uid="uid://dohv4sl4yg6rk" path="res://scripts/sub_level.gd" id="1_63hxh"]
 [ext_resource type="PackedScene" uid="uid://mabpxtts6b0l" path="res://scenes/props/engine.tscn" id="2_yhvq1"]
 [ext_resource type="PackedScene" uid="uid://blrteg5ux6vja" path="res://scenes/props/door.tscn" id="6_r3kyx"]
 [ext_resource type="PackedScene" uid="uid://d07uu0bx20luu" path="res://scenes/props/button.tscn" id="7_1cbk6"]
@@ -19,8 +19,8 @@ loop_mode = 1
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nsu3t"]
 _data = {
-"RESET": SubResource("Animation_u1udo"),
-"waves": SubResource("Animation_yn0yu")
+&"RESET": SubResource("Animation_u1udo"),
+&"waves": SubResource("Animation_yn0yu")
 }
 
 [node name="Room-Engine" type="Node2D"]

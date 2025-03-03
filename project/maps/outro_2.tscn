@@ -84,8 +84,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rl804"]
 _data = {
-"RESET": SubResource("Animation_sw5cg"),
-"intro_start": SubResource("Animation_msfbg")
+&"RESET": SubResource("Animation_sw5cg"),
+&"intro_start": SubResource("Animation_msfbg")
 }
 
 [sub_resource type="Animation" id="Animation_n858i"]
@@ -122,8 +122,23 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7xhcy"]
 _data = {
-"RESET": SubResource("Animation_n858i"),
-"helicopter": SubResource("Animation_clesl")
+&"RESET": SubResource("Animation_n858i"),
+&"helicopter": SubResource("Animation_clesl")
+}
+
+[sub_resource type="Animation" id="Animation_xq8yu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Art/Helicopter:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(918, -350)]
 }
 
 [sub_resource type="Animation" id="Animation_xbcay"]
@@ -142,25 +157,10 @@ tracks/0/keys = {
 "values": [Vector2(918, -350), Vector2(-205, 416), Vector2(-283, 502)]
 }
 
-[sub_resource type="Animation" id="Animation_xq8yu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Art/Helicopter:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(918, -350)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ar63s"]
 _data = {
-"RESET": SubResource("Animation_xq8yu"),
-"arrival": SubResource("Animation_xbcay")
+&"RESET": SubResource("Animation_xq8yu"),
+&"arrival": SubResource("Animation_xbcay")
 }
 
 [node name="Intro" type="Node2D"]

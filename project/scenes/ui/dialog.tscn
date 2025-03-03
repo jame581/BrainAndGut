@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b2nhuw7nenoha"]
 
 [ext_resource type="Texture2D" uid="uid://b03rcae8rlmlf" path="res://assets/sprites/ui/panel-pac.png" id="1_8dgyt"]
-[ext_resource type="Script" path="res://scripts/ui/dialog.gd" id="1_iius6"]
+[ext_resource type="Script" uid="uid://dxxgcnmeb0hi8" path="res://scripts/ui/dialog.gd" id="1_iius6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_837vr"]
 texture = ExtResource("1_8dgyt")
@@ -53,9 +53,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8pgpp"]
 _data = {
-"RESET": SubResource("Animation_g50p7"),
-"hide": SubResource("Animation_odu20"),
-"show": SubResource("Animation_t402m")
+&"RESET": SubResource("Animation_g50p7"),
+&"hide": SubResource("Animation_odu20"),
+&"show": SubResource("Animation_t402m")
 }
 
 [node name="Dialog" type="MarginContainer"]
@@ -114,7 +114,7 @@ one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_8pgpp")
+&"": SubResource("AnimationLibrary_8pgpp")
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

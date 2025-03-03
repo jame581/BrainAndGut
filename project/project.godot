@@ -21,7 +21,7 @@ Credits:
 config/version="0.0.3"
 config/tags=PackedStringArray("2d", "point_and_click")
 run/main_scene="res://maps/main_menu.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 run/max_fps=60
 boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://assets/sprites/project/bag_ico.png"
