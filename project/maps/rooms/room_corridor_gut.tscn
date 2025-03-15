@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bruckdjuw6skc"]
+[gd_scene load_steps=26 format=3 uid="uid://bruckdjuw6skc"]
 
 [ext_resource type="Script" uid="uid://dohv4sl4yg6rk" path="res://scripts/sub_level.gd" id="1_8c2wp"]
 [ext_resource type="Texture2D" uid="uid://bl87335mqu1ic" path="res://assets/sprites/rooms/corridor/deck3.png" id="2_sqwan"]
@@ -11,9 +11,74 @@
 [ext_resource type="Texture2D" uid="uid://djbe007jk1qqx" path="res://assets/sprites/rooms/corridor/light6.png" id="8_g0wfq"]
 [ext_resource type="Texture2D" uid="uid://bislrfchaocou" path="res://assets/sprites/rooms/corridor/right_lock.png" id="10_2qs5u"]
 [ext_resource type="PackedScene" uid="uid://d1b0tqy6ljrip" path="res://scenes/debris.tscn" id="10_38nuj"]
+[ext_resource type="Shader" uid="uid://bh8h4n3uhg5dc" path="res://shaders/door_strip.gdshader" id="11_aen10"]
 [ext_resource type="Texture2D" uid="uid://cl456dsixgojw" path="res://assets/sprites/damaged/cracks-for-floor2.png" id="11_c5iy5"]
 [ext_resource type="PackedScene" uid="uid://b2nhuw7nenoha" path="res://scenes/ui/dialog.tscn" id="12_dqk0j"]
+[ext_resource type="Texture2D" uid="uid://dfl3fgo5dm7mc" path="res://assets/sprites/rooms/corridor/corridor_lock_left_upper_front.png" id="12_u02mw"]
+[ext_resource type="Texture2D" uid="uid://c5tu1yuu47g5l" path="res://assets/sprites/rooms/corridor/corridor_lock_left_upper_side.png" id="13_jyhp0"]
 [ext_resource type="PackedScene" uid="uid://fjwmicie0bbf" path="res://scenes/props/corridor_door.tscn" id="14_qm0i1"]
+[ext_resource type="Texture2D" uid="uid://lub0b1pr8ir1" path="res://assets/sprites/rooms/corridor/corridor_lock_right_upper_side.png" id="14_r3ac1"]
+[ext_resource type="Texture2D" uid="uid://baqgkptt5f6mg" path="res://assets/sprites/rooms/corridor/corridor_lock_right_upper_front.png" id="15_v7iuw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uno4x"]
+shader = ExtResource("11_aen10")
+shader_parameter/size = 50.0
+shader_parameter/color_white = Color(1, 1, 1, 1)
+shader_parameter/color_enabled = Color(0.129412, 0.631373, 0.47451, 1)
+shader_parameter/color_disabled = Color(0.843137, 0.14902, 0.219608, 1)
+shader_parameter/speed = 1.0
+shader_parameter/first_puzzle_lock = false
+shader_parameter/second_puzzle_lock = true
+shader_parameter/direction_x = 4.75e-08
+shader_parameter/direction_y = -1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u3jjw"]
+shader = ExtResource("11_aen10")
+shader_parameter/size = 50.0
+shader_parameter/color_white = Color(1, 1, 1, 1)
+shader_parameter/color_enabled = Color(0.129412, 0.631373, 0.47451, 1)
+shader_parameter/color_disabled = Color(0.843137, 0.14902, 0.219608, 1)
+shader_parameter/speed = 1.0
+shader_parameter/first_puzzle_lock = false
+shader_parameter/second_puzzle_lock = true
+shader_parameter/direction_x = -1.0
+shader_parameter/direction_y = 4.75e-08
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_abyfb"]
+shader = ExtResource("11_aen10")
+shader_parameter/size = 50.0
+shader_parameter/color_white = Color(1, 1, 1, 1)
+shader_parameter/color_enabled = Color(0.129412, 0.631373, 0.47451, 1)
+shader_parameter/color_disabled = Color(0.843137, 0.14902, 0.219608, 1)
+shader_parameter/speed = 1.0
+shader_parameter/first_puzzle_lock = false
+shader_parameter/second_puzzle_lock = true
+shader_parameter/direction_x = -1.0
+shader_parameter/direction_y = 4.75e-08
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ndy72"]
+shader = ExtResource("11_aen10")
+shader_parameter/size = 50.0
+shader_parameter/color_white = Color(1, 1, 1, 1)
+shader_parameter/color_enabled = Color(0.129412, 0.631373, 0.47451, 1)
+shader_parameter/color_disabled = Color(0.843137, 0.14902, 0.219608, 1)
+shader_parameter/speed = 1.0
+shader_parameter/first_puzzle_lock = true
+shader_parameter/second_puzzle_lock = false
+shader_parameter/direction_x = 1.0
+shader_parameter/direction_y = 4.75e-08
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j2jff"]
+shader = ExtResource("11_aen10")
+shader_parameter/size = 50.0
+shader_parameter/color_white = Color(1, 1, 1, 1)
+shader_parameter/color_enabled = Color(0.129412, 0.631373, 0.47451, 1)
+shader_parameter/color_disabled = Color(0.843137, 0.14902, 0.219608, 1)
+shader_parameter/speed = 1.0
+shader_parameter/first_puzzle_lock = true
+shader_parameter/second_puzzle_lock = false
+shader_parameter/direction_x = 4.75e-08
+shader_parameter/direction_y = -1.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7umth"]
 vertices = PackedVector2Array(812.258, -79.1094, 1334.39, 792.078, -865.859, 802.859, 224.477, -90.9219)
@@ -51,6 +116,41 @@ texture = ExtResource("7_hdqcp")
 texture = ExtResource("8_g0wfq")
 
 [node name="RightLock" type="Sprite2D" parent="Deck3"]
+texture = ExtResource("10_2qs5u")
+
+[node name="LeftLock2" type="Node" parent="Deck3"]
+
+[node name="LeftLock1" type="Sprite2D" parent="Deck3/LeftLock2"]
+material = SubResource("ShaderMaterial_uno4x")
+texture = ExtResource("3_02gbd")
+
+[node name="LockLeft3" type="Sprite2D" parent="Deck3/LeftLock2"]
+material = SubResource("ShaderMaterial_u3jjw")
+texture = ExtResource("12_u02mw")
+
+[node name="LockLeft2" type="Sprite2D" parent="Deck3/LeftLock2"]
+material = SubResource("ShaderMaterial_abyfb")
+position = Vector2(1, 0)
+texture = ExtResource("13_jyhp0")
+
+[node name="LockRight" type="Node" parent="Deck3"]
+
+[node name="LockRight3" type="Sprite2D" parent="Deck3/LockRight"]
+material = SubResource("ShaderMaterial_ndy72")
+position = Vector2(-8, -19.702)
+scale = Vector2(1, 0.960596)
+texture = ExtResource("14_r3ac1")
+
+[node name="LockRight2" type="Sprite2D" parent="Deck3/LockRight"]
+material = SubResource("ShaderMaterial_ndy72")
+position = Vector2(0, -9.95001)
+scale = Vector2(1, 0.9801)
+texture = ExtResource("15_v7iuw")
+
+[node name="LockRight1" type="Sprite2D" parent="Deck3/LockRight"]
+material = SubResource("ShaderMaterial_j2jff")
+position = Vector2(-2, -5)
+scale = Vector2(1, 0.99)
 texture = ExtResource("10_2qs5u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
