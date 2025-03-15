@@ -70,8 +70,9 @@ func break_button():
 func fix_engine():
 	fixed_engine = true
 	emit_signal("on_engine_fixed")
+	RenderingServer.global_shader_parameter_set("first_puzzle_solved", 1.0)
+
 	if fixed_engine && fixed_control:
-		RenderingServer.global_shader_parameter_set("first_puzzle_solved", 1.0)
 		await get_tree().create_timer(4.0).timeout
 		load_outro_level()
 
@@ -79,8 +80,9 @@ func fix_engine():
 func fix_control():
 	fixed_control = true
 	emit_signal("on_control_fixed")
+	RenderingServer.global_shader_parameter_set("second_puzzle_solved", 1.0)
+
 	if fixed_engine && fixed_control:
-		RenderingServer.global_shader_parameter_set("second_puzzle_solved", 1.0)
 		await get_tree().create_timer(4.0).timeout
 		load_outro_level()
 
