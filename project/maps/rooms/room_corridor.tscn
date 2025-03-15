@@ -108,24 +108,26 @@ texture = ExtResource("6_6dh0w")
 [node name="Light6" type="Sprite2D" parent="Deck3"]
 texture = ExtResource("7_k5sbf")
 
-[node name="LeftLock" type="Node" parent="Deck3"]
+[node name="LockLeft" type="Node2D" parent="Deck3"]
+position = Vector2(13, -11)
 
-[node name="LeftLock1" type="Sprite2D" parent="Deck3/LeftLock"]
+[node name="LeftLock1" type="Sprite2D" parent="Deck3/LockLeft"]
 material = SubResource("ShaderMaterial_y38fg")
 position = Vector2(-13, 11)
 texture = ExtResource("10_qbbx5")
 
-[node name="LockLeft3" type="Sprite2D" parent="Deck3/LeftLock"]
+[node name="LockLeft3" type="Sprite2D" parent="Deck3/LockLeft"]
 material = SubResource("ShaderMaterial_7xodl")
 position = Vector2(-13, 11)
 texture = ExtResource("11_13qct")
 
-[node name="LockLeft2" type="Sprite2D" parent="Deck3/LeftLock"]
+[node name="LockLeft2" type="Sprite2D" parent="Deck3/LockLeft"]
 material = SubResource("ShaderMaterial_xpuma")
 position = Vector2(-12, 11)
 texture = ExtResource("12_88tha")
 
-[node name="LockRight" type="Node" parent="Deck3"]
+[node name="LockRight" type="Node2D" parent="Deck3"]
+position = Vector2(13, -11)
 
 [node name="LockRight3" type="Sprite2D" parent="Deck3/LockRight"]
 material = SubResource("ShaderMaterial_ewcgf")

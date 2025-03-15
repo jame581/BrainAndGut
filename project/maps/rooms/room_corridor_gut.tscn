@@ -118,36 +118,36 @@ texture = ExtResource("8_g0wfq")
 [node name="RightLock" type="Sprite2D" parent="Deck3"]
 texture = ExtResource("10_2qs5u")
 
-[node name="LeftLock2" type="Node" parent="Deck3"]
+[node name="LockLeft" type="Node2D" parent="Deck3"]
 
-[node name="LeftLock1" type="Sprite2D" parent="Deck3/LeftLock2"]
+[node name="LeftLock1" type="Sprite2D" parent="Deck3/LockLeft"]
 material = SubResource("ShaderMaterial_uno4x")
 texture = ExtResource("3_02gbd")
 
-[node name="LockLeft3" type="Sprite2D" parent="Deck3/LeftLock2"]
+[node name="LockLeft3" type="Sprite2D" parent="Deck3/LockLeft"]
 material = SubResource("ShaderMaterial_u3jjw")
 texture = ExtResource("12_u02mw")
 
-[node name="LockLeft2" type="Sprite2D" parent="Deck3/LeftLock2"]
+[node name="LockLeft2" type="Sprite2D" parent="Deck3/LockLeft"]
 material = SubResource("ShaderMaterial_abyfb")
 position = Vector2(1, 0)
 texture = ExtResource("13_jyhp0")
 
-[node name="LockRight" type="Node" parent="Deck3"]
+[node name="LockRight2" type="Node2D" parent="Deck3"]
 
-[node name="LockRight3" type="Sprite2D" parent="Deck3/LockRight"]
+[node name="LockRight3" type="Sprite2D" parent="Deck3/LockRight2"]
 material = SubResource("ShaderMaterial_ndy72")
 position = Vector2(-8, -19.702)
 scale = Vector2(1, 0.960596)
 texture = ExtResource("14_r3ac1")
 
-[node name="LockRight2" type="Sprite2D" parent="Deck3/LockRight"]
+[node name="LockRight2" type="Sprite2D" parent="Deck3/LockRight2"]
 material = SubResource("ShaderMaterial_ndy72")
 position = Vector2(0, -9.95001)
 scale = Vector2(1, 0.9801)
 texture = ExtResource("15_v7iuw")
 
-[node name="LockRight1" type="Sprite2D" parent="Deck3/LockRight"]
+[node name="LockRight1" type="Sprite2D" parent="Deck3/LockRight2"]
 material = SubResource("ShaderMaterial_j2jff")
 position = Vector2(-2, -5)
 scale = Vector2(1, 0.99)
