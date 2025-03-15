@@ -1,4 +1,5 @@
 extends Node2D
+class_name ControlButton
 
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var buttonOn: Sprite2D = $SpriteON
@@ -19,13 +20,15 @@ func _ready():
 
 func _on_interaction_area_interacted():
 	enable_button()
-	print("control button: interacted with control button")
+	print("Control Puzzle Button: interacted with control button")
 	GameHelper.emit_signal("on_control_button_pressed", button_index)
 
 func disable_button():
 	buttonOff.visible = true
 	interaction_area.interaction_allowed = Global.InteractionAllowed.BRAIN
+	print("Control Puzzle Button: Button disabled: ", button_index)
 
 func enable_button():
 	buttonOff.visible = false
 	interaction_area.interaction_allowed = Global.InteractionAllowed.NONE
+	print("Control Puzzle Button: Button enabled: ", button_index)

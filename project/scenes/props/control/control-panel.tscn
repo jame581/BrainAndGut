@@ -8,8 +8,9 @@
 [ext_resource type="Script" uid="uid://ddlb03jue443l" path="res://scripts/props/control_button.gd" id="5_qeay2"]
 [ext_resource type="Texture2D" uid="uid://budfqlm85jac4" path="res://assets/sprites/cursors/cursor_interact.png" id="7_80bci"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("buttons")]
 script = ExtResource("1_qc4cr")
+buttons = [NodePath("Buttons/Button1"), NodePath("Buttons/Button2"), NodePath("Buttons/Button3"), NodePath("Buttons/Button4")]
 
 [node name="Art" type="Node2D" parent="."]
 
@@ -29,22 +30,26 @@ texture = ExtResource("4_dkrq5")
 position = Vector2(446, 44)
 script = ExtResource("5_qeay2")
 cursor_texture = ExtResource("7_80bci")
+interaction_allowed = 0
 button_index = 0
 
 [node name="Button2" parent="Buttons" instance=ExtResource("3_71p2o")]
 position = Vector2(544, 44)
 script = ExtResource("5_qeay2")
 cursor_texture = ExtResource("7_80bci")
+interaction_allowed = 0
 button_index = 1
 
 [node name="Button3" parent="Buttons" instance=ExtResource("3_71p2o")]
 position = Vector2(654, 44)
 script = ExtResource("5_qeay2")
 cursor_texture = ExtResource("7_80bci")
+interaction_allowed = 0
 button_index = 2
 
 [node name="Button4" parent="Buttons" instance=ExtResource("3_71p2o")]
 position = Vector2(750, 44)
 script = ExtResource("5_qeay2")
 cursor_texture = ExtResource("7_80bci")
+interaction_allowed = 0
 button_index = 3
