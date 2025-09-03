@@ -40,7 +40,7 @@ shape = SubResource("RectangleShape2D_wh4ty")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_lnqd7")
+&"": SubResource("AnimationLibrary_lnqd7")
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

@@ -11,5 +11,3 @@ func _ready():
 func _on_engine_fixed():
 	animation_player.play("running")
 	print("Engine fixed. Running animation started.")
-
-
