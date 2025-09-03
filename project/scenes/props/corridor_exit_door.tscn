@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ccs1mg51r0b8h"]
+[gd_scene load_steps=8 format=3 uid="uid://bdf2v8ykp2t4a"]
 
 [ext_resource type="Script" uid="uid://c7ihb3nns75gg" path="res://scripts/props/corridor_exit_door.gd" id="1_exit"]
 [ext_resource type="Texture2D" uid="uid://bmcwnikqc617x" path="res://assets/sprites/props/seconddoor2.png" id="2_oem5e"]

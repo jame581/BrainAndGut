@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://kmt2ryi8xibm" path="res://scenes/props/corridor_door_smaller.tscn" id="10_4td0b"]
 [ext_resource type="Texture2D" uid="uid://b4mllnx8fiqgt" path="res://assets/sprites/rooms/corridor/left_lock.png" id="10_qbbx5"]
 [ext_resource type="Texture2D" uid="uid://dfl3fgo5dm7mc" path="res://assets/sprites/rooms/corridor/corridor_lock_left_upper_front.png" id="11_13qct"]
-[ext_resource type="PackedScene" uid="uid://ccs1mg51r0b8h" path="res://scenes/props/corridor_exit_door.tscn" id="11_exit"]
+[ext_resource type="PackedScene" uid="uid://bdf2v8ykp2t4a" path="res://scenes/props/corridor_exit_door.tscn" id="11_exit"]
 [ext_resource type="Texture2D" uid="uid://c5tu1yuu47g5l" path="res://assets/sprites/rooms/corridor/corridor_lock_left_upper_side.png" id="12_88tha"]
 [ext_resource type="PackedScene" uid="uid://b2nhuw7nenoha" path="res://scenes/ui/dialog.tscn" id="12_dialog"]
 [ext_resource type="Texture2D" uid="uid://bislrfchaocou" path="res://assets/sprites/rooms/corridor/right_lock.png" id="12_kk2mf"]
