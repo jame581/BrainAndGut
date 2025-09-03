@@ -72,9 +72,8 @@ func fix_engine():
 	emit_signal("on_engine_fixed")
 	RenderingServer.global_shader_parameter_set("first_puzzle_solved", 1.0)
 
-	if fixed_engine && fixed_control:
-		await get_tree().create_timer(4.0).timeout
-		load_outro_level()
+	# Return to corridor after completing puzzle
+	#switch_sublevel(MainLevel.SUBLEVELS.CORRIDOR)
 
 
 func fix_control():
@@ -82,9 +81,8 @@ func fix_control():
 	emit_signal("on_control_fixed")
 	RenderingServer.global_shader_parameter_set("second_puzzle_solved", 1.0)
 
-	if fixed_engine && fixed_control:
-		await get_tree().create_timer(4.0).timeout
-		load_outro_level()
+	# Return to corridor after completing puzzle
+	#switch_sublevel(MainLevel.SUBLEVELS.CORRIDOR)
 
 func load_outro_level() -> void:
 	await get_tree().create_timer(1.0).timeout

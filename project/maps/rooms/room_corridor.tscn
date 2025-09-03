@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dtt1otbxp35mk"]
+[gd_scene load_steps=25 format=3 uid="uid://dtt1otbxp35mk"]
 
 [ext_resource type="Texture2D" uid="uid://bl87335mqu1ic" path="res://assets/sprites/rooms/corridor/deck3.png" id="1_pdrp2"]
 [ext_resource type="Script" uid="uid://dohv4sl4yg6rk" path="res://scripts/sub_level.gd" id="1_ysvqb"]
@@ -12,7 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://kmt2ryi8xibm" path="res://scenes/props/corridor_door_smaller.tscn" id="10_4td0b"]
 [ext_resource type="Texture2D" uid="uid://b4mllnx8fiqgt" path="res://assets/sprites/rooms/corridor/left_lock.png" id="10_qbbx5"]
 [ext_resource type="Texture2D" uid="uid://dfl3fgo5dm7mc" path="res://assets/sprites/rooms/corridor/corridor_lock_left_upper_front.png" id="11_13qct"]
+[ext_resource type="PackedScene" uid="uid://ccs1mg51r0b8h" path="res://scenes/props/corridor_exit_door.tscn" id="11_exit"]
 [ext_resource type="Texture2D" uid="uid://c5tu1yuu47g5l" path="res://assets/sprites/rooms/corridor/corridor_lock_left_upper_side.png" id="12_88tha"]
+[ext_resource type="PackedScene" uid="uid://b2nhuw7nenoha" path="res://scenes/ui/dialog.tscn" id="12_dialog"]
 [ext_resource type="Texture2D" uid="uid://bislrfchaocou" path="res://assets/sprites/rooms/corridor/right_lock.png" id="12_kk2mf"]
 [ext_resource type="Texture2D" uid="uid://lub0b1pr8ir1" path="res://assets/sprites/rooms/corridor/corridor_lock_right_upper_side.png" id="13_2tu4g"]
 [ext_resource type="Texture2D" uid="uid://baqgkptt5f6mg" path="res://assets/sprites/rooms/corridor/corridor_lock_right_upper_front.png" id="14_4wkwk"]
@@ -162,5 +164,14 @@ scale = Vector2(1, -1)
 interaction_allowed = 1
 next_room = 3
 
+[node name="CorridorExitDoor" parent="." node_paths=PackedStringArray("dialog_on_interaction") instance=ExtResource("11_exit")]
+position = Vector2(531, -347)
+scale = Vector2(1.21, 0.64875)
+dialog_on_interaction = NodePath("../CanvasLayer/Dialog")
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_7umth")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Dialog" parent="CanvasLayer" instance=ExtResource("12_dialog")]

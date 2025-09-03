@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://ccs1mg51r0b8h"]
+
+[ext_resource type="Script" uid="uid://c7ihb3nns75gg" path="res://scripts/props/corridor_exit_door.gd" id="1_exit"]
+[ext_resource type="Texture2D" uid="uid://bmcwnikqc617x" path="res://assets/sprites/props/seconddoor2.png" id="2_oem5e"]
+[ext_resource type="PackedScene" uid="uid://cpbupgumegnux" path="res://scenes/interaction_area.tscn" id="3_ewehn"]
+
+[sub_resource type="Animation" id="Animation_qv8km"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ykafw"]
+resource_name = "open_door"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r51ik"]
+_data = {
+&"RESET": SubResource("Animation_qv8km"),
+&"open_door": SubResource("Animation_ykafw")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwu60"]
+size = Vector2(273, 840.5)
+
+[node name="CorridorExitDoor" type="Node2D"]
+script = ExtResource("1_exit")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_oem5e")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_r51ik")
+}
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_ewehn")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_uwu60")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="interacted" from="InteractionArea" to="." method="_on_interaction_area_interacted"]
