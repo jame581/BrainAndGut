@@ -35,8 +35,10 @@ func activate_sublevel(sublevel: Sublevel) -> void:
 
 		players.clear()
 		active_level = sublevel
-		reactivate_players()
 		sublevel.activate()
+		
+		# Reactivate players after sublevel has registered them
+		reactivate_players()
 
 	else:
 		print("MainLevel: Sublevel is null.")	
@@ -76,7 +78,7 @@ func switch_character():
 			current_player_index = (current_player_index + 1) % players.size()
 			players[current_player_index].set_player_active(true)
 	else:
-		if players.has(0):
+		if players.size() > 0:
 			players[0].set_player_active(true)
 
 # Function to handle input events
