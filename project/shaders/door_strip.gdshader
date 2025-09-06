@@ -20,10 +20,10 @@ uniform float direction_y : hint_range(-1.0, 1.0) = 1.0; // Vertical movement
 void fragment() {
 
 	// Whether lock is released - works for both side of door
-	float door_enabled = float(first_puzzle_lock) * first_puzzle_solved + second_puzzle_solved * float(second_puzzle_lock);
-	
-	// Ensure clean 0.0 or 1.0 values for web compatibility (handles precision issues)
-	door_enabled = step(0.5, door_enabled);
+	// Convert global bools to float for arithmetic
+	float door_enabled = float(first_puzzle_lock) * float(first_puzzle_solved) + float(second_puzzle_solved) * float(second_puzzle_lock);
+
+	door_enabled = step(0.5, door_enabled); // Ensure it's 0 or 1
 
     vec2 pos = FRAGCOORD.xy / size;
 
@@ -35,7 +35,7 @@ void fragment() {
 		direction = vec2(1.0, 0.0);
 	}
 	direction = normalize(direction);
-	
+
 	vec2 offset = direction * time_offset;
 
 	pos = floor(pos + offset);
@@ -43,17 +43,17 @@ void fragment() {
 	// Simplified pattern calculation for better web compatibility
 	float x_pattern = mod(pos.x, 2.0);
 	float y_pattern = mod(pos.y, 2.0);
-	
+
 	// Create checkerboard pattern based on direction
 	float pattern_mask;
 	if (abs(direction_x) > abs(direction_y)) {
 		// Horizontal stripes
 		pattern_mask = x_pattern;
 	} else {
-		// Vertical stripes  
+		// Vertical stripes
 		pattern_mask = y_pattern;
 	}
-	
+
 	// Ensure clean 0 or 1 values
 	pattern_mask = step(0.5, pattern_mask);
 
@@ -70,7 +70,7 @@ void fragment() {
 	vec4 pattern = mix(color_white, door_color, pattern_mask);
 
 	float visible_mask = texture(TEXTURE, UV).r * texture(TEXTURE, UV).a;
-	
+
 	// Ensure we always have some visibility
 	COLOR = mix(texture_color, pattern, visible_mask);
 }
