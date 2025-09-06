@@ -26,6 +26,7 @@ func _ready():
 	# Initialize global shader parameters to ensure they work in web builds
 	RenderingServer.global_shader_parameter_set("first_puzzle_solved", 0.0)
 	RenderingServer.global_shader_parameter_set("second_puzzle_solved", 0.0)
+	print("GameHelper: Initialized shader parameters - first_puzzle_solved: 0.0, second_puzzle_solved: 0.0")
 
 	# await get_tree().create_timer(3.0).timeout
 	# RenderingServer.global_shader_parameter_set("first_puzzle_solved", 1.0)
@@ -75,6 +76,7 @@ func fix_engine():
 	fixed_engine = true
 	emit_signal("on_engine_fixed")
 	RenderingServer.global_shader_parameter_set("first_puzzle_solved", 1.0)
+	print("GameHelper: Set first_puzzle_solved to 1.0")
 
 	# Return to corridor after completing puzzle
 	#switch_sublevel(MainLevel.SUBLEVELS.CORRIDOR)
@@ -84,6 +86,7 @@ func fix_control():
 	fixed_control = true
 	emit_signal("on_control_fixed")
 	RenderingServer.global_shader_parameter_set("second_puzzle_solved", 1.0)
+	print("GameHelper: Set second_puzzle_solved to 1.0")
 
 	# Return to corridor after completing puzzle
 	#switch_sublevel(MainLevel.SUBLEVELS.CORRIDOR)
