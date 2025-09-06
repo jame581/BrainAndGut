@@ -74,10 +74,10 @@ renderer/rendering_method.mobile="gl_compatibility"
 [shader_globals]
 
 first_puzzle_solved={
-"type": "bool",
-"value": false
+"type": "float",
+"value": 0.0
 }
 second_puzzle_solved={
-"type": "bool",
-"value": false
+"type": "float",
+"value": 0.0
 }
