@@ -7,8 +7,8 @@ uniform vec4 color_disabled : source_color = vec4(0.0, 0.0, 0.0, 1.0);
 
 uniform float speed : hint_range(0.0, 10.0) = 1.0;
 
-global uniform bool first_puzzle_solved;
-global uniform bool second_puzzle_solved;
+global uniform bool first_puzzle_solved = false;
+global uniform bool second_puzzle_solved = false;
 
 uniform bool first_puzzle_lock = false;
 uniform bool second_puzzle_lock = false;
@@ -26,8 +26,13 @@ void fragment() {
 
     float time_offset = TIME * speed;
 
-	vec2 direction = normalize(vec2(direction_x, direction_y));
-
+	vec2 direction = vec2(direction_x, direction_y);
+	// Avoid division by zero and precision issues
+	if (length(direction) < 0.001) {
+		direction = vec2(1.0, 0.0);
+	}
+	direction = normalize(direction);
+	
 	vec2 offset = direction * time_offset;
 
 	pos = floor(pos + offset);

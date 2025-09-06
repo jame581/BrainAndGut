@@ -23,6 +23,10 @@ func _ready():
 
 	Global.map_changed.connect(handle_map_changed)
 
+	# Initialize global shader parameters to ensure they work in web builds
+	RenderingServer.global_shader_parameter_set("first_puzzle_solved", 0.0)
+	RenderingServer.global_shader_parameter_set("second_puzzle_solved", 0.0)
+
 	# await get_tree().create_timer(3.0).timeout
 	# RenderingServer.global_shader_parameter_set("first_puzzle_solved", 1.0)
 	# await get_tree().create_timer(3.0).timeout

@@ -29,7 +29,7 @@ shader_parameter/color_disabled = Color(0.843137, 0.14902, 0.219608, 1)
 shader_parameter/speed = 1.0
 shader_parameter/first_puzzle_lock = false
 shader_parameter/second_puzzle_lock = true
-shader_parameter/direction_x = 4.75e-08
+shader_parameter/direction_x = 0.0
 shader_parameter/direction_y = -1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u3jjw"]
@@ -42,7 +42,7 @@ shader_parameter/speed = 1.0
 shader_parameter/first_puzzle_lock = false
 shader_parameter/second_puzzle_lock = true
 shader_parameter/direction_x = -1.0
-shader_parameter/direction_y = 4.75e-08
+shader_parameter/direction_y = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_abyfb"]
 shader = ExtResource("11_aen10")
@@ -54,7 +54,7 @@ shader_parameter/speed = 1.0
 shader_parameter/first_puzzle_lock = false
 shader_parameter/second_puzzle_lock = true
 shader_parameter/direction_x = -1.0
-shader_parameter/direction_y = 4.75e-08
+shader_parameter/direction_y = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ndy72"]
 shader = ExtResource("11_aen10")
@@ -66,7 +66,7 @@ shader_parameter/speed = 1.0
 shader_parameter/first_puzzle_lock = true
 shader_parameter/second_puzzle_lock = false
 shader_parameter/direction_x = 1.0
-shader_parameter/direction_y = 4.75e-08
+shader_parameter/direction_y = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j2jff"]
 shader = ExtResource("11_aen10")
@@ -77,7 +77,7 @@ shader_parameter/color_disabled = Color(0.843137, 0.14902, 0.219608, 1)
 shader_parameter/speed = 1.0
 shader_parameter/first_puzzle_lock = true
 shader_parameter/second_puzzle_lock = false
-shader_parameter/direction_x = 4.75e-08
+shader_parameter/direction_x = 0.0
 shader_parameter/direction_y = -1.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7umth"]
