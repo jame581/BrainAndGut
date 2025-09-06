@@ -9,15 +9,11 @@ uniform float period : hint_range(0.1, 10.0) = 1;
 global uniform float first_puzzle_solved = 0.0;
 global uniform float second_puzzle_solved = 0.0;
 
-uniform float first_puzzle_lock = 0.0;
-uniform float second_puzzle_lock = 0.0;
-
-
 void fragment() {
 
 	// Convert boolean uniforms to floats explicitly for cross-platform compatibility
-	float p1_solved = first_puzzle_lock * first_puzzle_solved;
-	float p2_solved = second_puzzle_lock * second_puzzle_solved;
+	float p1_solved = first_puzzle_solved;
+	float p2_solved = second_puzzle_solved;
 
 	// Use max to determine if the door is enabled. This is robust if one or both are solved.
 	float door_enabled = max(p1_solved, p2_solved);
