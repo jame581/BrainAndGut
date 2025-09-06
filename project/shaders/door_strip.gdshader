@@ -19,9 +19,12 @@ uniform float direction_y : hint_range(-1.0, 1.0) = 1.0; // Vertical movement
 
 void fragment() {
 
-	// Whether lock is released - works for both side of door
-	// Convert global bools to float for arithmetic
-	float door_enabled = float(first_puzzle_lock) * float(first_puzzle_solved) + float(second_puzzle_solved) * float(second_puzzle_lock);
+	// Convert boolean uniforms to floats explicitly for cross-platform compatibility
+	float p1_solved = float(first_puzzle_lock) * first_puzzle_solved;
+	float p2_solved = float(second_puzzle_lock) * second_puzzle_solved;
+
+	// Use max to determine if the door is enabled. This is robust if one or both are solved.
+	float door_enabled = max(p1_solved, p2_solved);
 
 	door_enabled = step(0.5, door_enabled); // Ensure it's 0 or 1
 
