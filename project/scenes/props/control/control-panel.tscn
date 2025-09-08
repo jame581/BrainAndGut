@@ -15,6 +15,7 @@ buttons = [NodePath("Buttons/Button1"), NodePath("Buttons/Button2"), NodePath("B
 [node name="Art" type="Node2D" parent="."]
 
 [node name="Machine-room1" type="Sprite2D" parent="Art"]
+position = Vector2(100, 0)
 texture = ExtResource("1_erf8i")
 
 [node name="Machine-room-buttons" type="Sprite2D" parent="Art"]

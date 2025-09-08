@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cit3mo14hgcr1" path="res://assets/sprites/rooms/guts/gutsroom-bed.png" id="3_webog"]
 [ext_resource type="Texture2D" uid="uid://bks288ivwd2kv" path="res://assets/sprites/rooms/guts/gutsroom-furniture.png" id="4_7bcof"]
 [ext_resource type="PackedScene" uid="uid://b2nhuw7nenoha" path="res://scenes/ui/dialog.tscn" id="6_v40ax"]
-[ext_resource type="PackedScene" uid="uid://blrteg5ux6vja" path="res://scenes/props/door.tscn" id="9_ti42r"]
+[ext_resource type="PackedScene" uid="uid://blrteg5ux6vja" path="res://scenes/props/door_left.tscn" id="9_ti42r"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_08l0f"]
 vertices = PackedVector2Array(359.578, 220.906, 355.406, 322.773, -651.453, 299.508, -570.68, 213.031)
